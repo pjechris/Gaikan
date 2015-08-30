@@ -12,6 +12,7 @@
 		49EC39741B92FC7D002938E1 /* GaikanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39731B92FC7D002938E1 /* GaikanTests.swift */; };
 		49EC39801B92FF48002938E1 /* StyleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC397F1B92FF48002938E1 /* StyleProperty.swift */; settings = {ASSET_TAGS = (); }; };
 		49EC39821B9301E5002938E1 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39811B9301E5002938E1 /* Stylesheet.swift */; settings = {ASSET_TAGS = (); }; };
+		49EC398B1B93085E002938E1 /* StyleRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC398A1B93085E002938E1 /* StyleRule.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -33,6 +34,7 @@
 		49EC39751B92FC7D002938E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		49EC397F1B92FF48002938E1 /* StyleProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleProperty.swift; sourceTree = "<group>"; };
 		49EC39811B9301E5002938E1 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
+		49EC398A1B93085E002938E1 /* StyleRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleRule.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,9 +77,10 @@
 		49EC39661B92FC7D002938E1 /* Gaikan */ = {
 			isa = PBXGroup;
 			children = (
-				49EC397E1B92FF2F002938E1 /* Style */,
 				49EC39671B92FC7D002938E1 /* Gaikan.h */,
 				49EC39691B92FC7D002938E1 /* Info.plist */,
+				49EC397E1B92FF2F002938E1 /* Style */,
+				49EC39851B930517002938E1 /* View */,
 			);
 			path = Gaikan;
 			sourceTree = "<group>";
@@ -94,10 +97,18 @@
 		49EC397E1B92FF2F002938E1 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				49EC398A1B93085E002938E1 /* StyleRule.swift */,
 				49EC397F1B92FF48002938E1 /* StyleProperty.swift */,
 				49EC39811B9301E5002938E1 /* Stylesheet.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		49EC39851B930517002938E1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -208,6 +219,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EC398B1B93085E002938E1 /* StyleRule.swift in Sources */,
 				49EC39801B92FF48002938E1 /* StyleProperty.swift in Sources */,
 				49EC39821B9301E5002938E1 /* Stylesheet.swift in Sources */,
 			);

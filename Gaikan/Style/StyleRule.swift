@@ -8,6 +8,6 @@
 
 import Foundation
 
-public struct Stylesheet {
-    public let styles : Dictionary<String, StyleRule>
+public struct StyleRule {
+    public let attributes : Dictionary<StyleProperty, Any?>
 }

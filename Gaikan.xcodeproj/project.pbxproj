@@ -10,6 +10,8 @@
 		49EC39681B92FC7D002938E1 /* Gaikan.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EC39671B92FC7D002938E1 /* Gaikan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49EC396F1B92FC7D002938E1 /* Gaikan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EC39641B92FC7D002938E1 /* Gaikan.framework */; settings = {ASSET_TAGS = (); }; };
 		49EC39741B92FC7D002938E1 /* GaikanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39731B92FC7D002938E1 /* GaikanTests.swift */; };
+		49EC39801B92FF48002938E1 /* StyleProperty.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC397F1B92FF48002938E1 /* StyleProperty.swift */; settings = {ASSET_TAGS = (); }; };
+		49EC39821B9301E5002938E1 /* Stylesheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39811B9301E5002938E1 /* Stylesheet.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +31,8 @@
 		49EC396E1B92FC7D002938E1 /* GaikanTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = GaikanTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EC39731B92FC7D002938E1 /* GaikanTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GaikanTests.swift; sourceTree = "<group>"; };
 		49EC39751B92FC7D002938E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49EC397F1B92FF48002938E1 /* StyleProperty.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleProperty.swift; sourceTree = "<group>"; };
+		49EC39811B9301E5002938E1 /* Stylesheet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylesheet.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +75,7 @@
 		49EC39661B92FC7D002938E1 /* Gaikan */ = {
 			isa = PBXGroup;
 			children = (
+				49EC397E1B92FF2F002938E1 /* Style */,
 				49EC39671B92FC7D002938E1 /* Gaikan.h */,
 				49EC39691B92FC7D002938E1 /* Info.plist */,
 			);
@@ -84,6 +89,15 @@
 				49EC39751B92FC7D002938E1 /* Info.plist */,
 			);
 			path = GaikanTests;
+			sourceTree = "<group>";
+		};
+		49EC397E1B92FF2F002938E1 /* Style */ = {
+			isa = PBXGroup;
+			children = (
+				49EC397F1B92FF48002938E1 /* StyleProperty.swift */,
+				49EC39811B9301E5002938E1 /* Stylesheet.swift */,
+			);
+			path = Style;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -142,6 +156,7 @@
 		49EC395B1B92FC7D002938E1 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = fr.akane;
 				TargetAttributes = {
@@ -193,6 +208,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49EC39801B92FF48002938E1 /* StyleProperty.swift in Sources */,
+				49EC39821B9301E5002938E1 /* Stylesheet.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -307,6 +324,7 @@
 		49EC39791B92FC7D002938E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -317,12 +335,14 @@
 				PRODUCT_BUNDLE_IDENTIFIER = Akane.Gaikan;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
 		49EC397A1B92FC7D002938E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -375,6 +395,7 @@
 				49EC397A1B92FC7D002938E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49EC397B1B92FC7D002938E1 /* Build configuration list for PBXNativeTarget "GaikanTests" */ = {
 			isa = XCConfigurationList;
@@ -383,6 +404,7 @@
 				49EC397D1B92FC7D002938E1 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

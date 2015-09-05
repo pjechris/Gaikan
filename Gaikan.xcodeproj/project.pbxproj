@@ -22,6 +22,7 @@
 		49EC39931B9373B2002938E1 /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39921B9373B2002938E1 /* Stylable.swift */; };
 		49EC39951B938027002938E1 /* UIViewStylableExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39941B938027002938E1 /* UIViewStylableExtension.swift */; };
 		49EC39991B938218002938E1 /* ViewStyleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39981B938218002938E1 /* ViewStyleRenderer.swift */; };
+		49F3212E1B9A51B4009F1694 /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F3212D1B9A51B4009F1694 /* Border.swift */; settings = {ASSET_TAGS = (); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		49EC39921B9373B2002938E1 /* Stylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylable.swift; sourceTree = "<group>"; };
 		49EC39941B938027002938E1 /* UIViewStylableExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewStylableExtension.swift; sourceTree = "<group>"; };
 		49EC39981B938218002938E1 /* ViewStyleRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStyleRenderer.swift; sourceTree = "<group>"; };
+		49F3212D1B9A51B4009F1694 /* Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +148,7 @@
 		49EC397E1B92FF2F002938E1 /* Style */ = {
 			isa = PBXGroup;
 			children = (
+				49F3212C1B9A51AB009F1694 /* PropertyType */,
 				49EC39921B9373B2002938E1 /* Stylable.swift */,
 				49EC397F1B92FF48002938E1 /* StyleProperty.swift */,
 				49EC398A1B93085E002938E1 /* StyleRule.swift */,
@@ -162,6 +165,14 @@
 				49E5147B1B9830A20030529C /* LabelStyleRenderer.swift */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		49F3212C1B9A51AB009F1694 /* PropertyType */ = {
+			isa = PBXGroup;
+			children = (
+				49F3212D1B9A51B4009F1694 /* Border.swift */,
+			);
+			path = PropertyType;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -319,6 +330,7 @@
 				49EC39931B9373B2002938E1 /* Stylable.swift in Sources */,
 				49E5147C1B9830A20030529C /* LabelStyleRenderer.swift in Sources */,
 				49EC39801B92FF48002938E1 /* StyleProperty.swift in Sources */,
+				49F3212E1B9A51B4009F1694 /* Border.swift in Sources */,
 				49EC39951B938027002938E1 /* UIViewStylableExtension.swift in Sources */,
 				49EC39821B9301E5002938E1 /* Stylesheet.swift in Sources */,
 			);
@@ -545,6 +557,7 @@
 				498E05471B98362100B4E26B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		49EC395E1B92FC7D002938E1 /* Build configuration list for PBXProject "Gaikan" */ = {
 			isa = XCConfigurationList;

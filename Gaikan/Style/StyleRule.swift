@@ -30,15 +30,23 @@ public struct StyleRule : DictionaryLiteralConvertible {
 }
 
 public extension StyleRule {
-    public var color : UIColor? {
+    public var border: Border {
+        get { return self.attributes[.Border].map { return $0 as! Border } ?? Border(width: 0, color: nil) }
+    }
+
+    public var color: UIColor? {
         get { return self.attributes[.Color].map { return $0 as! UIColor } }
     }
 
-    public var tintColor : UIColor? {
+    public var font: UIFont? {
+        get { return self.attributes[.Font].map { return $0 as! UIFont } }
+    }
+
+    public var tintColor: UIColor? {
         get { return self.attributes[.TintColor].map { return $0 as! UIColor } }
     }
 
-    public var visible : Bool {
+    public var visible: Bool {
         get { return self.attributes[.Visible].map { return $0 as! Bool } ?? true }
     }
 }

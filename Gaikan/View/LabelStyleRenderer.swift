@@ -10,6 +10,7 @@ import Foundation
 
 public extension ViewStyleRenderer {
     public class func render(stylable: UILabel, styleRule: StyleRule) {
+        stylable.font = styleRule.font
         stylable.textColor = styleRule.color
     }
 }

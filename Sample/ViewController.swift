@@ -15,7 +15,11 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let style: StyleRule = [ .Color: UIColor.redColor(), .TintColor: UIColor.blueColor() ]
+        let style: StyleRule = [
+            .Color: UIColor.redColor(),
+            .Border: Border(width: 1, color: UIColor.greenColor()),
+            .Font: UIFont(name: "Courier", size: 26),
+            .TintColor: UIColor.blueColor() ]
 
         self.label.applyStyle(style)
     }

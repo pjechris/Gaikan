@@ -16,14 +16,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label styled with Gaikan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyz-xj-UlD">
-                                <rect key="frame" x="115" y="164" width="186" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label styled with Gaikan" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vyz-xj-UlD">
+                                <rect key="frame" x="214.5" y="290.5" width="171" height="19"/>
+                                <fontDescription key="fontDescription" name="Optima-Regular" family="Optima" pointSize="16"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="vyz-xj-UlD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="qKa-cq-u68"/>
+                            <constraint firstItem="vyz-xj-UlD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qcR-Nz-UU5"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="label" destination="vyz-xj-UlD" id="aSR-ER-IN6"/>

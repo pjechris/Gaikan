@@ -20,10 +20,10 @@ class ViewStyleRendererSpec: QuickSpec {
             view = UIView()
         }
 
-        describe("render style") {
+        describe("render") {
             var style: StyleRule!
 
-            context("when applying property") {
+            context("when giving style") {
 
                 it("should apply tintColor") {
                     style = [ .TintColor: UIColor.redColor()]
@@ -47,7 +47,7 @@ class ViewStyleRendererSpec: QuickSpec {
 
                     view.applyStyle(style)
 
-                    expect(view.hidden) == false
+                    expect(view.hidden) == true
                 }
             }
         }

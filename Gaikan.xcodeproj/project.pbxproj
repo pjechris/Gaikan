@@ -14,6 +14,7 @@
 		498E053E1B98362100B4E26B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498E053C1B98362100B4E26B /* Main.storyboard */; };
 		498E05401B98362100B4E26B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 498E053F1B98362100B4E26B /* Assets.xcassets */; };
 		498E05431B98362100B4E26B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498E05411B98362100B4E26B /* LaunchScreen.storyboard */; };
+		49CA04E01BA2C0EF00B61EAB /* LabelStyleRendererSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CA04DF1BA2C0EF00B61EAB /* LabelStyleRendererSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		49E5147C1B9830A20030529C /* LabelStyleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5147B1B9830A20030529C /* LabelStyleRenderer.swift */; };
 		49EC39681B92FC7D002938E1 /* Gaikan.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EC39671B92FC7D002938E1 /* Gaikan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49EC396F1B92FC7D002938E1 /* Gaikan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EC39641B92FC7D002938E1 /* Gaikan.framework */; };
@@ -55,6 +56,7 @@
 		498E053F1B98362100B4E26B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		498E05421B98362100B4E26B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		498E05441B98362100B4E26B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		49CA04DF1BA2C0EF00B61EAB /* LabelStyleRendererSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyleRendererSpec.swift; sourceTree = "<group>"; };
 		49E5147B1B9830A20030529C /* LabelStyleRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyleRenderer.swift; sourceTree = "<group>"; };
 		49EC39641B92FC7D002938E1 /* Gaikan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gaikan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EC39671B92FC7D002938E1 /* Gaikan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gaikan.h; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 		490AD3DB1BA1CD4A0078F2DB /* View */ = {
 			isa = PBXGroup;
 			children = (
+				49CA04DF1BA2C0EF00B61EAB /* LabelStyleRendererSpec.swift */,
 				490AD3DC1BA1CD4A0078F2DB /* ViewStyleRendererSpec.swift */,
 			);
 			path = View;
@@ -434,6 +437,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CA04E01BA2C0EF00B61EAB /* LabelStyleRendererSpec.swift in Sources */,
 				490AD3DD1BA1CD4A0078F2DB /* ViewStyleRendererSpec.swift in Sources */,
 				49EC39741B92FC7D002938E1 /* GaikanTests.swift in Sources */,
 			);

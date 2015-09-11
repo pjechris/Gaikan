@@ -8,8 +8,21 @@
 
 import Foundation
 
+var ViewStyleNameAttribute = "ViewStyleNameAttribute"
+
 extension UIView : Stylable {
-    public func applyStyle(styleRule: StyleRule) {
-        ViewStyleRenderer.render(self, styleRule: styleRule)
+    @IBInspectable public var styleName: String? {
+        get { return objc_getAssociatedObject(self, &ViewStyleNameAttribute) as? String }
+        set { objc_setAssociatedObject(self, &ViewStyleNameAttribute, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
+
+    public func applyStyle(style: StyleRule) {
+        ViewStyleRenderer.render(self, styleRule: style)
+    }
+
+    public func applyStyle(stylesheet: Stylesheet) {
+        if let style = stylesheet[self.styleName] {
+            self.applyStyle(style)
+        }
     }
 }

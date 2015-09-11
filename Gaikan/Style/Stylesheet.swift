@@ -8,6 +8,23 @@
 
 import Foundation
 
-public struct Stylesheet {
-    public let styles : Dictionary<String, StyleRule>
+public struct Stylesheet: DictionaryLiteralConvertible {
+    public typealias Key = String
+    public typealias Value = StyleRule
+
+    public let styles : Dictionary<Key, Value>
+
+    public init(dictionaryLiteral elements: (Key, Value)...) {
+        var styles = Dictionary<Key, Value>()
+
+        for (key, value) in elements {
+            styles[key] = value
+        }
+
+        self.styles = styles
+    }
+
+    public subscript(keyname: String?) -> StyleRule? {
+        get { return (keyname != nil) ? self.styles[keyname] : nil }
+    }
 }

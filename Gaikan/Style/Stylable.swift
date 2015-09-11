@@ -9,5 +9,8 @@
 import Foundation
 
 public protocol Stylable {
-    func applyStyle(styleRule: StyleRule)
+    var styleName: String? { get set }
+
+    func applyStyle(style: StyleRule)
+    func applyStyle(stylesheet: Stylesheet)
 }

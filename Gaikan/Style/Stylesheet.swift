@@ -25,6 +25,6 @@ public struct Stylesheet: DictionaryLiteralConvertible {
     }
 
     public subscript(keyname: String?) -> StyleRule? {
-        get { return (keyname != nil) ? self.styles[keyname] : nil }
+        get { return (keyname != nil) ? self.styles[keyname!] : nil }
     }
 }

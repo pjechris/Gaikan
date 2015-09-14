@@ -1,0 +1,13 @@
+language: swift
+osx_image: xcode7
+
+env:
+  xcode_workspace: Gaikan.xcworkspace
+  xcode_scheme: Gaikan
+
+script:
+  - set -o pipefail && xcodebuild -workspace ${xcode_workspace} -scheme ${xcode_scheme}  -sdk ${xcode_sdk} build test | xcpretty -c
+
+branches:
+  except:
+    - /^tags.+/

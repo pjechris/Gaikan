@@ -6,6 +6,8 @@ env:
   xcode_scheme: Gaikan
   xcode_sdk: iphonesimulator
 
+install: pod install
+
 script:
   - set -o pipefail && xcodebuild -workspace ${xcode_workspace} -scheme ${xcode_scheme}  -sdk ${xcode_sdk} build test | xcpretty -c
 

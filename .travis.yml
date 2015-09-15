@@ -2,14 +2,21 @@ language: objective-c
 osx_image: xcode7
 
 env:
-  xcode_workspace: Gaikan.xcworkspace
-  xcode_scheme: Gaikan
-  xcode_sdk: iphonesimulator
+  - >
+    xcode_workspace=Gaikan.xcworkspace
+    xcode_scheme=Gaikan
+    xcode_sdk=iphonesimulator
+    xcode_platform="platform=iOS Simulator,name=iPhone 6"
 
 install: pod install
 
 script:
-  - set -o pipefail && xcodebuild -workspace ${xcode_workspace} -scheme ${xcode_scheme}  -sdk ${xcode_sdk} build test | xcpretty -c
+  - >
+    set -o pipefail && xcodebuild
+    -workspace ${xcode_workspace}
+    -scheme ${xcode_scheme}
+    -sdk ${xcode_sdk}
+    -destination "${xcode_platform}" test | xcpretty -c
 
 branches:
   except:

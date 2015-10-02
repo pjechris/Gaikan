@@ -10,10 +10,13 @@ import Foundation
 
 public class ViewStyleRenderer {
     public class func render(stylable: UIView, styleRule: StyleRule) {
-        stylable.layer.borderWidth = styleRule.border.width
-        stylable.layer.borderColor = styleRule.border.color?.CGColor
+        let border = styleRule.border ?? Border(width: 0, color: nil)
+        let visible = styleRule.visible ?? true
+
+        stylable.layer.borderWidth = border.width
+        stylable.layer.borderColor = border.color?.CGColor
         stylable.tintColor = styleRule.tintColor
-        stylable.hidden = !styleRule.visible
+        stylable.hidden = !visible
 
         self.forward(stylable, styleRule: styleRule)
     }

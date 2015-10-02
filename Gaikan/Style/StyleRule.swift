@@ -47,8 +47,8 @@ public struct StyleRule : DictionaryLiteralConvertible {
 }
 
 public extension StyleRule {
-    public var border: Border {
-        get { return self[.Border].map { return $0 as! Border } ?? Border(width: 0, color: nil) }
+    public var border: Border? {
+        get { return self[.Border].map { return $0 as! Border } }
     }
 
     public var color: UIColor? {
@@ -63,7 +63,7 @@ public extension StyleRule {
         get { return self[.TintColor].map { return $0 as! UIColor } }
     }
 
-    public var visible: Bool {
-        get { return self[.Visible].map { return $0 as! Bool } ?? true }
+    public var visible: Bool? {
+        get { return self[.Visible].map { return $0 as! Bool } }
     }
 }

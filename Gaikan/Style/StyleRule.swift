@@ -28,6 +28,12 @@ public struct StyleRule : DictionaryLiteralConvertible {
         self.attributes = attributes
     }
 
+    public init(_ styleBlock: (inout style: StyleRule) -> ()) {
+        self.init(attributes: [:])
+
+        styleBlock(style: &self)
+    }
+
     public mutating func extends(styles: StyleRule?...) -> StyleRule {
         var composedAttributes: [Key:Value] = [:]
 
@@ -49,21 +55,26 @@ public struct StyleRule : DictionaryLiteralConvertible {
 public extension StyleRule {
     public var border: Border? {
         get { return self[.Border].map { return $0 as! Border } }
+        set { self.attributes[.Border] = newValue }
     }
 
     public var color: UIColor? {
         get { return self[.Color].map { return $0 as! UIColor } }
+        set { self.attributes[.Color] = newValue }
     }
 
     public var font: UIFont? {
         get { return self[.Font].map { return $0 as! UIFont } }
+        set { self.attributes[.Font] = newValue }
     }
 
     public var tintColor: UIColor? {
         get { return self[.TintColor].map { return $0 as! UIColor } }
+        set { self.attributes[.TintColor] = newValue }
     }
 
     public var visible: Bool? {
         get { return self[.Visible].map { return $0 as! Bool } }
+        set { self.attributes[.Visible] = newValue }
     }
 }

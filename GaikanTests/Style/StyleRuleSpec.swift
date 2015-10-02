@@ -15,6 +15,20 @@ class StyleRuleSpec: QuickSpec {
     override func spec() {
         var style: StyleRule!
 
+        describe("init") {
+            context("when passing block") {
+                beforeEach {
+                    style = StyleRule() { (inout style: StyleRule) -> () in
+                        style.color = UIColor.blueColor()
+                    }
+                }
+
+                it("should initialize color") {
+                    expect(style.color) == UIColor.blueColor()
+                }
+            }
+        }
+
         describe("extends") {
             beforeEach {
                 style = [ .Color: UIColor.blueColor(), .TintColor: nil ]

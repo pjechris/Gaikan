@@ -34,7 +34,7 @@ public struct StyleRule : DictionaryLiteralConvertible {
         styleBlock(style: &self)
     }
 
-    public mutating func extends(styles: StyleRule?...) -> StyleRule {
+    public func extends(styles: StyleRule?...) -> StyleRule {
         var composedAttributes: [Key:Value] = [:]
 
         for style in styles {
@@ -43,8 +43,7 @@ public struct StyleRule : DictionaryLiteralConvertible {
             }
         }
 
-        self.attributes = composedAttributes.gaikan_merge(self.attributes)
-        return self
+        return StyleRule(attributes: composedAttributes.gaikan_merge(self.attributes))
     }
 
     private subscript(keyname: StyleProperty) -> Value {

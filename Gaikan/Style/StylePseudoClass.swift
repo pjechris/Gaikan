@@ -13,8 +13,8 @@ public enum StylePseudoClass {
 
     case Disabled
     case Enabled
-    case Focus
+//    case Focus
     case Highlighted
-    case On
+//    case On
     case Selected
 }

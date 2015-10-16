@@ -14,7 +14,6 @@ public protocol Stylable {
     var styleName: String? { get set }
 
     func applyStyle(style: StyleRule)
-    func applyStyle(stylesheet: Stylesheet)
     func applyStyle(style: Style)
 }
 

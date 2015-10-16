@@ -25,12 +25,6 @@ extension Stylable where Self : UIView {
         ViewStyleRenderer.render(self, styleRule: style)
     }
 
-    public func applyStyle(stylesheet: Stylesheet) {
-        if let style = stylesheet[self.styleName] {
-            self.applyStyle(style)
-        }
-    }
-
     public func applyStyle(style: Style) {
         self.applyStyle(style.normal)
     }

@@ -50,6 +50,10 @@ public struct Style : DictionaryLiteralConvertible {
 
         style.pseudoStyles[pseudoClass] = styleRule
     }
+
+    public subscript(pseudoClass: StylePseudoClass) -> StyleRule? {
+        get { return self.pseudoStyles[pseudoClass] }
+    }
 }
 
 public extension Style {

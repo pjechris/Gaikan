@@ -18,7 +18,9 @@ extension UIView : Stylable {
             self.updateStyle()
         }
     }
+}
 
+extension Stylable where Self : UIView {
     public func applyStyle(style: StyleRule) {
         ViewStyleRenderer.render(self, styleRule: style)
     }

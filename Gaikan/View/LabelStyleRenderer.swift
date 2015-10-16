@@ -8,9 +8,9 @@
 
 import Foundation
 
-public extension ViewStyleRenderer {
-    public class func render(stylable: UILabel, styleRule: StyleRule) {
-        stylable.font = styleRule.font
-        stylable.textColor = styleRule.color
+extension Stylable where Self : UILabel {
+    public func applyStyle(style: StyleRule) {
+        ViewStyleRenderer.render(self as UIView, styleRule: style)
+        ViewStyleRenderer.render(self, styleRule: style)
     }
 }

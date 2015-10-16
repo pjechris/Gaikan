@@ -17,3 +17,17 @@ public protocol Themable : Stylable {
 
     func stylableThemeItems() -> [Stylable]
 }
+
+extension Themable {
+    public var styleTheme: ThemeType? {
+        get { return objc_getAssociatedObject(self as! AnyObject, &ThemableStyleThemeAttribute) as? ThemeType }
+        set {
+            objc_setAssociatedObject(self as! AnyObject, &ThemableStyleThemeAttribute, newValue as! AnyObject?, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+
+            let styles = newValue?.styles()
+            for var stylable in self.stylableThemeItems() {
+                stylable.stylesRef = styles
+            }
+        }
+    }
+}

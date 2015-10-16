@@ -13,7 +13,10 @@ var ViewStyleNameAttribute = "ViewStyleNameAttribute"
 extension UIView : Stylable {
     @IBInspectable public var styleName: String? {
         get { return objc_getAssociatedObject(self, &ViewStyleNameAttribute) as? String }
-        set { objc_setAssociatedObject(self, &ViewStyleNameAttribute, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+        set {
+            objc_setAssociatedObject(self, &ViewStyleNameAttribute, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            self.updateStyle()
+        }
     }
 
     public func applyStyle(style: StyleRule) {
@@ -24,5 +27,9 @@ extension UIView : Stylable {
         if let style = stylesheet[self.styleName] {
             self.applyStyle(style)
         }
+    }
+
+    public func applyStyle(style: Style) {
+        self.applyStyle(style.normal)
     }
 }

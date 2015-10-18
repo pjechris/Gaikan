@@ -8,9 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		0EF0EAFE0023971A300C153D /* Pods_GaikanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C02980E631EF22B39F30C2B /* Pods_GaikanTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
-		4903EB561BD14990000B1D21 /* UISwitchExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4903EB551BD14990000B1D21 /* UISwitchExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		490AD3DD1BA1CD4A0078F2DB /* ViewStyleRendererSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490AD3DC1BA1CD4A0078F2DB /* ViewStyleRendererSpec.swift */; settings = {ASSET_TAGS = (); }; };
-		4941756B1BD0F6640080E52F /* UIControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941756A1BD0F6640080E52F /* UIControlExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		495DE8FC1BA580D100DA97BF /* DictionarySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DE8FB1BA580D100DA97BF /* DictionarySpec.swift */; settings = {ASSET_TAGS = (); }; };
 		4970A8141BD4003200BCB3BA /* ViewDynamicRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A8131BD4003200BCB3BA /* ViewDynamicRenderer.swift */; settings = {ASSET_TAGS = (); }; };
 		4982A7631BCEB33B0074DB85 /* StylePseudoClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982A7621BCEB33B0074DB85 /* StylePseudoClass.swift */; settings = {ASSET_TAGS = (); }; };
@@ -25,7 +23,6 @@
 		49CF5F971BA4835800216E6D /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF5F961BA4835800216E6D /* Dictionary.swift */; settings = {ASSET_TAGS = (); }; };
 		49CF5F991BA4866B00216E6D /* StyleRuleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		49DBD9021BCAAF110069B0C2 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD9011BCAAF110069B0C2 /* Style.swift */; settings = {ASSET_TAGS = (); }; };
-		49E5147C1B9830A20030529C /* LabelStyleRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49E5147B1B9830A20030529C /* LabelStyleRenderer.swift */; };
 		49EC39681B92FC7D002938E1 /* Gaikan.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EC39671B92FC7D002938E1 /* Gaikan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49EC396F1B92FC7D002938E1 /* Gaikan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EC39641B92FC7D002938E1 /* Gaikan.framework */; };
 		49EC39741B92FC7D002938E1 /* GaikanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39731B92FC7D002938E1 /* GaikanTests.swift */; };
@@ -58,9 +55,7 @@
 /* Begin PBXFileReference section */
 		072F4ED19647D336AD352F01 /* Pods-GaikanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaikanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GaikanTests/Pods-GaikanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		187FEDA9974C0AEB357AAD43 /* Pods-GaikanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaikanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GaikanTests/Pods-GaikanTests.release.xcconfig"; sourceTree = "<group>"; };
-		4903EB551BD14990000B1D21 /* UISwitchExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitchExtension.swift; sourceTree = "<group>"; };
 		490AD3DC1BA1CD4A0078F2DB /* ViewStyleRendererSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStyleRendererSpec.swift; sourceTree = "<group>"; };
-		4941756A1BD0F6640080E52F /* UIControlExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtension.swift; sourceTree = "<group>"; };
 		495DE8FB1BA580D100DA97BF /* DictionarySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionarySpec.swift; sourceTree = "<group>"; };
 		4970A8131BD4003200BCB3BA /* ViewDynamicRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDynamicRenderer.swift; sourceTree = "<group>"; };
 		4982A7621BCEB33B0074DB85 /* StylePseudoClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylePseudoClass.swift; sourceTree = "<group>"; };
@@ -77,7 +72,6 @@
 		49CF5F961BA4835800216E6D /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleRuleSpec.swift; sourceTree = "<group>"; };
 		49DBD9011BCAAF110069B0C2 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
-		49E5147B1B9830A20030529C /* LabelStyleRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LabelStyleRenderer.swift; sourceTree = "<group>"; };
 		49EC39641B92FC7D002938E1 /* Gaikan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gaikan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EC39671B92FC7D002938E1 /* Gaikan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gaikan.h; sourceTree = "<group>"; };
 		49EC39691B92FC7D002938E1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -265,9 +259,6 @@
 		49EC39851B930517002938E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49E5147B1B9830A20030529C /* LabelStyleRenderer.swift */,
-				4941756A1BD0F6640080E52F /* UIControlExtension.swift */,
-				4903EB551BD14990000B1D21 /* UISwitchExtension.swift */,
 				49EC39941B938027002938E1 /* UIViewStylableExtension.swift */,
 				4970A8131BD4003200BCB3BA /* ViewDynamicRenderer.swift */,
 				49EC39981B938218002938E1 /* ViewStyleRenderer.swift */,
@@ -493,13 +484,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				4982A7631BCEB33B0074DB85 /* StylePseudoClass.swift in Sources */,
-				4903EB561BD14990000B1D21 /* UISwitchExtension.swift in Sources */,
-				4941756B1BD0F6640080E52F /* UIControlExtension.swift in Sources */,
 				49EC398B1B93085E002938E1 /* StyleRule.swift in Sources */,
 				49EC39991B938218002938E1 /* ViewStyleRenderer.swift in Sources */,
 				49EC39931B9373B2002938E1 /* Stylable.swift in Sources */,
 				4982A7681BCEBF1E0074DB85 /* Theme.swift in Sources */,
-				49E5147C1B9830A20030529C /* LabelStyleRenderer.swift in Sources */,
 				49EC39801B92FF48002938E1 /* StyleProperty.swift in Sources */,
 				49CF5F971BA4835800216E6D /* Dictionary.swift in Sources */,
 				4982A7661BCEBE7A0074DB85 /* Themable.swift in Sources */,

@@ -8,12 +8,8 @@
 
 import Foundation
 
-public class ViewStyleRenderer {
-    public class func render(stylable: UIView, style: Style) {
-        self.render(stylable, styleRule: style.normal)
-    }
-
-    public class func render(stylable: UIView, styleRule: StyleRule) {
+internal class ViewStyleRenderer {
+    final class func render(stylable: UIView, styleRule: StyleRule) {
         let border = styleRule.border ?? Border(width: 0, color: nil)
         let visible = styleRule.visible ?? true
 
@@ -23,16 +19,18 @@ public class ViewStyleRenderer {
         stylable.hidden = !visible
     }
 
-    public class func render(stylable: UILabel, styleRule: StyleRule) {
+    final class func render(stylable: UILabel, styleRule: StyleRule) {
         stylable.font = styleRule.font
         stylable.textColor = styleRule.color
     }
 
-    public class func render(button: UIButton, styleRule: StyleRule) {
+    final class func render(button: UIButton, styleRule: StyleRule) {
         self.render(button.titleLabel!, styleRule: styleRule)
+
+        button.setTitleColor(styleRule.color, forState: .Normal)
     }
 
-    public class func render(textField: UITextField, styleRule: StyleRule) {
+    final class func render(textField: UITextField, styleRule: StyleRule) {
         textField.textAlignment = styleRule.textAlign ?? .Natural
     }
 }

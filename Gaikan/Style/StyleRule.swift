@@ -67,6 +67,11 @@ public extension StyleRule {
         set { self.attributes[.Font] = newValue }
     }
 
+    public var textAlign: NSTextAlignment? {
+        get { return self[.TextAlign].map { return $0 as! NSTextAlignment } }
+        set { self.attributes[.TextAlign] = newValue }
+    }
+
     public var tintColor: UIColor? {
         get { return self[.TintColor].map { return $0 as! UIColor } }
         set { self.attributes[.TintColor] = newValue }

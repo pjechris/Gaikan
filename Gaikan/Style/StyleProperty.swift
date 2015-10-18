@@ -12,6 +12,7 @@ public enum StyleProperty {
     case Border
     case Color
     case Font
+    case TextAlign
     case TintColor
     case Visible
 }

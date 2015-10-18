@@ -27,4 +27,12 @@ public class ViewStyleRenderer {
         stylable.font = styleRule.font
         stylable.textColor = styleRule.color
     }
+
+    public class func render(button: UIButton, styleRule: StyleRule) {
+        self.render(button.titleLabel!, styleRule: styleRule)
+    }
+
+    public class func render(textField: UITextField, styleRule: StyleRule) {
+        textField.textAlignment = styleRule.textAlign ?? .Natural
+    }
 }

@@ -13,6 +13,7 @@
 		4970A8141BD4003200BCB3BA /* ViewDynamicRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A8131BD4003200BCB3BA /* ViewDynamicRenderer.swift */; settings = {ASSET_TAGS = (); }; };
 		4970A8171BD4459300BCB3BA /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A8161BD4459300BCB3BA /* Property.swift */; settings = {ASSET_TAGS = (); }; };
 		4970A81A1BD445DB00BCB3BA /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A8191BD445DB00BCB3BA /* Border.swift */; settings = {ASSET_TAGS = (); }; };
+		4970A81C1BD4484F00BCB3BA /* StyleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A81B1BD4484F00BCB3BA /* StyleSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		4982A7631BCEB33B0074DB85 /* StylePseudoClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982A7621BCEB33B0074DB85 /* StylePseudoClass.swift */; settings = {ASSET_TAGS = (); }; };
 		4982A7661BCEBE7A0074DB85 /* Themable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982A7651BCEBE7A0074DB85 /* Themable.swift */; settings = {ASSET_TAGS = (); }; };
 		4982A7681BCEBF1E0074DB85 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982A7671BCEBF1E0074DB85 /* Theme.swift */; settings = {ASSET_TAGS = (); }; };
@@ -59,6 +60,7 @@
 		4970A8131BD4003200BCB3BA /* ViewDynamicRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDynamicRenderer.swift; sourceTree = "<group>"; };
 		4970A8161BD4459300BCB3BA /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		4970A8191BD445DB00BCB3BA /* Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
+		4970A81B1BD4484F00BCB3BA /* StyleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSpec.swift; sourceTree = "<group>"; };
 		4982A7621BCEB33B0074DB85 /* StylePseudoClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylePseudoClass.swift; sourceTree = "<group>"; };
 		4982A7651BCEBE7A0074DB85 /* Themable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themable.swift; sourceTree = "<group>"; };
 		4982A7671BCEBF1E0074DB85 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -126,6 +128,7 @@
 			isa = PBXGroup;
 			children = (
 				49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */,
+				4970A81B1BD4484F00BCB3BA /* StyleSpec.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -511,6 +514,7 @@
 				490AD3DD1BA1CD4A0078F2DB /* ViewStyleRendererSpec.swift in Sources */,
 				49CF5F991BA4866B00216E6D /* StyleRuleSpec.swift in Sources */,
 				495DE8FC1BA580D100DA97BF /* DictionarySpec.swift in Sources */,
+				4970A81C1BD4484F00BCB3BA /* StyleSpec.swift in Sources */,
 				49EC39741B92FC7D002938E1 /* GaikanTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

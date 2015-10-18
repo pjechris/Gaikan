@@ -22,11 +22,7 @@ public struct Style : DictionaryLiteralConvertible {
     }
 
     public init(_ styleBlock: (inout style: StyleRule) -> ()) {
-        var styleRule = StyleRule(attributes: [:])
-
-        styleBlock(style: &styleRule)
-
-        self.init(defaultStyle: styleRule)
+        self.init(defaultStyle: StyleRule(styleBlock))
     }
 
     private init(defaultStyle: StyleRule) {
@@ -34,21 +30,19 @@ public struct Style : DictionaryLiteralConvertible {
     }
 
     public func include(pseudoClass: StylePseudoClass, styleRule styleBlock: (inout style: StyleRule) -> ()) -> Style {
-        var styleRule = StyleRule(attributes: [:]).extends(self.normal)
         var style = self
 
-        styleBlock(style: &styleRule)
-
-        style.pseudoStyles[pseudoClass] = styleRule
+        style.pseudoStyles[pseudoClass] = StyleRule(styleBlock)
 
         return style
     }
 
-    public mutating func include(pseudoClass: StylePseudoClass, attributes: [StyleRule.Key:StyleRule.Value]) {
-        let styleRule = StyleRule(attributes: attributes).extends(self.normal)
+    public func include(pseudoClass: StylePseudoClass, attributes: [StyleRule.Key:StyleRule.Value]) -> Style {
         var style = self
 
-        style.pseudoStyles[pseudoClass] = styleRule
+        style.pseudoStyles[pseudoClass] = StyleRule(attributes: attributes)
+
+        return style
     }
 
     public subscript(pseudoClass: StylePseudoClass) -> StyleRule? {

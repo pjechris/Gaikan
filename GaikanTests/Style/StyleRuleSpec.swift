@@ -36,7 +36,7 @@ class StyleRuleSpec: QuickSpec {
 
             context("when extending properties") {
                 it("it should take new value") {
-                    var newStyle: StyleRule = [ .Color: UIColor.blackColor() ]
+                    let newStyle: StyleRule = [ .Color: UIColor.blackColor() ]
 
                     expect(newStyle.extends(style).color) == UIColor.blackColor()
                 }
@@ -45,7 +45,7 @@ class StyleRuleSpec: QuickSpec {
             context("when adding properties") {
                 it("should be added to style") {
                     let font = UIFont.systemFontOfSize(22)
-                    var newStyle: StyleRule = [ .Font: font ]
+                    let newStyle: StyleRule = [ .Font: font ]
 
                     expect(newStyle.extends(style).font) == font
                 }
@@ -65,14 +65,14 @@ class StyleRuleSpec: QuickSpec {
                     it("should merge valid ones") {
                         var newStyle: StyleRule = [:]
 
-                        newStyle.extends(nil, style)
+                        newStyle = newStyle.extends(nil, style)
                         expect(newStyle.color) == UIColor.blueColor()
                     }
 
                     it("should add all properties") {
                         var newStyle: StyleRule = [:]
 
-                        newStyle.extends(style, [ .TintColor: UIColor.greenColor() ])
+                        newStyle = newStyle.extends(style, [ .TintColor: UIColor.greenColor() ])
 
                         expect(newStyle.color) == UIColor.blueColor()
                         expect(newStyle.tintColor) == UIColor.greenColor()

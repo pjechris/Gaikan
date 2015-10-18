@@ -20,12 +20,19 @@ extension UIView : Stylable {
     }
 }
 
-extension Stylable where Self : UIView {
+public extension Stylable where Self : UIView {
     public func applyStyle(style: StyleRule) {
         ViewStyleRenderer.render(self, styleRule: style)
     }
 
     public func applyStyle(style: Style) {
-        self.applyStyle(style.normal)
+        let pseudoClasses = StylePseudoClass.fromView(self)
+        var styleRule = StyleRule()
+
+        for pseudoClass in pseudoClasses {
+            styleRule = style[pseudoClass].map { return $0.extends(styleRule) } ?? styleRule
+        }
+
+        self.applyStyle(styleRule)
     }
 }

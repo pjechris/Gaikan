@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum StyleProperty {
+public enum Property {
     case Border
     case Color
     case Font

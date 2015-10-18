@@ -9,7 +9,7 @@
 import Foundation
 
 public struct StyleRule : DictionaryLiteralConvertible {
-    public typealias Key = StyleProperty
+    public typealias Key = Property
     public typealias Value = Any?
 
     private var attributes : Dictionary<Key, Value>
@@ -46,7 +46,7 @@ public struct StyleRule : DictionaryLiteralConvertible {
         return StyleRule(attributes: composedAttributes.gaikan_merge(self.attributes))
     }
 
-    private subscript(keyname: StyleProperty) -> Value {
+    private subscript(keyname: Property) -> Value {
         get { return self.attributes[keyname] != nil ? self.attributes[keyname]! : nil }
     }
 }

@@ -12,6 +12,7 @@
 		490AD3DD1BA1CD4A0078F2DB /* ViewStyleRendererSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490AD3DC1BA1CD4A0078F2DB /* ViewStyleRendererSpec.swift */; settings = {ASSET_TAGS = (); }; };
 		4941756B1BD0F6640080E52F /* UIControlExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4941756A1BD0F6640080E52F /* UIControlExtension.swift */; settings = {ASSET_TAGS = (); }; };
 		495DE8FC1BA580D100DA97BF /* DictionarySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DE8FB1BA580D100DA97BF /* DictionarySpec.swift */; settings = {ASSET_TAGS = (); }; };
+		4970A8141BD4003200BCB3BA /* ViewDynamicRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A8131BD4003200BCB3BA /* ViewDynamicRenderer.swift */; settings = {ASSET_TAGS = (); }; };
 		4982A7631BCEB33B0074DB85 /* StylePseudoClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982A7621BCEB33B0074DB85 /* StylePseudoClass.swift */; settings = {ASSET_TAGS = (); }; };
 		4982A7661BCEBE7A0074DB85 /* Themable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982A7651BCEBE7A0074DB85 /* Themable.swift */; settings = {ASSET_TAGS = (); }; };
 		4982A7681BCEBF1E0074DB85 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982A7671BCEBF1E0074DB85 /* Theme.swift */; settings = {ASSET_TAGS = (); }; };
@@ -61,6 +62,7 @@
 		490AD3DC1BA1CD4A0078F2DB /* ViewStyleRendererSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewStyleRendererSpec.swift; sourceTree = "<group>"; };
 		4941756A1BD0F6640080E52F /* UIControlExtension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControlExtension.swift; sourceTree = "<group>"; };
 		495DE8FB1BA580D100DA97BF /* DictionarySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionarySpec.swift; sourceTree = "<group>"; };
+		4970A8131BD4003200BCB3BA /* ViewDynamicRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewDynamicRenderer.swift; sourceTree = "<group>"; };
 		4982A7621BCEB33B0074DB85 /* StylePseudoClass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylePseudoClass.swift; sourceTree = "<group>"; };
 		4982A7651BCEBE7A0074DB85 /* Themable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themable.swift; sourceTree = "<group>"; };
 		4982A7671BCEBF1E0074DB85 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
@@ -263,11 +265,12 @@
 		49EC39851B930517002938E1 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				49EC39941B938027002938E1 /* UIViewStylableExtension.swift */,
-				49EC39981B938218002938E1 /* ViewStyleRenderer.swift */,
 				49E5147B1B9830A20030529C /* LabelStyleRenderer.swift */,
 				4941756A1BD0F6640080E52F /* UIControlExtension.swift */,
 				4903EB551BD14990000B1D21 /* UISwitchExtension.swift */,
+				49EC39941B938027002938E1 /* UIViewStylableExtension.swift */,
+				4970A8131BD4003200BCB3BA /* ViewDynamicRenderer.swift */,
+				49EC39981B938218002938E1 /* ViewStyleRenderer.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -500,6 +503,7 @@
 				49EC39801B92FF48002938E1 /* StyleProperty.swift in Sources */,
 				49CF5F971BA4835800216E6D /* Dictionary.swift in Sources */,
 				4982A7661BCEBE7A0074DB85 /* Themable.swift in Sources */,
+				4970A8141BD4003200BCB3BA /* ViewDynamicRenderer.swift in Sources */,
 				49F3212E1B9A51B4009F1694 /* Border.swift in Sources */,
 				49EC39951B938027002938E1 /* UIViewStylableExtension.swift in Sources */,
 				49EC39821B9301E5002938E1 /* Stylesheet.swift in Sources */,

@@ -20,9 +20,13 @@ public protocol Themable : Stylable {
 
 extension Themable {
     public var styleTheme: ThemeType? {
-        get { return objc_getAssociatedObject(self as! AnyObject, &ThemableStyleThemeAttribute) as? ThemeType }
+        get {
+            let value = objc_getAssociatedObject(self as! AnyObject, &ThemableStyleThemeAttribute) as? AssociatedObject<ThemeType?>
+
+            return value != nil ? value!.value : nil
+        }
         set {
-            objc_setAssociatedObject(self as! AnyObject, &ThemableStyleThemeAttribute, newValue as! AnyObject?, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self as! AnyObject, &ThemableStyleThemeAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
 
             let styles = newValue?.styles()
             for var stylable in self.stylableThemeItems() {

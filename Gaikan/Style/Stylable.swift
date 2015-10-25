@@ -19,9 +19,13 @@ public protocol Stylable {
 
 extension Stylable {
     var stylesRef: [String:Style]? {
-        get { return objc_getAssociatedObject(self as! AnyObject, &StylableStylesRefAttribute) as? [String:Style] }
+        get {
+            let value = objc_getAssociatedObject(self as! AnyObject, &StylableStylesRefAttribute) as? AssociatedObject<[String:Style]?>
+
+            return value != nil ? value!.value : nil
+        }
         set {
-            objc_setAssociatedObject(self as! AnyObject, &StylableStylesRefAttribute, newValue as! AnyObject, .OBJC_ASSOCIATION_ASSIGN)
+            objc_setAssociatedObject(self as! AnyObject, &StylableStylesRefAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.updateStyle()
         }
     }

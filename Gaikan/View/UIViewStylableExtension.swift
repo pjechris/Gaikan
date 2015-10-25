@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import KVOController
 
 var ViewStyleNameAttribute = "ViewStyleNameAttribute"
 
@@ -14,6 +15,14 @@ extension UIView : Stylable {
     @IBInspectable public var styleName: String? {
         get { return objc_getAssociatedObject(self, &ViewStyleNameAttribute) as? String }
         set {
+            if (self.styleName == nil) {
+                self.registerStyleKeyPaths()
+            }
+
+            if (newValue == nil) {
+                self.unregisterStyleKeyPaths()
+            }
+
             objc_setAssociatedObject(self, &ViewStyleNameAttribute, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.updateStyle()
         }
@@ -33,4 +42,29 @@ extension UIView : Stylable {
 
         self.applyStyle(styleRule)
     }
+
+    func registerStyleKeyPaths() {
+        let keyPaths = self.dynamicType.keyPathsAffectingStyle()
+
+        if keyPaths.count > 0 {
+            self.KVOController.observe(self, keyPaths: keyPaths, options: .New) { [weak self] _ in
+                self?.updateStyle()
+            }
+        }
+    }
+
+    func unregisterStyleKeyPaths() {
+        self.KVOController.unobserveAll()
+    }
+
+    public class func keyPathsAffectingStyle() -> [String] {
+        return []
+    }
+
+    public func updateStyle() {
+        if let styleName = self.styleName, let style = self.stylesRef?[styleName] {
+            self.applyStyle(style)
+        }
+    }
 }
+

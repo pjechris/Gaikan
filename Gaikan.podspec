@@ -13,4 +13,6 @@ Pod::Spec.new do |s|
   s.ios.deployment_target   = "8.0"
   s.source_files            = "Gaikan/**/*.{swift}"
   s.requires_arc            = true
+
+  s.dependency		    'KVOController', '~> 1.x'
 end

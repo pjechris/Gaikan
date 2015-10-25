@@ -13,9 +13,13 @@ var StylableStylesRefAttribute = "StylableStylesRefAttribute"
 public protocol Stylable {
     var styleName: String? { get set }
 
+    func updateStyle()
     func applyStyle(style: StyleRule)
     func applyStyle(style: Style)
+
+    static func keyPathsAffectingStyle() -> [String]
 }
+
 
 extension Stylable {
     var stylesRef: [String:Style]? {
@@ -27,12 +31,6 @@ extension Stylable {
         set {
             objc_setAssociatedObject(self as! AnyObject, &StylableStylesRefAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.updateStyle()
-        }
-    }
-
-    func updateStyle() {
-        if let styleName = self.styleName, let style = self.stylesRef?[styleName] {
-            self.applyStyle(style)
         }
     }
 }

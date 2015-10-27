@@ -9,8 +9,9 @@
 import Foundation
 
 var StylableStylesRefAttribute = "StylableStylesRefAttribute"
+var ComputedStyleAttribute = "ComputedStyleAttribute"
 
-public protocol Stylable {
+public protocol Stylable: class {
     var styleName: String? { get set }
 
     func updateStyle()
@@ -24,12 +25,24 @@ public protocol Stylable {
 extension Stylable {
     var stylesRef: [String:Style]? {
         get {
-            let value = objc_getAssociatedObject(self as! AnyObject, &StylableStylesRefAttribute) as? AssociatedObject<[String:Style]?>
+            let value = objc_getAssociatedObject(self, &StylableStylesRefAttribute) as? AssociatedObject<[String:Style]?>
 
             return value != nil ? value!.value : nil
         }
         set {
-            objc_setAssociatedObject(self as! AnyObject, &StylableStylesRefAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &StylableStylesRefAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            self.updateStyle()
+        }
+    }
+
+    public var computedStyle: StyleRule? {
+        get {
+            let value = objc_getAssociatedObject(self, &ComputedStyleAttribute) as? AssociatedObject<StyleRule?>
+
+            return value != nil ? value!.value : nil
+        }
+        set {
+            objc_setAssociatedObject(self, &ComputedStyleAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.updateStyle()
         }
     }

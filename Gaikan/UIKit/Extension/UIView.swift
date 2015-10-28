@@ -36,24 +36,12 @@ extension UIView : Stylable {
         self.computedStyle = style
     }
 
-    func registerStyleKeyPaths() {
-        let keyPaths = self.dynamicType.keyPathsAffectingStyle()
-
-        if keyPaths.count > 0 {
-            self.KVOController.observe(self, keyPaths: keyPaths, options: .New) { [weak self] _ in
-                self?.computeStyle()
-            }
-        }
-    }
-
-    func unregisterStyleKeyPaths() {
-        self.KVOController.unobserveAll()
-    }
-
     public class func keyPathsAffectingStyle() -> [String] {
         return []
     }
+}
 
+internal extension UIView {
     func computeStyle() {
         guard let styleName = self.styleName, let style = self.stylesRef?[styleName] else {
             return
@@ -67,5 +55,19 @@ extension UIView : Stylable {
         }
 
         self.computedStyle = computedStyle
+    }
+
+    func registerStyleKeyPaths() {
+        let keyPaths = self.dynamicType.keyPathsAffectingStyle()
+
+        if keyPaths.count > 0 {
+            self.KVOController.observe(self, keyPaths: keyPaths, options: .New) { [weak self] _ in
+                self?.computeStyle()
+            }
+        }
+    }
+
+    func unregisterStyleKeyPaths() {
+        self.KVOController.unobserveAll()
     }
 }

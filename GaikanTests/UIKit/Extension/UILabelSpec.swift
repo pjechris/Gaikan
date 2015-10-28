@@ -11,7 +11,7 @@ import Quick
 import Nimble
 import Gaikan
 
-class LabelStyleRendererSpec: QuickSpec {
+class UILabelSpec: QuickSpec {
     override func spec() {
         var label: UILabel!
 
@@ -19,7 +19,7 @@ class LabelStyleRendererSpec: QuickSpec {
             label = UILabel()
         }
 
-        describe("render") {
+        describe("applyStyle") {
             var style: StyleRule!
 
             context("when giving style") {

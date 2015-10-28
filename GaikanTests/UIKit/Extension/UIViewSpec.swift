@@ -11,7 +11,7 @@ import Quick
 import Nimble
 import Gaikan
 
-class ViewStyleRendererSpec: QuickSpec {
+class UIViewSpec: QuickSpec {
 
     override func spec() {
         var view: UIView!
@@ -20,7 +20,7 @@ class ViewStyleRendererSpec: QuickSpec {
             view = UIView()
         }
 
-        describe("render") {
+        describe("applyStyle") {
             var style: StyleRule!
 
             context("when giving style") {

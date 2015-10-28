@@ -13,14 +13,13 @@ var ComputedStyleAttribute = "ComputedStyleAttribute"
 
 public protocol Stylable: class {
     var styleName: String? { get set }
+    var computedStyle: StyleRule? { get }
 
     func updateStyle()
     func applyStyle(style: StyleRule)
-    func applyStyle(style: Style)
 
     static func keyPathsAffectingStyle() -> [String]
 }
-
 
 extension Stylable {
     var stylesRef: [String:Style]? {

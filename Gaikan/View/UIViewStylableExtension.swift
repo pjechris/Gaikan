@@ -24,23 +24,16 @@ extension UIView : Stylable {
             }
 
             objc_setAssociatedObject(self, &ViewStyleNameAttribute, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            self.updateStyle()
+            self.computeStyle()
         }
+    }
+
+    public func updateStyle() {
+        ViewDynamicRenderer.render(self, styleRule: self.computedStyle!)
     }
 
     public func applyStyle(style: StyleRule) {
-        ViewDynamicRenderer.render(self, styleRule: style)
-    }
-
-    public func applyStyle(style: Style) {
-        let pseudoClasses = StylePseudoClass.fromView(self)
-        var styleRule = StyleRule()
-
-        for pseudoClass in pseudoClasses {
-            styleRule = style[pseudoClass].map { return $0.extends(styleRule) } ?? styleRule
-        }
-
-        self.applyStyle(styleRule)
+        self.computedStyle = style
     }
 
     func registerStyleKeyPaths() {
@@ -48,7 +41,7 @@ extension UIView : Stylable {
 
         if keyPaths.count > 0 {
             self.KVOController.observe(self, keyPaths: keyPaths, options: .New) { [weak self] _ in
-                self?.updateStyle()
+                self?.computeStyle()
             }
         }
     }
@@ -61,10 +54,18 @@ extension UIView : Stylable {
         return []
     }
 
-    public func updateStyle() {
-        if let styleName = self.styleName, let style = self.stylesRef?[styleName] {
-            self.applyStyle(style)
+    func computeStyle() {
+        guard let styleName = self.styleName, let style = self.stylesRef?[styleName] else {
+            return
         }
+
+        let pseudoClasses = StylePseudoClass.fromView(self)
+        var computedStyle = StyleRule()
+
+        for pseudoClass in pseudoClasses {
+            computedStyle = style[pseudoClass].map { return $0.extends(computedStyle) } ?? computedStyle
+        }
+
+        self.computedStyle = computedStyle
     }
 }
-

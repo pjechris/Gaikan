@@ -9,6 +9,12 @@
 import Foundation
 
 public extension UIButton {
+    public override func updateStyle() {
+        super.updateStyle()
+
+        ViewStyleRenderer.render(self, styleRule: self.computedStyle!)
+    }
+
     public override class func keyPathsAffectingStyle() -> [String] {
         return ["enabled", "state", "on"]
     }

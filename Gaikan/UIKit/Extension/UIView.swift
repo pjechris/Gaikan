@@ -29,7 +29,7 @@ extension UIView : Stylable {
     }
 
     public func updateStyle() {
-        ViewDynamicRenderer.render(self, styleRule: self.computedStyle!)
+        ViewStyleRenderer.render(self, styleRule: self.computedStyle!)
     }
 
     public func applyStyle(style: StyleRule) {

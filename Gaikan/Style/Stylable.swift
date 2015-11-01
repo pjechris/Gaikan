@@ -16,6 +16,7 @@ public protocol Stylable: class {
     var computedStyle: StyleRule? { get }
 
     func updateStyle()
+    func computeStyle()
     func applyStyle(style: StyleRule)
 
     static func keyPathsAffectingStyle() -> [String]
@@ -30,7 +31,7 @@ extension Stylable {
         }
         set {
             objc_setAssociatedObject(self, &StylableStylesRefAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            self.updateStyle()
+            self.computeStyle()
         }
     }
 

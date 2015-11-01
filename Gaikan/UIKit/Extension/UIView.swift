@@ -32,17 +32,7 @@ extension UIView : Stylable {
         ViewStyleRenderer.render(self, styleRule: self.computedStyle!)
     }
 
-    public func applyStyle(style: StyleRule) {
-        self.computedStyle = style
-    }
-
-    public class func keyPathsAffectingStyle() -> [String] {
-        return []
-    }
-}
-
-internal extension UIView {
-    func computeStyle() {
+    public func computeStyle() {
         guard let styleName = self.styleName, let style = self.stylesRef?[styleName] else {
             return
         }
@@ -57,6 +47,16 @@ internal extension UIView {
         self.computedStyle = computedStyle
     }
 
+    public func applyStyle(style: StyleRule) {
+        self.computedStyle = style
+    }
+
+    public class func keyPathsAffectingStyle() -> [String] {
+        return []
+    }
+}
+
+internal extension UIView {
     func registerStyleKeyPaths() {
         let keyPaths = self.dynamicType.keyPathsAffectingStyle()
 

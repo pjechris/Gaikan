@@ -52,8 +52,8 @@ public struct StyleRule : DictionaryLiteralConvertible {
 }
 
 public extension StyleRule {
-    public var background: BackgroundColor? {
-        get { return self[.Background].map { return $0 as! BackgroundColor } }
+    public var background: BackgroundValue? {
+        get { return self[.Background].map { return $0 as! BackgroundValue } }
         set { self.attributes[.Background] = newValue }
     }
 

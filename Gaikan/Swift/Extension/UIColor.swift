@@ -8,6 +8,8 @@
 
 import Foundation
 
-extension UIColor : BackgroundColor {
-
+extension UIColor : BackgroundValue {
+    public func render(intoView view: UIView) {
+        BackgroundRenderer.render(self, intoView: view)
+    }
 }

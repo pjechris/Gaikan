@@ -8,6 +8,12 @@
 
 import Foundation
 
-public protocol BackgroundColor {
+public protocol Background {
+    typealias BackgroundValue
 
+    static func render(value: BackgroundValue, intoView view: UIView)
+}
+
+public protocol BackgroundValue {
+    func render(intoView view: UIView)
 }

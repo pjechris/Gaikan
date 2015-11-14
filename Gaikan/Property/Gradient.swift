@@ -8,22 +8,30 @@
 
 import Foundation
 
-public struct Gradient : BackgroundColor {
-    public typealias GradientItem = (color: UIColor, position: Int?)
+public struct Gradient  {
+    public typealias GradientItem = (color: UIColor, position: Int)
 
+    let gradientValues: [(color: UIColor, position: Int)]
     let to: CGPoint
-    let gradients: [GradientItem]
+    let from: CGPoint
 
-    public init(to: CGPoint, _ gradients: GradientItem...) {
-        self.init(to: to, gradients)
+    public init(from: CGPoint, to: CGPoint, _ gradients: (color: UIColor, position: Int)...) {
+        self.init(from: from, to: to, gradients)
     }
 
-    public init(_ gradients: GradientItem...) {
-        self.init(gradients)
+    public init(_ gradients: (color: UIColor, position: Int)...) {
+        self.init(from: CGPoint.top(), to: CGPoint.bottom(), gradients)
     }
 
-    private init(to: CGPoint = CGPoint.bottom(), _ gradients: [GradientItem]) {
+    private init(from: CGPoint, to: CGPoint, _ gradients: [(color: UIColor, position: Int)]) {
+        self.from = from
         self.to = to
-        self.gradients = gradients
+        self.gradientValues = gradients
+    }
+}
+
+extension Gradient : BackgroundValue {
+    public func render(intoView view: UIView) {
+        BackgroundRenderer.render(self, intoView: view)
     }
 }

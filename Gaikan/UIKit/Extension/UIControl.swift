@@ -11,8 +11,12 @@ import Foundation
 public extension UIControl {
     public override func updateStyle() {
         super.updateStyle()
-        
-        ViewStyleRenderer.render(self, styleRule: self.computedStyle!)
+
+        guard let computedStyle = self.computedStyle else {
+            return
+        }
+
+        ViewStyleRenderer.render(self, styleRule: computedStyle)
     }
 
     public override class func keyPathsAffectingStyle() -> [String] {

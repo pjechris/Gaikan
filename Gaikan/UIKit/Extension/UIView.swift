@@ -29,7 +29,11 @@ extension UIView : Stylable {
     }
 
     public func updateStyle() {
-        ViewStyleRenderer.render(self, styleRule: self.computedStyle!)
+        guard let computedStyle = self.computedStyle else {
+            return
+        }
+
+        ViewStyleRenderer.render(self, styleRule: computedStyle)
     }
 
     public func computeStyle() {
@@ -64,6 +68,10 @@ internal extension UIView {
             self.KVOController.observe(self, keyPaths: keyPaths, options: .New) { [weak self] _ in
                 self?.computeStyle()
             }
+        }
+
+        self.KVOController.observe(self.layer, keyPath: "bounds", options: .New) { [weak self] _ in
+            self?.updateStyle()
         }
     }
 

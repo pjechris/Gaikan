@@ -31,7 +31,7 @@ public struct Gradient  {
 }
 
 extension Gradient : BackgroundValue {
-    public func render(intoView view: UIView) {
-        BackgroundRenderer.render(self, intoView: view)
+    public func render(inContext ctx: CGContextRef) {
+        BackgroundRenderer.render(self, inContext: ctx)
     }
 }

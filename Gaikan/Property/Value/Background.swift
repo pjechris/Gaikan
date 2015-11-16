@@ -8,12 +8,18 @@
 
 import Foundation
 
-public protocol Background {
-    typealias BackgroundValue
-
-    static func render(value: BackgroundValue, intoView view: UIView)
+public protocol BackgroundValue {
+    func render(inContext ctx: CGContextRef)
 }
 
-public protocol BackgroundValue {
-    func render(intoView view: UIView)
+public struct Background : BackgroundValue {
+    internal var backgrounds: [BackgroundValue]
+
+    public init(_ backgrounds: BackgroundValue...) {
+        self.backgrounds = backgrounds
+    }
+
+    public func render(inContext ctx: CGContextRef) {
+        BackgroundRenderer.render(self, inContext: ctx)
+    }
 }

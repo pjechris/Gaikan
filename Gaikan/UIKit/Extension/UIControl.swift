@@ -20,6 +20,6 @@ public extension UIControl {
     }
 
     public override class func keyPathsAffectingStyle() -> [String] {
-        return ["state"]
+        return ["enabled", "selected", "highlighted"]
     }
 }

@@ -18,8 +18,4 @@ public extension UIButton {
 
         ViewStyleRenderer.render(self, styleRule: computedStyle)
     }
-
-    public override class func keyPathsAffectingStyle() -> [String] {
-        return ["enabled", "state", "on"]
-    }
 }

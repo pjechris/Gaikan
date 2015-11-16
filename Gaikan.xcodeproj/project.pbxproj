@@ -31,12 +31,13 @@
 		498E053E1B98362100B4E26B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498E053C1B98362100B4E26B /* Main.storyboard */; };
 		498E05401B98362100B4E26B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 498E053F1B98362100B4E26B /* Assets.xcassets */; };
 		498E05431B98362100B4E26B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498E05411B98362100B4E26B /* LaunchScreen.storyboard */; };
-		49B00DF01BF8EF3D0098FECE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B00DEF1BF8EF3D0098FECE /* UIImage.swift */; settings = {ASSET_TAGS = (); }; };
-		49B674BC1BEE814B007D1BE2 /* BackgroundRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B674BB1BEE814B007D1BE2 /* BackgroundRenderer.swift */; settings = {ASSET_TAGS = (); }; };
+		49B00DF01BF8EF3D0098FECE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B00DEF1BF8EF3D0098FECE /* UIImage.swift */; };
+		49B674BC1BEE814B007D1BE2 /* BackgroundRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B674BB1BEE814B007D1BE2 /* BackgroundRenderer.swift */; };
 		49CF5F971BA4835800216E6D /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF5F961BA4835800216E6D /* Dictionary.swift */; };
 		49CF5F991BA4866B00216E6D /* StyleRuleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */; };
 		49D1BF831BDD4A8700348D3D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1BF821BDD4A8700348D3D /* CustomView.swift */; };
 		49D1BF851BDD506300348D3D /* AssociatedObject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1BF841BDD506300348D3D /* AssociatedObject.swift */; };
+		49D375B31BF9ED78006EF209 /* RailTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D375B21BF9ED78006EF209 /* RailTheme.swift */; };
 		49DBD9021BCAAF110069B0C2 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD9011BCAAF110069B0C2 /* Style.swift */; };
 		49EC39681B92FC7D002938E1 /* Gaikan.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EC39671B92FC7D002938E1 /* Gaikan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49EC396F1B92FC7D002938E1 /* Gaikan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EC39641B92FC7D002938E1 /* Gaikan.framework */; };
@@ -98,6 +99,7 @@
 		49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleRuleSpec.swift; sourceTree = "<group>"; };
 		49D1BF821BDD4A8700348D3D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
 		49D1BF841BDD506300348D3D /* AssociatedObject.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AssociatedObject.swift; sourceTree = "<group>"; };
+		49D375B21BF9ED78006EF209 /* RailTheme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RailTheme.swift; sourceTree = "<group>"; };
 		49DBD9011BCAAF110069B0C2 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		49EC39641B92FC7D002938E1 /* Gaikan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gaikan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EC39671B92FC7D002938E1 /* Gaikan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gaikan.h; sourceTree = "<group>"; };
@@ -260,6 +262,7 @@
 				498E05411B98362100B4E26B /* LaunchScreen.storyboard */,
 				498E05441B98362100B4E26B /* Info.plist */,
 				49D1BF821BDD4A8700348D3D /* CustomView.swift */,
+				49D375B21BF9ED78006EF209 /* RailTheme.swift */,
 			);
 			path = Sample;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				49D1BF831BDD4A8700348D3D /* CustomView.swift in Sources */,
+				49D375B31BF9ED78006EF209 /* RailTheme.swift in Sources */,
 				498E053B1B98362100B4E26B /* ViewController.swift in Sources */,
 				498E05391B98362100B4E26B /* AppDelegate.swift in Sources */,
 			);

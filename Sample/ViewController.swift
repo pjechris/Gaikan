@@ -10,18 +10,17 @@ import UIKit
 import Gaikan
 
 class ViewController: UIViewController {
-    @IBOutlet weak var label : UILabel!
+    var customView: CustomView!
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        let style: StyleRule = [
-            .Color: UIColor.redColor(),
-            .Border: Border(width: 1, color: UIColor.greenColor()),
-            .Font: UIFont(name: "Courier", size: 26),
-            .TintColor: UIColor.blueColor() ]
+        self.customView = self.view as! CustomView
+        self.customView.styleTheme = RailTheme()
+    }
 
-        self.label.applyStyle(style)
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(true)
     }
 
     override func didReceiveMemoryWarning() {

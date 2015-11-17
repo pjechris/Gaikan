@@ -9,7 +9,7 @@ Gaikan is a tool to style your views easily outside of your classes. It gives yo
 
 _Inspired by_ <a href="https://speakerdeck.com/vjeux/react-css-in-js">React: CSS in JS</a> and <a href="http://glenmaddern.com/articles/css-modules">CSS modules</a>
 
-<img src="Doc/Screen/gaikan.jpg" width="400" />
+<img src="Doc/Screen/gaikan.png" width="400" />
 
 ## Features
 

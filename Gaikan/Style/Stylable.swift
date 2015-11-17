@@ -11,6 +11,9 @@ import Foundation
 var StylableStylesRefAttribute = "StylableStylesRefAttribute"
 var ComputedStyleAttribute = "ComputedStyleAttribute"
 
+/**
+ Define methods allow an object to apply a StyleRule to style itself
+*/
 public protocol Stylable: class {
     var styleName: String? { get set }
     var computedStyle: StyleRule? { get }

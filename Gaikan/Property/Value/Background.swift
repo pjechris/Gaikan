@@ -8,10 +8,17 @@
 
 import Foundation
 
+/**
+ Any class/struct conforming to BackgroundValue can be used to represent the `Background` property
+*/
 public protocol BackgroundValue {
+    /// Render the object into given context
     func render(inContext ctx: CGContextRef)
 }
 
+/**
+ Allow to use one or more BackgroundValue objects at once as a unique background
+ */
 public struct Background : BackgroundValue {
     internal var backgrounds: [BackgroundValue]
 

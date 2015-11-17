@@ -10,6 +10,9 @@ import Foundation
 
 var ThemableStyleThemeAttribute = "ThemableStyleThemeAttribute"
 
+/**
+ Recursive styling using a dedicated `styleTheme` object containing the style definitions
+*/
 public protocol Themable : Stylable {
     typealias ThemeType: Theme
 

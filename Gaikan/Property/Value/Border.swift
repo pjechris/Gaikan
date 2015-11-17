@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ Represent the `Border` property
+*/
 public struct Border {
     public let width: CGFloat
     public let color: UIColor?

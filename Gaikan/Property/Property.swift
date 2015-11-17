@@ -8,6 +8,7 @@
 
 import Foundation
 
+/// Property that can be used to style a view
 public enum Property {
     case Background
     case Border

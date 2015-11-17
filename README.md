@@ -128,8 +128,7 @@ may not have any effect. Here are all the available style properties you can use
 
 | Property name | Apply to  | Description                     | Available version
 | --------------|-----------|---------------------------------|------------------
-| Background    | UIView    | Sets a background to your view  
-|               |           | (color, gradient and or image)  | 0.3
+| Background    | UIView    | Sets a background to your view (color, gradient and or image)  | 0.3
 | Border        | UIView    | Sets the layer Border           | 0.1
 | Color         | UILabel   | Sets the text color             | 0.1
 | Font          | UILabel   | Sets the text font              | 0.1

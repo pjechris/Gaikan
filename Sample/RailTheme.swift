@@ -47,7 +47,15 @@ public class RailTheme : Theme {
                 { (inout style: StyleRule) -> () in
                     style.font = UIFont(name: "AvenirNext-Italic", size: 18)
                     style.color = UIColor(red: 251/255, green: 208/255, blue: 176/255, alpha: 1)
-            }
+            },
+
+            "get-it": [
+                .Border: Border(width: 1, color: UIColor.whiteColor()),
+                .Color: UIColor.whiteColor()
+            ],
+            "got-it": [
+                .Color: UIColor(red: 251/255, green: 208/255, blue: 176/255, alpha: 1)
+            ]
         ]
     }
 }

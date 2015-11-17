@@ -51,21 +51,39 @@
                                     <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="logo"/>
                                 </userDefinedRuntimeAttributes>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Vy-ih-7cJ">
+                                <rect key="frame" x="270" y="372.5" width="60" height="24"/>
+                                <animations/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="24" id="0oR-vS-xYT"/>
+                                    <constraint firstAttribute="width" constant="60" id="ksB-7X-gAf"/>
+                                </constraints>
+                                <state key="normal" title="Got it!"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="get-it"/>
+                                </userDefinedRuntimeAttributes>
+                                <connections>
+                                    <action selector="gotIt" destination="8bC-Xf-vdC" eventType="touchUpInside" id="3tv-K3-2WI"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <animations/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstItem="0Vy-ih-7cJ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ISz-g8-d0Q"/>
                             <constraint firstItem="QjQ-fv-UZ9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="LWw-Wi-VaU"/>
                             <constraint firstItem="l5F-dS-U93" firstAttribute="top" secondItem="vyz-xj-UlD" secondAttribute="bottom" id="Yz2-I4-p3k"/>
                             <constraint firstItem="l5F-dS-U93" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="ihS-tm-wzR"/>
                             <constraint firstItem="vyz-xj-UlD" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="is3-Of-qAn"/>
                             <constraint firstItem="QjQ-fv-UZ9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="42" id="lpk-aG-RDK"/>
+                            <constraint firstItem="0Vy-ih-7cJ" firstAttribute="top" secondItem="l5F-dS-U93" secondAttribute="bottom" constant="42" id="q7P-PW-7sD"/>
                             <constraint firstItem="vyz-xj-UlD" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="qcR-Nz-UU5"/>
                         </constraints>
                         <userDefinedRuntimeAttributes>
                             <userDefinedRuntimeAttribute type="string" keyPath="styleName" value="home"/>
                         </userDefinedRuntimeAttributes>
                         <connections>
+                            <outlet property="button" destination="0Vy-ih-7cJ" id="Hpf-II-fhO"/>
                             <outlet property="footnote" destination="l5F-dS-U93" id="rNQ-md-OhO"/>
                             <outlet property="logo" destination="QjQ-fv-UZ9" id="raz-7l-wub"/>
                             <outlet property="title" destination="vyz-xj-UlD" id="m3u-pg-cEf"/>

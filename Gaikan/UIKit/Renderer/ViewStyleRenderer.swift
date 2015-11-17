@@ -18,7 +18,9 @@ internal class ViewStyleRenderer {
         stylable.tintColor = styleRule.tintColor
         stylable.hidden = !visible
 
-        BackgroundRenderer.render(Background(styleRule.background!), intoView: stylable)
+        if let background = styleRule.background {
+            BackgroundRenderer.render(Background(background), intoView: stylable)
+        }
     }
 
     final class func render(stylable: UILabel, styleRule: StyleRule) {

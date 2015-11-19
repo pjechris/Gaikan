@@ -1,4 +1,4 @@
-<h1> <img src="Doc/Screen/logo.png" width="64" /> Gaikan </h1>
+<h1><img src="Doc/Screen/logo.png" width="550" alt="Gaikan" /></h1>
 [![Build Status](https://travis-ci.org/akane/Gaikan.svg?branch=travis)](https://travis-ci.org/akane/Gaikan)
 
 ```ruby

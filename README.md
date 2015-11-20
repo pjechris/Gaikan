@@ -5,8 +5,8 @@
 pod install Gaikan
 ```
 
-Gaikan give you powerful styling capabilities, just like CSS.
-_Inspired by_ <a href="https://speakerdeck.com/vjeux/react-css-in-js">React: CSS in JS</a> and <a href="http://glenmaddern.com/articles/css-modules">CSS modules</a>
+Gaikan gives you powerful styling capabilities using a declarative DSL in Swift.
+_Inspired by_ <a href="https://speakerdeck.com/vjeux/react-css-in-js">React: CSS in JS</a> and <a href="http://glenmaddern.com/articles/css-modules">CSS modules</a>.
 
 To style UIView(s) just give them a ```Style``` object:
 
@@ -28,7 +28,7 @@ self.label.applyStyle(myLabelStyle)
 
 ```
 
-Check out the sample to see how Gaikan integrates inside a project.
+Check out the sample to see how to integrate Gaikan into a project.
 
 <img src="Doc/Screen/gaikan.png" width="400" />
 
@@ -58,10 +58,9 @@ may not have any effect. Here are all the available style properties you can use
 
 ### Theme
 
-Manually defining a ```Style``` object for each view is pain and not maintainable.
-Most of the time what you'll really want to do is defining a ```Theme``` instead: a
-```Theme``` object is just a way to put multiple ```Style``` definition as a whole which
-make sense.
+Manually defining a ```Style``` object for each view is cumbersome.
+Most of the time what you'll really want to do is defining a ```Theme```: a
+```Theme``` packages together multiple ```Style``` definitions for a ```Themable``` view.
 
 ```Swift
 class CustomView: UIView, Themable {
@@ -95,7 +94,7 @@ public class RailTheme : Theme {
 
 ### Extends
 
-You can extends your styles to reuse common features
+You can extend your styles to reuse common features
 
 ```Swift
 func primary() -> Style {
@@ -132,11 +131,11 @@ func style() -> Style {
 }
 ```
 
-Don't hesitate to take a look to the sample to better understand how it works.
+Don't hesitate to take a look at the sample to better understand how it works.
 
 ## Contributing
 
-This project was first developed by [Xebia](http://xebia.fr) and has been open source since.
+This project was first developed by [Xebia](http://xebia.fr) and has been open-sourced since.
 We will continue working and investing on it.
 
 We encourage the community to contribute to the project by opening tickets and/or pull requests.

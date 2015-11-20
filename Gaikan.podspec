@@ -1,11 +1,11 @@
 Pod::Spec.new do |s|
   s.name                    = "Gaikan"
-  s.version                 = "0.1.0"
+  s.version                 = "0.3.0"
   s.source                  = { :git => "https://github.com/akane/Gaikan.git",
   		     	                    :tag => s.version.to_s }
 
-  s.summary                 = "View styling for iOS. Inspired by ReactJS and CSS modules."
-  s.description             = "Easily create (interchangeable) styles for your views using flexible swift structs. "
+  s.summary                 = "Declarative view styling in Swift."
+  s.description             = "Powerful styling capabilities using a declarative DSL in Swift. Inspired by ReactJS and CSS modules."
   s.homepage                = s.source[:git].to_s
   s.license                 = { :type => "MIT", :file => "LICENSE" }
   s.author                  = 'pjechris', 'akane'

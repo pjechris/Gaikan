@@ -4,10 +4,6 @@
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
-```ruby
-pod install Gaikan
-```
-
 Gaikan gives you powerful styling capabilities using a declarative DSL in Swift.
 _Inspired by_ <a href="https://speakerdeck.com/vjeux/react-css-in-js">React: CSS in JS</a> and <a href="http://glenmaddern.com/articles/css-modules">CSS modules</a>.
 
@@ -56,6 +52,26 @@ may not have any effect. Here are all the available style properties you can use
 | TextAlign     | UILabel   | Text horizontal alignment       | 0.2
 | TintColor     | UIView    | Sets the tint color             | 0.1
 | Visible       | UIView    | Sets the view hidden property   | 0.1
+
+## Installing
+
+Gaikan can be installed either using [Cocoapods](https://cocoapods.org/) or [Carthage](https://github.com/Carthage/Carthage).
+
+### Cocoapods
+
+Run the following command from your project folder:
+
+```ruby
+pod install Gaikan
+```
+
+### Carthage
+
+Add the following line to your Cartfile:
+
+```
+github "akane/Gaikan"
+```
 
 ## Advanced usage
 

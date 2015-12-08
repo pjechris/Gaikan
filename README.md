@@ -154,7 +154,7 @@ Don't hesitate to take a look at the sample to better understand how it works.
 
 ## Contributing
 
-This project was first developed by [Xebia](http://xebia.fr) and has been open-sourced since.
+This project was first developed by [Xebia IT Architects](http://xebia.fr) in Paris, France with the ultimate goal of releasing it as Open Source Software.
 We will continue working and investing on it.
 
 We encourage the community to contribute to the project by opening tickets and/or pull requests.

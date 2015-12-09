@@ -1,9 +1,8 @@
 <h1><img src="Doc/Screen/logo.png" width="550" alt="Gaikan" /></h1>
 [![Build Status](https://travis-ci.org/akane/Gaikan.svg?branch=travis)](https://travis-ci.org/akane/Gaikan)
+[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Gaikan.svg)](https://img.shields.io/cocoapods/v/Gaikan.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
-```ruby
-pod install Gaikan
-```
 
 Gaikan gives you powerful styling capabilities using a declarative DSL in Swift.
 _Inspired by_ <a href="https://speakerdeck.com/vjeux/react-css-in-js">React: CSS in JS</a> and <a href="http://glenmaddern.com/articles/css-modules">CSS modules</a>.
@@ -53,6 +52,26 @@ may not have any effect. Here are all the available style properties you can use
 | TextAlign     | UILabel   | Text horizontal alignment       | 0.2
 | TintColor     | UIView    | Sets the tint color             | 0.1
 | Visible       | UIView    | Sets the view hidden property   | 0.1
+
+## Installing
+
+Gaikan can be installed either using [Cocoapods](https://cocoapods.org/) or [Carthage](https://github.com/Carthage/Carthage).
+
+### Cocoapods
+
+Run the following command from your project folder:
+
+```ruby
+pod install Gaikan
+```
+
+### Carthage
+
+Add the following line to your Cartfile:
+
+```
+github "akane/Gaikan"
+```
 
 ## Advanced usage
 
@@ -135,7 +154,7 @@ Don't hesitate to take a look at the sample to better understand how it works.
 
 ## Contributing
 
-This project was first developed by [Xebia](http://xebia.fr) and has been open-sourced since.
+This project was first developed by [Xebia IT Architects](http://xebia.fr) in Paris, France with the ultimate goal of releasing it as Open Source Software.
 We will continue working and investing on it.
 
 We encourage the community to contribute to the project by opening tickets and/or pull requests.

@@ -45,4 +45,8 @@ public struct Style : DictionaryLiteralConvertible {
 
         return style
     }
+
+    internal subscript(state: StylePseudoState) -> StyleRule? {
+        get { return self.states[.PseudoState(state)] }
+    }
 }

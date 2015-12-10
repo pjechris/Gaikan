@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0EF0EAFE0023971A300C153D /* Pods_GaikanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C02980E631EF22B39F30C2B /* Pods_GaikanTests.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		0EF0EAFE0023971A300C153D /* Pods_GaikanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C02980E631EF22B39F30C2B /* Pods_GaikanTests.framework */; };
 		4912E9821BEB905A00C0DA4A /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9811BEB905A00C0DA4A /* Background.swift */; };
 		4912E9861BEB9A9800C0DA4A /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9851BEB9A9800C0DA4A /* Gradient.swift */; };
 		4912E9881BEB9FB000C0DA4A /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9871BEB9FB000C0DA4A /* CGPoint.swift */; };
@@ -30,7 +30,7 @@
 		498E053E1B98362100B4E26B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498E053C1B98362100B4E26B /* Main.storyboard */; };
 		498E05401B98362100B4E26B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 498E053F1B98362100B4E26B /* Assets.xcassets */; };
 		498E05431B98362100B4E26B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498E05411B98362100B4E26B /* LaunchScreen.storyboard */; };
-		49A4F5581C1A3C7600D2A392 /* StylePseudoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4F5571C1A3C7600D2A392 /* StylePseudoState.swift */; settings = {ASSET_TAGS = (); }; };
+		49A4F5581C1A3C7600D2A392 /* StylePseudoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4F5571C1A3C7600D2A392 /* StylePseudoState.swift */; };
 		49B00DF01BF8EF3D0098FECE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B00DEF1BF8EF3D0098FECE /* UIImage.swift */; };
 		49B674BC1BEE814B007D1BE2 /* BackgroundRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B674BB1BEE814B007D1BE2 /* BackgroundRenderer.swift */; };
 		49C8F7E91C1A33F400FF33DC /* StyleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8F7E81C1A33F400FF33DC /* StyleState.swift */; };
@@ -45,7 +45,7 @@
 		49EC39741B92FC7D002938E1 /* GaikanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39731B92FC7D002938E1 /* GaikanTests.swift */; };
 		49EC398B1B93085E002938E1 /* StyleRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC398A1B93085E002938E1 /* StyleRule.swift */; };
 		49EC39931B9373B2002938E1 /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39921B9373B2002938E1 /* Stylable.swift */; };
-		ADA041F0E651936D02A51FCB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3971B328ADBE03773776917F /* Pods.framework */; settings = {ATTRIBUTES = (Weak, ); }; };
+		ADA041F0E651936D02A51FCB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3971B328ADBE03773776917F /* Pods.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */

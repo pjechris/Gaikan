@@ -41,11 +41,11 @@ extension UIView : Stylable {
             return
         }
 
-        let pseudoClasses = StylePseudoClass.fromView(self)
-        var computedStyle = StyleRule()
+        let states = StyleState.states(fromView: self)
+        var computedStyle = style.style
 
-        for pseudoClass in pseudoClasses {
-            computedStyle = style[pseudoClass].map { return $0.extends(computedStyle) } ?? computedStyle
+        for state in states {
+            computedStyle = style.states[state].map { return $0.extends(computedStyle) } ?? computedStyle
         }
 
         self.computedStyle = computedStyle

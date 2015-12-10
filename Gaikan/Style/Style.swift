@@ -9,7 +9,8 @@
 import Foundation
 
 public struct Style : DictionaryLiteralConvertible {
-    private var pseudoStyles: [StylePseudoClass:StyleRule]
+    internal private(set) var style: StyleRule
+    internal private(set) var states: [StyleState:StyleRule] = [:]
 
     public init(dictionaryLiteral elements: (StyleRule.Key, StyleRule.Value)...) {
         var attributes = Dictionary<StyleRule.Key, StyleRule.Value>()
@@ -18,56 +19,30 @@ public struct Style : DictionaryLiteralConvertible {
             attributes[attributeName] = attributeValue
         }
 
-        self.init(defaultStyle: StyleRule(attributes: attributes))
+        self.init(style: StyleRule(attributes: attributes))
     }
 
     public init(_ styleBlock: (inout style: StyleRule) -> ()) {
-        self.init(defaultStyle: StyleRule(styleBlock))
+        self.init(style: StyleRule(styleBlock))
     }
 
-    private init(defaultStyle: StyleRule) {
-        self.pseudoStyles = [.Normal: defaultStyle]
+    private init(style: StyleRule) {
+        self.style = style
     }
 
-    public func include(pseudoClass: StylePseudoClass, styleRule styleBlock: (inout style: StyleRule) -> ()) -> Style {
+    public func state(state: StylePseudoState, styleRule styleBlock: (inout style: StyleRule) -> ()) -> Style {
         var style = self
 
-        style.pseudoStyles[pseudoClass] = StyleRule(styleBlock)
+        style.states[.PseudoState(state)] = StyleRule(styleBlock)
 
         return style
     }
 
-    public func include(pseudoClass: StylePseudoClass, attributes: [StyleRule.Key:StyleRule.Value]) -> Style {
+    public func include(state: StylePseudoState, attributes: [StyleRule.Key:StyleRule.Value]) -> Style {
         var style = self
 
-        style.pseudoStyles[pseudoClass] = StyleRule(attributes: attributes)
+        style.states[.PseudoState(state)] = StyleRule(attributes: attributes)
 
         return style
-    }
-
-    public subscript(pseudoClass: StylePseudoClass) -> StyleRule? {
-        get { return self.pseudoStyles[pseudoClass] }
-    }
-}
-
-public extension Style {
-    public var normal: StyleRule {
-        get { return self.pseudoStyles[.Normal]! }
-    }
-
-    public var disabled: StyleRule? {
-        get { return self.pseudoStyles[.Disabled] }
-    }
-
-    public var enabled: StyleRule? {
-        get { return self.pseudoStyles[.Enabled] }
-    }
-
-    public var highlighted: StyleRule? {
-        get { return self.pseudoStyles[.Highlighted] }
-    }
-
-    public var selected: StyleRule? {
-        get { return self.pseudoStyles[.Selected] }
     }
 }

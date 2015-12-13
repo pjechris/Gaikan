@@ -21,7 +21,7 @@ class StyleSpec: QuickSpec {
             }
         }
 
-        describe("include") {
+        describe("state") {
             context("when pseudo class does not exist yet") {
                 it("should be nil") {
                     expect(style[.Highlighted]).to(beNil())

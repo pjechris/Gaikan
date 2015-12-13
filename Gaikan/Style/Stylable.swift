@@ -16,6 +16,7 @@ var ComputedStyleAttribute = "ComputedStyleAttribute"
 */
 public protocol Stylable: class {
     var styleName: String? { get set }
+    var styleState: String? { get }
     var computedStyle: StyleRule? { get }
 
     func updateStyle()

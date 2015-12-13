@@ -10,6 +10,7 @@ import Foundation
 import KVOController
 
 var ViewStyleNameAttribute = "ViewStyleNameAttribute"
+var ViewStyleStateAttribute = "ViewStyleStateAttribute"
 
 extension UIView : Stylable {
     @IBInspectable public var styleName: String? {
@@ -24,6 +25,14 @@ extension UIView : Stylable {
             }
 
             objc_setAssociatedObject(self, &ViewStyleNameAttribute, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            self.computeStyle()
+        }
+    }
+
+    public var styleState: String? {
+        get { return objc_getAssociatedObject(self, &ViewStyleStateAttribute) as? String }
+        set {
+            objc_setAssociatedObject(self, &ViewStyleStateAttribute, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.computeStyle()
         }
     }

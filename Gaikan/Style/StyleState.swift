@@ -36,6 +36,10 @@ extension StyleState {
                 }
             }
         }
+
+        if let customState = view.styleState {
+            states.append(.Custom(customState))
+        }
         
         return states
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public enum StyleState {
+enum StyleState {
     case PseudoState(StylePseudoState)
     case Custom(String)
 }
@@ -42,7 +42,7 @@ extension StyleState {
 }
 
 extension StyleState : Hashable {
-    public var hashValue: Int {
+    var hashValue: Int {
         switch (self) {
         case .PseudoState(let state):
             return state.hashValue
@@ -52,7 +52,7 @@ extension StyleState : Hashable {
     }
 }
 
-public func ==(lhs: StyleState, rhs: StyleState) -> Bool {
+func ==(lhs: StyleState, rhs: StyleState) -> Bool {
     switch (lhs, rhs) {
     case (.PseudoState(let state1), .PseudoState(let state2)):
         return state1 == state2

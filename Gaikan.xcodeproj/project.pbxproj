@@ -46,6 +46,7 @@
 		49EC398B1B93085E002938E1 /* StyleRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC398A1B93085E002938E1 /* StyleRule.swift */; };
 		49EC39931B9373B2002938E1 /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39921B9373B2002938E1 /* Stylable.swift */; };
 		ADA041F0E651936D02A51FCB /* Pods.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3971B328ADBE03773776917F /* Pods.framework */; };
+		CAFCDA4F1C592BBC004513D3 /* Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFCDA4E1C592BBC004513D3 /* Corners.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,6 +115,7 @@
 		4C02980E631EF22B39F30C2B /* Pods_GaikanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaikanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		82F3DECD5B5F77691A881A3C /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		BCF8DC77B6D3457A7C6C3EDC /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
+		CAFCDA4E1C592BBC004513D3 /* Corners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,6 +243,7 @@
 			children = (
 				4970A8191BD445DB00BCB3BA /* Border.swift */,
 				4912E9811BEB905A00C0DA4A /* Background.swift */,
+				CAFCDA4E1C592BBC004513D3 /* Corners.swift */,
 			);
 			path = Value;
 			sourceTree = "<group>";
@@ -615,6 +618,7 @@
 				49DBD9021BCAAF110069B0C2 /* Style.swift in Sources */,
 				492C1B591BE0C9DF000515B9 /* UISwitch.swift in Sources */,
 				4912E9861BEB9A9800C0DA4A /* Gradient.swift in Sources */,
+				CAFCDA4F1C592BBC004513D3 /* Corners.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

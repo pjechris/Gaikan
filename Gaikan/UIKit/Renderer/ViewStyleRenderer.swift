@@ -37,4 +37,22 @@ internal class ViewStyleRenderer {
     final class func render(textField: UITextField, styleRule: StyleRule) {
         textField.textAlignment = styleRule.textAlign ?? .Natural
     }
+    
+    final class func render(navigationBar: UINavigationBar, styleRule: StyleRule) {
+        var attributes = [String: AnyObject]()
+        
+        if let titleForegroundColorAttribute = styleRule.titleForegroundColor {
+            attributes[NSForegroundColorAttributeName] = titleForegroundColorAttribute
+        }
+        
+        if let fontAttribute = styleRule.titleFont {
+            attributes[NSFontAttributeName] = fontAttribute
+        }
+        
+        if let shadowAttribute = styleRule.titleShadow {
+            attributes[NSShadowAttributeName] = shadowAttribute
+        }
+        
+        navigationBar.titleTextAttributes = attributes
+    }
 }

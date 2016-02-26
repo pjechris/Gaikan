@@ -86,4 +86,19 @@ public extension StyleRule {
         get { return self[.Visible].map { return $0 as! Bool } }
         set { self.attributes[.Visible] = newValue }
     }
+    
+    public var titleFont: UIFont? {
+        get { return self[.TitleFont].map { return $0 as! UIFont } }
+        set { self.attributes[.TitleFont] = newValue }
+    }
+    
+    public var titleForegroundColor: UIColor? {
+        get { return self[.TitleForegroundColor].map { return $0 as! UIColor } }
+        set { self.attributes[.TitleForegroundColor] = newValue }
+    }
+    
+    public var titleShadow: NSShadow? {
+        get { return self[.TitleShadow].map { return $0 as! NSShadow } }
+        set { self.attributes[.TitleShadow] = newValue }
+    }
 }

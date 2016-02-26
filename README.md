@@ -1,7 +1,6 @@
 <h1><img src="Doc/Screen/logo.png" width="550" alt="Gaikan" /></h1>
 [![Build Status](https://travis-ci.org/akane/Gaikan.svg?branch=travis)](https://travis-ci.org/akane/Gaikan)
 [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Gaikan.svg)](https://img.shields.io/cocoapods/v/Gaikan.svg)
-[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
 Gaikan gives you powerful styling capabilities using a declarative DSL in Swift.

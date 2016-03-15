@@ -12,6 +12,7 @@ import Foundation
 public enum Property {
     case Background
     case Border
+    case Clip
     case Color
     case Font
     case Opacity

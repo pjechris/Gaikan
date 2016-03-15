@@ -15,8 +15,8 @@ internal class ViewStyleRenderer {
         let corners = styleRule.corners ?? Corners(radius: 0)
         
         stylable.layer.cornerRadius = corners.radius
-        stylable.clipsToBounds = true
-        stylable.layer.masksToBounds = true
+        stylable.clipsToBounds = styleRule.clip
+        stylable.layer.masksToBounds = styleRule.clip
 
         stylable.layer.borderWidth = border.width
         stylable.layer.borderColor = border.color?.CGColor

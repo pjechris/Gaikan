@@ -1,6 +1,6 @@
 <h1><img src="Doc/Screen/logo.png" width="550" alt="Gaikan" /></h1>
 [![Build Status](https://travis-ci.org/akane/Gaikan.svg?branch=travis)](https://travis-ci.org/akane/Gaikan)
-[![Cocoapods Compatible](https://img.shields.io/cocoapods/v/Gaikan.svg)](https://img.shields.io/cocoapods/v/Gaikan.svg)
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Gaikan.svg)](https://img.shields.io/cocoapods/v/Gaikan.svg)
 [![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
 
 
@@ -55,9 +55,9 @@ may not have any effect. Here are all the available style properties you can use
 
 ## Installing
 
-Gaikan can be installed either using [Cocoapods](https://cocoapods.org/) or [Carthage](https://github.com/Carthage/Carthage).
+Gaikan can be installed either using [CocoaPods](https://cocoapods.org/) or [Carthage](https://github.com/Carthage/Carthage).
 
-### Cocoapods
+### CocoaPods
 
 Run the following command from your project folder:
 

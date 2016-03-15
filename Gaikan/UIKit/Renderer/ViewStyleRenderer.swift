@@ -12,6 +12,11 @@ internal class ViewStyleRenderer {
     final class func render(stylable: UIView, styleRule: StyleRule) {
         let border = styleRule.border ?? Border(width: 0, color: nil)
         let visible = styleRule.visible ?? true
+        let corners = styleRule.corners ?? Corners(radius: 0)
+        
+        stylable.layer.cornerRadius = corners.radius
+        stylable.clipsToBounds = true
+        stylable.layer.masksToBounds = true
 
         stylable.layer.borderWidth = border.width
         stylable.layer.borderColor = border.color?.CGColor

@@ -61,6 +61,11 @@ public extension StyleRule {
         get { return self[.Border].map { return $0 as! Border } }
         set { self.attributes[.Border] = newValue }
     }
+    
+    public var corners: Corners? {
+        get { return self[.Corners].map { return $0 as! Corners } }
+        set { self.attributes[.Corners] = newValue }
+    }
 
     public var color: UIColor? {
         get { return self[.Color].map { return $0 as! UIColor } }

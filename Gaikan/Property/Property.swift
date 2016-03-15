@@ -14,6 +14,7 @@ public enum Property {
     case Border
     case Color
     case Font
+    case Opacity
     case TextAlign
     case TintColor
     case Visible

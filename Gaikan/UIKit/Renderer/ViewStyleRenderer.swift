@@ -17,6 +17,7 @@ internal class ViewStyleRenderer {
         stylable.layer.borderColor = border.color?.CGColor
         stylable.tintColor = styleRule.tintColor
         stylable.hidden = !visible
+        stylable.alpha = CGFloat(styleRule.opacity / 100)
 
         if let background = styleRule.background {
             BackgroundRenderer.render(Background(background), intoView: stylable)

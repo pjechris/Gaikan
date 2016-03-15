@@ -72,6 +72,13 @@ public extension StyleRule {
         set { self.attributes[.Font] = newValue }
     }
 
+    /// value must be between 0 and 100
+    /// default is 100
+    public var opacity: Double {
+        get { return self[.Opacity].map { return $0 as! Double } ?? 100 }
+        set { self.attributes[.Opacity] = newValue }
+    }
+
     public var textAlign: NSTextAlignment? {
         get { return self[.TextAlign].map { return $0 as! NSTextAlignment } }
         set { self.attributes[.TextAlign] = newValue }

@@ -9,7 +9,7 @@
 import Foundation
 import Quick
 import Nimble
-import Gaikan
+@testable import Gaikan
 
 class UIViewSpec: QuickSpec {
 
@@ -46,10 +46,34 @@ class UIViewSpec: QuickSpec {
                     style = [ .Visible: false ]
 
                     view.applyStyle(style)
-
+                    
                     expect(view.hidden) == true
                 }
             }
         }
+
+        describe("styleState") {
+            var style: Style!
+
+            beforeEach {
+                style = Style() { (inout styleRule:StyleRule) in
+                        styleRule.tintColor = UIColor.redColor()
+                    }
+                    .state("newState", [.TintColor: UIColor.blueColor()])
+            }
+
+            context("when setting") {
+                beforeEach {
+                    view.stylesRef = ["test":style]
+                    view.styleName = "test"
+                    view.styleState = "newState"
+                }
+
+                it("should apply state tintColor") {
+                    expect(view.tintColor) == UIColor.blueColor()
+                }
+            }
+        }
+
     }
 }

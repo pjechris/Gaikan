@@ -34,7 +34,7 @@ public class RailTheme : Theme {
             "logo": Style() { (inout style: StyleRule) -> () in
                 style.tintColor = UIColor.whiteColor()
             }
-                .include(.Selected, attributes: [
+                .state(.Selected, [
                     .TintColor: UIColor.logoColor().colorWithAlphaComponent(0.6)
                 ]),
 

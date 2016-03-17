@@ -32,17 +32,17 @@ class UINavigationBarSpec: QuickSpec {
                 }
 
                 it("should apply a title font") {
-                    style = [ .TitleFont: UIFont.systemFontOfSize(42.0) ]
+                    style = [ .Font: UIFont.systemFontOfSize(42.0) ]
 
-                    navigationBar.applyStyle(style)
+                    navigationBar.titleStyle.applyStyle(style)
 
                     expect(navigationBar.titleTextAttributes![NSFontAttributeName] as? UIFont) == UIFont.systemFontOfSize(42.0)
                 }
 
                 it("should apply a foreground color to the title") {
-                    style = [ .TitleForegroundColor: UIColor.blueColor() ]
+                    style = [ .Color: UIColor.blueColor() ]
                     
-                    navigationBar.applyStyle(style)
+                    navigationBar.titleStyle.applyStyle(style)
                     
                     expect(navigationBar.titleTextAttributes![NSForegroundColorAttributeName] as? UIColor) == UIColor.blueColor()
                 }
@@ -51,9 +51,9 @@ class UINavigationBarSpec: QuickSpec {
                     let shadow = NSShadow()
                     shadow.shadowOffset = CGSize(width: 2, height: 3)
                     
-                    style = [ .TitleShadow: shadow ]
+                    style = [ .TextShadow: shadow ]
                     
-                    navigationBar.applyStyle(style)
+                    navigationBar.titleStyle.applyStyle(style)
                     
                     expect(navigationBar.titleTextAttributes![NSShadowAttributeName] as? NSShadow) == shadow
                 }

@@ -14,7 +14,7 @@ var ComputedStyleAttribute = "ComputedStyleAttribute"
 /**
  Define methods allow an object to apply a StyleRule to style itself
 */
-public protocol Stylable: class {
+public protocol Stylable : class {
     var styleName: String? { get set }
     var styleState: String? { get }
     var computedStyle: StyleRule? { get }

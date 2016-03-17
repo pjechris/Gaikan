@@ -10,6 +10,7 @@
 		0EF0EAFE0023971A300C153D /* Pods_GaikanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C02980E631EF22B39F30C2B /* Pods_GaikanTests.framework */; };
 		420190841C80B4BB00B70169 /* UINavigationBarSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420190831C80B4BB00B70169 /* UINavigationBarSpec.swift */; };
 		420190861C80B60F00B70169 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420190851C80B60F00B70169 /* UINavigationBar.swift */; };
+		42087B221C9AE4B8000606A7 /* VirtualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42087B211C9AE4B8000606A7 /* VirtualView.swift */; };
 		4912E9821BEB905A00C0DA4A /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9811BEB905A00C0DA4A /* Background.swift */; };
 		4912E9861BEB9A9800C0DA4A /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9851BEB9A9800C0DA4A /* Gradient.swift */; };
 		4912E9881BEB9FB000C0DA4A /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9871BEB9FB000C0DA4A /* CGPoint.swift */; };
@@ -73,6 +74,7 @@
 		3971B328ADBE03773776917F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		420190831C80B4BB00B70169 /* UINavigationBarSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarSpec.swift; sourceTree = "<group>"; };
 		420190851C80B60F00B70169 /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		42087B211C9AE4B8000606A7 /* VirtualView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualView.swift; sourceTree = "<group>"; };
 		4912E9811BEB905A00C0DA4A /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		4912E9851BEB9A9800C0DA4A /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		4912E9871BEB9FB000C0DA4A /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
@@ -173,6 +175,7 @@
 			children = (
 				492C1B4F1BE0C9DF000515B9 /* Extension */,
 				492C1B551BE0C9DF000515B9 /* Renderer */,
+				42087B211C9AE4B8000606A7 /* VirtualView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -235,9 +238,9 @@
 		4970A8151BD4455900BCB3BA /* Property */ = {
 			isa = PBXGroup;
 			children = (
+				4912E9851BEB9A9800C0DA4A /* Gradient.swift */,
 				4970A8161BD4459300BCB3BA /* Property.swift */,
 				4970A8181BD445DB00BCB3BA /* Value */,
-				4912E9851BEB9A9800C0DA4A /* Gradient.swift */,
 			);
 			path = Property;
 			sourceTree = "<group>";
@@ -621,6 +624,7 @@
 				492C1B5A1BE0C9DF000515B9 /* UIView.swift in Sources */,
 				49DBD9021BCAAF110069B0C2 /* Style.swift in Sources */,
 				492C1B591BE0C9DF000515B9 /* UISwitch.swift in Sources */,
+				42087B221C9AE4B8000606A7 /* VirtualView.swift in Sources */,
 				4912E9861BEB9A9800C0DA4A /* Gradient.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

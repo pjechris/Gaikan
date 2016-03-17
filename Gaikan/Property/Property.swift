@@ -17,7 +17,5 @@ public enum Property {
     case TextAlign
     case TintColor
     case Visible
-    case TitleFont
-    case TitleForegroundColor
-    case TitleShadow
+    case TextShadow
 }

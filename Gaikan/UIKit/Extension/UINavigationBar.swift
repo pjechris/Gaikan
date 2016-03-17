@@ -9,13 +9,29 @@
 import Foundation
 
 public extension UINavigationBar {
+    
+    private struct AssociatedKeys {
+        static var VirtualView = "gaikan_virtualView"
+    }
+    
     public override func updateStyle() {
         super.updateStyle()
 
-        guard let computedStyle = self.computedStyle else {
-            return
+        if let computedStyle = self.computedStyle {
+            ViewStyleRenderer.render(self, styleRule: computedStyle)
         }
 
-        ViewStyleRenderer.render(self, styleRule: computedStyle)
+        if let titleStyle = self.titleStyle.computedStyle {
+            ViewStyleRenderer.render(self, titleStyle: titleStyle)
+        }
+    }
+    
+    public var titleStyle: VirtualView<UINavigationBar> {
+        guard let title = objc_getAssociatedObject(self, &AssociatedKeys.VirtualView) as? VirtualView<UINavigationBar> else {
+            let title = VirtualView(targetView: self)
+            objc_setAssociatedObject(self, &AssociatedKeys.VirtualView, title as VirtualView<UINavigationBar>?, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            return title
+        }
+        return title
     }
 }

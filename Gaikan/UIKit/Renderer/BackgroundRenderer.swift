@@ -34,7 +34,7 @@ internal class BackgroundRenderer {
         layer.endPoint = gradient.to
         layer.startPoint = gradient.from
         layer.colors = gradient.gradientValues.map { gradient in return gradient.color.CGColor }
-        layer.locations = gradient.gradientValues.map { gradient in return gradient.position / 100 }
+        layer.locations = gradient.gradientValues.map { gradient in return Float(gradient.position) / Float(100) }
 
         layer.renderInContext(ctx)
     }

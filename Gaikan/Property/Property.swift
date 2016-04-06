@@ -21,5 +21,6 @@ public enum Property {
     case TextAlign
     case TextShadow
     case TintColor
+    case Transform
     case Visible
 }

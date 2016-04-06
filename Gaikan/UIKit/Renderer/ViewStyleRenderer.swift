@@ -18,6 +18,7 @@ internal class ViewStyleRenderer {
         stylable.clipsToBounds = styleRule.clip
         stylable.layer.masksToBounds = styleRule.clip
 
+        stylable.layer.transform = styleRule.transform
         stylable.layer.borderWidth = border.width
         stylable.layer.borderColor = border.color?.CGColor
         stylable.tintColor = styleRule.tintColor

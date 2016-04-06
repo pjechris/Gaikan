@@ -99,6 +99,11 @@ public extension StyleRule {
         set { self.attributes[.TintColor] = newValue }
     }
 
+    public var transform: CATransform3D {
+        get { return self[.Transform].map { return $0 as! CATransform3D } ?? CATransform3DIdentity }
+        set { self.attributes[.Transform] = newValue }
+    }
+
     public var visible: Bool? {
         get { return self[.Visible].map { return $0 as! Bool } }
         set { self.attributes[.Visible] = newValue }

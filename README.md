@@ -42,18 +42,26 @@ Check out the sample to see how to integrate Gaikan into a project.
 Depending on your view type (UILabel, UIScrollView, UITextField, ...) some properties may or
 may not have any effect. Here are all the available style properties you can use:
 
-| Property name | Apply to  | Description                     | Available version
+| Property name | Apply to  | Description                     | Available since
 | --------------|-----------|---------------------------------|------------------
 | Background    | UIView    | Sets a background to your view (color, gradient and or image)  | 0.3
 | Border        | UIView    | Sets the layer Border           | 0.1
+| Clip          | UIView    | Make the content of the view hidden if larger than the frame | 0.4
 | Color         | UILabel   | Sets the text color             | 0.1
+| CornerRadius  | UIView    | Sets the view layer corner radius | 0.4
 | Font          | UILabel   | Sets the text font              | 0.1
+| Opacity       | UIView    | Change the view alpha (0...1)   | 0.4
 | TextAlign     | UILabel   | Text horizontal alignment       | 0.2
 | TintColor     | UIView    | Sets the tint color             | 0.1
+| Transform     | UIview    | Apply transforms (rotation, ...)| 0.4
 | Visible       | UIView    | Sets the view hidden property   | 0.1
-| TitleFont     | UINavigationBar | Sets the title font (`titleTextAttributes[NSFontAttributeName]`) | 0.4
-| TitleForegroundColor | UINavigationBar | Sets the title color (`titleTextAttributes[NSForegroundColorAttributeName]`) | 0.4
-| TitleShadow   | UINavigationBar | Sets the title shadow (`titleTextAttributes[NSShadowAttributeName]`) | 0.4
+
+Starting with 0.4, we also added `VirtualView`. This allow you to apply style effects on some non `UIView`
+attributes/objects:
+
+| NSObject          | Virtual view  | Description            | Available since
+| ------------------|---------------|------------------------|------------------
+| UINavigationBar   | titleStyle    | Sets title navigation bar style   | 0.4
 
 ## Installing
 

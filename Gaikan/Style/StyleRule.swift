@@ -103,4 +103,9 @@ public extension StyleRule {
         get { return self[.Visible].map { return $0 as! Bool } }
         set { self.attributes[.Visible] = newValue }
     }
+    
+    public var textShadow: NSShadow? {
+        get { return self[.TextShadow].map { return $0 as! NSShadow } }
+        set { self.attributes[.TextShadow] = newValue }
+    }
 }

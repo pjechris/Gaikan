@@ -13,21 +13,17 @@ class ViewController: UIViewController {
     var customView: CustomView!
 
     override func viewDidLoad() {
+        let titleStyle: StyleRule = [
+            .Font: UIFont(name: "AvenirNext-Italic", size: 16),
+            .Color: UIColor.purpleColor()
+        ]
+        
         super.viewDidLoad()
 
         self.customView = self.view as! CustomView
         self.customView.styleTheme = RailTheme()
+        
+        self.navigationController?.navigationBar.titleStyle.applyStyle(titleStyle)
     }
-
-    override func viewDidAppear(animated: Bool) {
-        super.viewDidAppear(true)
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-
-
 }
 

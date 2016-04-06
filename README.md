@@ -52,6 +52,9 @@ may not have any effect. Here are all the available style properties you can use
 | TextAlign     | UILabel   | Text horizontal alignment       | 0.2
 | TintColor     | UIView    | Sets the tint color             | 0.1
 | Visible       | UIView    | Sets the view hidden property   | 0.1
+| TitleFont     | UINavigationBar | Sets the title font (`titleTextAttributes[NSFontAttributeName]`) | 0.4
+| TitleForegroundColor | UINavigationBar | Sets the title color (`titleTextAttributes[NSForegroundColorAttributeName]`) | 0.4
+| TitleShadow   | UINavigationBar | Sets the title shadow (`titleTextAttributes[NSShadowAttributeName]`) | 0.4
 
 ## Installing
 

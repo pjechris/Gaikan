@@ -9,16 +9,17 @@
 import Foundation
 
 /// Property that can be used to style a view
+/// Keep this file Alphabetic ordered
 public enum Property {
     case Background
     case Border
     case Clip
     case Color
+    case CornerRadius
     case Font
     case Opacity
     case TextAlign
+    case TextShadow
     case TintColor
     case Visible
-    case Corners
-    case TextShadow
 }

@@ -68,8 +68,8 @@ public extension StyleRule {
     }
     
     public var corners: Corners? {
-        get { return self[.Corners].map { return $0 as! Corners } }
-        set { self.attributes[.Corners] = newValue }
+        get { return self[.CornerRadius].map { return $0 as! Corners } }
+        set { self.attributes[.CornerRadius] = newValue }
     }
 
     public var color: UIColor? {

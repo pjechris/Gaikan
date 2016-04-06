@@ -20,4 +20,5 @@ public enum Property {
     case TintColor
     case Visible
     case Corners
+    case TextShadow
 }

@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		0EF0EAFE0023971A300C153D /* Pods_GaikanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4C02980E631EF22B39F30C2B /* Pods_GaikanTests.framework */; };
+		420190841C80B4BB00B70169 /* UINavigationBarSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420190831C80B4BB00B70169 /* UINavigationBarSpec.swift */; };
+		420190861C80B60F00B70169 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420190851C80B60F00B70169 /* UINavigationBar.swift */; };
+		42087B221C9AE4B8000606A7 /* VirtualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42087B211C9AE4B8000606A7 /* VirtualView.swift */; };
 		4912E9821BEB905A00C0DA4A /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9811BEB905A00C0DA4A /* Background.swift */; };
 		4912E9861BEB9A9800C0DA4A /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9851BEB9A9800C0DA4A /* Gradient.swift */; };
 		4912E9881BEB9FB000C0DA4A /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9871BEB9FB000C0DA4A /* CGPoint.swift */; };
@@ -70,6 +73,9 @@
 		072F4ED19647D336AD352F01 /* Pods-GaikanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaikanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GaikanTests/Pods-GaikanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		187FEDA9974C0AEB357AAD43 /* Pods-GaikanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaikanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GaikanTests/Pods-GaikanTests.release.xcconfig"; sourceTree = "<group>"; };
 		3971B328ADBE03773776917F /* Pods.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		420190831C80B4BB00B70169 /* UINavigationBarSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarSpec.swift; sourceTree = "<group>"; };
+		420190851C80B60F00B70169 /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
+		42087B211C9AE4B8000606A7 /* VirtualView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualView.swift; sourceTree = "<group>"; };
 		4912E9811BEB905A00C0DA4A /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		4912E9851BEB9A9800C0DA4A /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		4912E9871BEB9FB000C0DA4A /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
@@ -171,6 +177,7 @@
 			children = (
 				492C1B4F1BE0C9DF000515B9 /* Extension */,
 				492C1B551BE0C9DF000515B9 /* Renderer */,
+				42087B211C9AE4B8000606A7 /* VirtualView.swift */,
 			);
 			path = UIKit;
 			sourceTree = "<group>";
@@ -180,6 +187,7 @@
 			children = (
 				492C1B501BE0C9DF000515B9 /* UIControl.swift */,
 				492C1B621BE0CAD0000515B9 /* UILabel.swift */,
+				420190851C80B60F00B70169 /* UINavigationBar.swift */,
 				492C1B521BE0C9DF000515B9 /* UISwitch.swift */,
 				492C1B531BE0C9DF000515B9 /* UIView.swift */,
 			);
@@ -207,6 +215,7 @@
 			isa = PBXGroup;
 			children = (
 				492C1B5E1BE0CA59000515B9 /* UILabelSpec.swift */,
+				420190831C80B4BB00B70169 /* UINavigationBarSpec.swift */,
 				492C1B5F1BE0CA59000515B9 /* UIViewSpec.swift */,
 			);
 			path = Extension;
@@ -231,9 +240,9 @@
 		4970A8151BD4455900BCB3BA /* Property */ = {
 			isa = PBXGroup;
 			children = (
+				4912E9851BEB9A9800C0DA4A /* Gradient.swift */,
 				4970A8161BD4459300BCB3BA /* Property.swift */,
 				4970A8181BD445DB00BCB3BA /* Value */,
-				4912E9851BEB9A9800C0DA4A /* Gradient.swift */,
 			);
 			path = Property;
 			sourceTree = "<group>";
@@ -613,10 +622,12 @@
 				49D1BF851BDD506300348D3D /* AssociatedObject.swift in Sources */,
 				4970A8171BD4459300BCB3BA /* Property.swift in Sources */,
 				4912E9821BEB905A00C0DA4A /* Background.swift in Sources */,
+				420190861C80B60F00B70169 /* UINavigationBar.swift in Sources */,
 				4982A7661BCEBE7A0074DB85 /* Themable.swift in Sources */,
 				492C1B5A1BE0C9DF000515B9 /* UIView.swift in Sources */,
 				49DBD9021BCAAF110069B0C2 /* Style.swift in Sources */,
 				492C1B591BE0C9DF000515B9 /* UISwitch.swift in Sources */,
+				42087B221C9AE4B8000606A7 /* VirtualView.swift in Sources */,
 				4912E9861BEB9A9800C0DA4A /* Gradient.swift in Sources */,
 				CAFCDA4F1C592BBC004513D3 /* Corners.swift in Sources */,
 			);
@@ -630,6 +641,7 @@
 				492C1B601BE0CA59000515B9 /* UILabelSpec.swift in Sources */,
 				495DE8FC1BA580D100DA97BF /* DictionarySpec.swift in Sources */,
 				492C1B611BE0CA59000515B9 /* UIViewSpec.swift in Sources */,
+				420190841C80B4BB00B70169 /* UINavigationBarSpec.swift in Sources */,
 				4970A81C1BD4484F00BCB3BA /* StyleSpec.swift in Sources */,
 				49EC39741B92FC7D002938E1 /* GaikanTests.swift in Sources */,
 			);

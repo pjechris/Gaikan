@@ -1,16 +1,18 @@
 PODS:
   - KVOController (1.0.3)
-  - Nimble (2.0.0-rc.3)
+  - Nimble (3.2.0)
   - Quick (0.6.0)
 
 DEPENDENCIES:
   - KVOController (~> 1.x)
-  - Nimble (= 2.0.0-rc.3)
+  - Nimble (~> 3.x)
   - Quick
 
 SPEC CHECKSUMS:
   KVOController: 9fd8f0343670994e4b6f9f0b31f5a45663f3e1cf
-  Nimble: 9dff98ee195ffe7351d3b2fb01d3a1420fd97948
+  Nimble: 703854335d181df169bbca9c97117b5cf8c47c1d
   Quick: 563686dbcf0ae0f9f7401ac9cd2d786ee1b7f3d7
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: d85440fe9457dddfcafb5d7e1388af149b865d93
+
+COCOAPODS: 1.0.0.beta.3

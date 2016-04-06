@@ -5,5 +5,5 @@ use_frameworks!
 
 target :GaikanTests do
   pod 'Quick'
-  pod 'Nimble', '2.0.0-rc.3'
+  pod 'Nimble', '~> 3.x'
 end

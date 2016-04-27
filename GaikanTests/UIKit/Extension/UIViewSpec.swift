@@ -64,8 +64,7 @@ class UIViewSpec: QuickSpec {
 
             context("when setting") {
                 beforeEach {
-                    view.stylesRef = ["test":style]
-                    view.styleName = "test"
+                    view.styleClass = style
                     view.styleState = "newState"
                 }
 

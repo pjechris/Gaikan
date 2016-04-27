@@ -13,10 +13,14 @@ var ViewStyleNameAttribute = "ViewStyleNameAttribute"
 var ViewStyleStateAttribute = "ViewStyleStateAttribute"
 
 extension UIView : Stylable {
-    @IBInspectable public var styleName: String? {
-        get { return objc_getAssociatedObject(self, &ViewStyleNameAttribute) as? String }
+    @IBInspectable public var styleClass: Style? {
+        get {
+            let value = objc_getAssociatedObject(self, &StylableStylesRefAttribute) as? AssociatedObject<Style?>
+
+            return value.map { $0.value } ?? nil
+        }
         set {
-            if (self.styleName == nil) {
+            if (self.styleClass == nil) {
                 self.registerStyleKeyPaths()
             }
 
@@ -24,7 +28,7 @@ extension UIView : Stylable {
                 self.unregisterStyleKeyPaths()
             }
 
-            objc_setAssociatedObject(self, &ViewStyleNameAttribute, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &StylableStylesRefAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.computeStyle()
         }
     }
@@ -46,7 +50,7 @@ extension UIView : Stylable {
     }
 
     public func computeStyle() {
-        guard let styleName = self.styleName, let style = self.stylesRef?[styleName] else {
+        guard let style = self.styleClass else {
             return
         }
 

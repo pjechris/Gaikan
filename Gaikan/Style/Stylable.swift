@@ -15,7 +15,8 @@ var ComputedStyleAttribute = "ComputedStyleAttribute"
  Define methods allow an object to apply a StyleRule to style itself
 */
 public protocol Stylable : class {
-    var styleName: String? { get set }
+    var styleClass: Style? { get set }
+
     var styleState: String? { get }
     var computedStyle: StyleRule? { get }
 
@@ -27,17 +28,6 @@ public protocol Stylable : class {
 }
 
 extension Stylable {
-    var stylesRef: [String:Style]? {
-        get {
-            let value = objc_getAssociatedObject(self, &StylableStylesRefAttribute) as? AssociatedObject<[String:Style]?>
-
-            return value != nil ? value!.value : nil
-        }
-        set {
-            objc_setAssociatedObject(self, &StylableStylesRefAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            self.computeStyle()
-        }
-    }
 
     public var computedStyle: StyleRule? {
         get {

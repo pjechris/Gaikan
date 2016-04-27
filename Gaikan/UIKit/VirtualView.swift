@@ -16,7 +16,9 @@ public class VirtualView<TargetView: UIView> : NSObject, Stylable {
         self.targetView = targetView
     }
     
-    public var styleName: String?
+    public var styleClass: Style? {
+        didSet { self.computeStyle() }
+    }
     
     public var styleState: String? {
         didSet {
@@ -29,7 +31,7 @@ public class VirtualView<TargetView: UIView> : NSObject, Stylable {
     }
     
     public func computeStyle() {
-        guard let styleName = self.styleName, let style = self.stylesRef?[styleName] else {
+        guard let style = self.styleClass else {
             return
         }
         

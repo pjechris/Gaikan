@@ -30,11 +30,6 @@ extension Themable {
         }
         set {
             objc_setAssociatedObject(self, &ThemableStyleThemeAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-
-            let styles = newValue?.styles()
-            for stylable in self.stylableThemeItems() {
-                stylable.stylesRef = styles
-            }
         }
     }
 }

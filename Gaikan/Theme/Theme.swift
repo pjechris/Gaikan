@@ -1,13 +1,15 @@
 //
-//  Theme.swift
-//  Gaikan
+// This file is part of Gaikan
 //
-//  Created by JC on 14/10/15.
-//  Copyright © 2015 fr.akane. All rights reserved.
+// Created by JC on 14/10/15.
+// For the full copyright and license information, please view the LICENSE
+// file that was distributed with this source code
 //
 
 import Foundation
 
-public protocol Theme {
-    func styles() -> [String:Style]
+public class Theme : AnyObject {
+    required public init() {
+
+    }
 }

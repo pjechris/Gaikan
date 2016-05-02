@@ -25,8 +25,6 @@
 		4970A8171BD4459300BCB3BA /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A8161BD4459300BCB3BA /* Property.swift */; };
 		4970A81A1BD445DB00BCB3BA /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A8191BD445DB00BCB3BA /* Border.swift */; };
 		4970A81C1BD4484F00BCB3BA /* StyleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A81B1BD4484F00BCB3BA /* StyleSpec.swift */; };
-		4982A7661BCEBE7A0074DB85 /* Themable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982A7651BCEBE7A0074DB85 /* Themable.swift */; };
-		4982A7681BCEBF1E0074DB85 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4982A7671BCEBF1E0074DB85 /* Theme.swift */; };
 		498E05391B98362100B4E26B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E05381B98362100B4E26B /* AppDelegate.swift */; };
 		498E053B1B98362100B4E26B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E053A1B98362100B4E26B /* ViewController.swift */; };
 		498E053E1B98362100B4E26B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498E053C1B98362100B4E26B /* Main.storyboard */; };
@@ -47,6 +45,7 @@
 		49EC39741B92FC7D002938E1 /* GaikanTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39731B92FC7D002938E1 /* GaikanTests.swift */; };
 		49EC398B1B93085E002938E1 /* StyleRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC398A1B93085E002938E1 /* StyleRule.swift */; };
 		49EC39931B9373B2002938E1 /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39921B9373B2002938E1 /* Stylable.swift */; };
+		49FD8A651CD16652004F2979 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FD8A631CD16652004F2979 /* Theme.swift */; };
 		593205EC54C9AFF876D912B2 /* Pods_GaikanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FCFF7171F4F384215361A2 /* Pods_GaikanTests.framework */; };
 		CAFCDA4F1C592BBC004513D3 /* Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFCDA4E1C592BBC004513D3 /* Corners.swift */; };
 /* End PBXBuildFile section */
@@ -88,8 +87,6 @@
 		4970A8161BD4459300BCB3BA /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		4970A8191BD445DB00BCB3BA /* Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		4970A81B1BD4484F00BCB3BA /* StyleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSpec.swift; sourceTree = "<group>"; };
-		4982A7651BCEBE7A0074DB85 /* Themable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Themable.swift; sourceTree = "<group>"; };
-		4982A7671BCEBF1E0074DB85 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		498E05361B98362100B4E26B /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		498E05381B98362100B4E26B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		498E053A1B98362100B4E26B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -116,6 +113,7 @@
 		49EC398A1B93085E002938E1 /* StyleRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleRule.swift; sourceTree = "<group>"; };
 		49EC39921B9373B2002938E1 /* Stylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylable.swift; sourceTree = "<group>"; };
 		49F93D713838E2D8C15F2D70 /* Pods-GaikanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaikanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GaikanTests/Pods-GaikanTests.release.xcconfig"; sourceTree = "<group>"; };
+		49FD8A631CD16652004F2979 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		58FCFF7171F4F384215361A2 /* Pods_GaikanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaikanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E1E5EEB5FAF534C619EC20B /* Pods-GaikanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaikanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GaikanTests/Pods-GaikanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAFCDA4E1C592BBC004513D3 /* Corners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
@@ -242,15 +240,6 @@
 			path = Value;
 			sourceTree = "<group>";
 		};
-		4982A7641BCEBE600074DB85 /* Theme */ = {
-			isa = PBXGroup;
-			children = (
-				4982A7651BCEBE7A0074DB85 /* Themable.swift */,
-				4982A7671BCEBF1E0074DB85 /* Theme.swift */,
-			);
-			path = Theme;
-			sourceTree = "<group>";
-		};
 		498E05371B98362100B4E26B /* Sample */ = {
 			isa = PBXGroup;
 			children = (
@@ -316,7 +305,7 @@
 				4970A8151BD4455900BCB3BA /* Property */,
 				49EC397E1B92FF2F002938E1 /* Style */,
 				49CF5F941BA4834B00216E6D /* Swift */,
-				4982A7641BCEBE600074DB85 /* Theme */,
+				49FD8A611CD16652004F2979 /* Theme */,
 				492C1B421BE0C81E000515B9 /* UIKit */,
 			);
 			path = Gaikan;
@@ -344,6 +333,14 @@
 				49C8F7E81C1A33F400FF33DC /* StyleState.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		49FD8A611CD16652004F2979 /* Theme */ = {
+			isa = PBXGroup;
+			children = (
+				49FD8A631CD16652004F2979 /* Theme.swift */,
+			);
+			path = Theme;
 			sourceTree = "<group>";
 		};
 		97E0955C1C774D94F578914F /* Pods */ = {
@@ -571,7 +568,6 @@
 				49EC398B1B93085E002938E1 /* StyleRule.swift in Sources */,
 				49C8F7E91C1A33F400FF33DC /* StyleState.swift in Sources */,
 				49EC39931B9373B2002938E1 /* Stylable.swift in Sources */,
-				4982A7681BCEBF1E0074DB85 /* Theme.swift in Sources */,
 				492C1B5B1BE0C9DF000515B9 /* ViewStyleRenderer.swift in Sources */,
 				49B00DF01BF8EF3D0098FECE /* UIImage.swift in Sources */,
 				492C1B631BE0CAD0000515B9 /* UILabel.swift in Sources */,
@@ -580,12 +576,12 @@
 				492C1B571BE0C9DF000515B9 /* UIControl.swift in Sources */,
 				49B674BC1BEE814B007D1BE2 /* BackgroundRenderer.swift in Sources */,
 				49CF5F971BA4835800216E6D /* Dictionary.swift in Sources */,
+				49FD8A651CD16652004F2979 /* Theme.swift in Sources */,
 				49A4F5581C1A3C7600D2A392 /* StylePseudoState.swift in Sources */,
 				49D1BF851BDD506300348D3D /* AssociatedObject.swift in Sources */,
 				4970A8171BD4459300BCB3BA /* Property.swift in Sources */,
 				4912E9821BEB905A00C0DA4A /* Background.swift in Sources */,
 				420190861C80B60F00B70169 /* UINavigationBar.swift in Sources */,
-				4982A7661BCEBE7A0074DB85 /* Themable.swift in Sources */,
 				492C1B5A1BE0C9DF000515B9 /* UIView.swift in Sources */,
 				49DBD9021BCAAF110069B0C2 /* Style.swift in Sources */,
 				492C1B591BE0C9DF000515B9 /* UISwitch.swift in Sources */,

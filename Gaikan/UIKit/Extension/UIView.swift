@@ -9,11 +9,10 @@
 import Foundation
 import KVOController
 
-var ViewStyleNameAttribute = "ViewStyleNameAttribute"
 var ViewStyleStateAttribute = "ViewStyleStateAttribute"
 
 extension UIView : Stylable {
-    @IBInspectable public var styleClass: Style? {
+    public var styleClass: Style? {
         get {
             let value = objc_getAssociatedObject(self, &StylableStylesRefAttribute) as? AssociatedObject<Style?>
 

@@ -255,6 +255,14 @@
 			path = Sample;
 			sourceTree = "<group>";
 		};
+		49C306561CD902D800CABDF4 /* InterfaceBuilder */ = {
+			isa = PBXGroup;
+			children = (
+				49C306571CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift */,
+			);
+			path = InterfaceBuilder;
+			sourceTree = "<group>";
+		};
 		49CF5F941BA4834B00216E6D /* Swift */ = {
 			isa = PBXGroup;
 			children = (
@@ -302,6 +310,7 @@
 			children = (
 				49EC39671B92FC7D002938E1 /* Gaikan.h */,
 				49EC39691B92FC7D002938E1 /* Info.plist */,
+				49C306561CD902D800CABDF4 /* InterfaceBuilder */,
 				4970A8151BD4455900BCB3BA /* Property */,
 				49EC397E1B92FF2F002938E1 /* Style */,
 				49CF5F941BA4834B00216E6D /* Swift */,
@@ -566,6 +575,7 @@
 			files = (
 				4970A81A1BD445DB00BCB3BA /* Border.swift in Sources */,
 				49EC398B1B93085E002938E1 /* StyleRule.swift in Sources */,
+				49C306581CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift in Sources */,
 				49C8F7E91C1A33F400FF33DC /* StyleState.swift in Sources */,
 				49EC39931B9373B2002938E1 /* Stylable.swift in Sources */,
 				492C1B5B1BE0C9DF000515B9 /* ViewStyleRenderer.swift in Sources */,

@@ -21,8 +21,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
 
         self.customView = self.view as! CustomView
-        self.customView.styleTheme = RailTheme()
-        
+
         self.navigationController?.navigationBar.titleStyle.applyStyle(titleStyle)
     }
 }

@@ -19,37 +19,17 @@ public class VirtualView<TargetView: UIView> : NSObject, Stylable {
     public var styleClass: Style? {
         didSet { self.computeStyle() }
     }
+
+    public var styleInline: StyleRule? {
+        didSet { self.computeStyle() }
+    }
     
     public var styleState: String? {
-        didSet {
-            self.computeStyle()
-        }
+        didSet { self.computeStyle() }
     }
-    
+
     public func updateStyle() {
         self.targetView.updateStyle()
-    }
-    
-    public func computeStyle() {
-        guard let style = self.styleClass else {
-            self.computedStyle = self.styleInline
-
-            return
-        }
-
-        let states = StyleState.states(fromView: self.targetView)
-        var computedStyle = style.style
-
-        for state in states {
-            computedStyle = style.states[state].map { return $0.extends(computedStyle) } ?? computedStyle
-        }
-
-        if let styleInline = self.styleInline {
-            self.computedStyle = styleInline.extends(computedStyle)
-        }
-        else {
-            self.computedStyle = computedStyle
-        }
     }
 
     public static func keyPathsAffectingStyle() -> [String] {

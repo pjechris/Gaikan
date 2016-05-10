@@ -10,11 +10,13 @@ import Foundation
 import KVOController
 
 var ViewStyleStateAttribute = "ViewStyleStateAttribute"
+var ViewStyleClassAttr = "ViewStyleClassAttr"
+var ViewStyleInlineAttr = "ViewStyleInlineAttr"
 
 extension UIView : Stylable {
     public var styleClass: Style? {
         get {
-            let value = objc_getAssociatedObject(self, &StylableStylesRefAttribute) as? AssociatedObject<Style?>
+            let value = objc_getAssociatedObject(self, &ViewStyleClassAttr) as? AssociatedObject<Style?>
 
             return value.map { $0.value } ?? nil
         }
@@ -27,7 +29,19 @@ extension UIView : Stylable {
                 self.unregisterStyleKeyPaths()
             }
 
-            objc_setAssociatedObject(self, &StylableStylesRefAttribute, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            objc_setAssociatedObject(self, &ViewStyleClassAttr, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+            self.computeStyle()
+        }
+    }
+
+    public var styleInline: StyleRule? {
+        get {
+            let value = objc_getAssociatedObject(self, &ViewStyleInlineAttr) as? AssociatedObject<StyleRule>
+
+            return value.map { $0.value }
+        }
+        set {
+            objc_setAssociatedObject(self, &ViewStyleInlineAttr, newValue.map { AssociatedObject($0) }, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.computeStyle()
         }
     }
@@ -46,28 +60,6 @@ extension UIView : Stylable {
         }
 
         ViewStyleRenderer.render(self, styleRule: computedStyle)
-    }
-
-    public func computeStyle() {
-        guard let style = self.styleClass else {
-            self.computedStyle = self.styleInline
-
-            return
-        }
-
-        let states = StyleState.states(fromView: self)
-        var computedStyle = style.style
-
-        for state in states {
-            computedStyle = style.states[state].map { return $0.extends(computedStyle) } ?? computedStyle
-        }
-
-        if let styleInline = self.styleInline {
-            self.computedStyle = styleInline.extends(computedStyle)
-        }
-        else {
-        self.computedStyle = computedStyle
-    }
     }
 
     public class func keyPathsAffectingStyle() -> [String] {

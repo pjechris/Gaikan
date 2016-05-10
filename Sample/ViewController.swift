@@ -22,7 +22,7 @@ class ViewController: UIViewController {
 
         self.customView = self.view as! CustomView
 
-        self.navigationController?.navigationBar.titleStyle.applyStyle(titleStyle)
+        self.navigationController?.navigationBar.titleStyle.styleInline = titleStyle
     }
 }
 

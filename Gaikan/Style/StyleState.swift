@@ -14,10 +14,10 @@ enum StyleState {
 }
 
 extension StyleState {
-    static func states<T: UIView where T:Stylable>(fromView view: T) -> [StyleState] {
+    static func states<T:Stylable>(element: T) -> [StyleState] {
         var states: [StyleState] = []
 
-        if let control = view as? UIControl {
+        if let control = element as? UIControl {
             if (control.highlighted) {
                 states.append(.PseudoState(.Highlighted))
             }
@@ -37,7 +37,7 @@ extension StyleState {
             }
         }
 
-        if let customState = view.styleState {
+        if let customState = element.styleState {
             states.append(.Custom(customState))
         }
         

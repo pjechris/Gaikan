@@ -8,7 +8,6 @@
 
 import Foundation
 
-var StylableStyleInlineAttr = "StylableStyleInlineAttr"
 var ComputedStyleAttribute = "ComputedStyleAttribute"
 
 /**
@@ -19,28 +18,14 @@ public protocol Stylable : class {
     var styleInline: StyleRule? { get set }
     var styleState: String? { get }
 
-    var computedStyle: StyleRule? { get }
-
     func updateStyle()
-    func computeStyle()
 
     static func keyPathsAffectingStyle() -> [String]
 }
 
 extension Stylable {
-    public var styleInline: StyleRule? {
-        get {
-            let value = objc_getAssociatedObject(self, &StylableStyleInlineAttr) as? AssociatedObject<StyleRule>
 
-            return value.map { $0.value }
-        }
-        set {
-            objc_setAssociatedObject(self, &StylableStyleInlineAttr, newValue.map { AssociatedObject($0) }, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            self.computeStyle()
-        }
-    }
-
-    public var computedStyle: StyleRule? {
+    public internal(set) var computedStyle: StyleRule? {
         get {
             let value = objc_getAssociatedObject(self, &ComputedStyleAttribute) as? AssociatedObject<StyleRule>
 
@@ -49,6 +34,28 @@ extension Stylable {
         set {
             objc_setAssociatedObject(self, &ComputedStyleAttribute, newValue.map { AssociatedObject($0) }, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
             self.updateStyle()
+        }
+    }
+
+    public func computeStyle() {
+        guard let style = self.styleClass else {
+            self.computedStyle = self.styleInline
+
+            return
+        }
+
+        let states = StyleState.states(self)
+        var computedStyle = style.style
+
+        for state in states {
+            computedStyle = style.states[state].map { return $0.extends(computedStyle) } ?? computedStyle
+        }
+
+        if let styleInline = self.styleInline {
+            self.computedStyle = styleInline.extends(computedStyle)
+        }
+        else {
+            self.computedStyle = computedStyle
         }
     }
 }

@@ -19,14 +19,14 @@ class UILabelSpec: QuickSpec {
             label = UILabel()
         }
 
-        describe("applyStyle") {
+        describe("styleInline") {
             var style: StyleRule!
 
             context("when giving style") {
                 it("should inherit view styles") {
                     style = [ .TintColor: UIColor.blueColor() ]
 
-                    label.applyStyle(style)
+                    label.styleInline = style
 
                     expect(label.tintColor) == UIColor.blueColor()
                 }
@@ -34,7 +34,7 @@ class UILabelSpec: QuickSpec {
                 it("should apply color") {
                     style = [ .Color: UIColor.redColor() ]
 
-                    label.applyStyle(style)
+                    label.styleInline = style
 
                     expect(label.textColor) == UIColor.redColor()
                 }

@@ -20,7 +20,7 @@ class UIViewSpec: QuickSpec {
             view = UIView()
         }
 
-        describe("applyStyle") {
+        describe("styleInline") {
             var style: StyleRule!
 
             context("when giving style") {
@@ -28,7 +28,7 @@ class UIViewSpec: QuickSpec {
                 it("should apply tintColor") {
                     style = [ .TintColor: UIColor.redColor()]
 
-                    view.applyStyle(style)
+                    view.styleInline = style
 
                     expect(view.tintColor) == UIColor.redColor()
                 }
@@ -36,7 +36,7 @@ class UIViewSpec: QuickSpec {
                 it("should apply border") {
                     style = [ .Border: Border(width: 3, color: UIColor.blackColor()) ]
 
-                    view.applyStyle(style)
+                    view.styleInline = style
 
                     expect(view.layer.borderWidth) == 3
                     expect(view.layer.borderColor.map { UIColor(CGColor: $0) }).to(equal(UIColor.blackColor()))
@@ -45,7 +45,7 @@ class UIViewSpec: QuickSpec {
                 it("should apply visible") {
                     style = [ .Visible: false ]
 
-                    view.applyStyle(style)
+                    view.styleInline = style
                     
                     expect(view.hidden) == true
                 }

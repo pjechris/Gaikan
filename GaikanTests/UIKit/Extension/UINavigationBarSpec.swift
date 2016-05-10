@@ -19,14 +19,14 @@ class UINavigationBarSpec: QuickSpec {
             navigationBar = UINavigationBar()
         }
 
-        describe("applyStyle") {
+        describe("styleInline") {
             var style: StyleRule!
 
             context("when giving style") {
                 it("should inherit view styles") {
                     style = [ .TintColor: UIColor.blueColor() ]
 
-                    navigationBar.applyStyle(style)
+                    navigationBar.styleInline = style
 
                     expect(navigationBar.tintColor) == UIColor.blueColor()
                 }
@@ -34,7 +34,7 @@ class UINavigationBarSpec: QuickSpec {
                 it("should apply a title font") {
                     style = [ .Font: UIFont.systemFontOfSize(42.0) ]
 
-                    navigationBar.titleStyle.applyStyle(style)
+                    navigationBar.titleStyle.styleInline = style
 
                     expect(navigationBar.titleTextAttributes![NSFontAttributeName] as? UIFont) == UIFont.systemFontOfSize(42.0)
                 }
@@ -42,7 +42,7 @@ class UINavigationBarSpec: QuickSpec {
                 it("should apply a foreground color to the title") {
                     style = [ .Color: UIColor.blueColor() ]
                     
-                    navigationBar.titleStyle.applyStyle(style)
+                    navigationBar.titleStyle.styleInline = style
                     
                     expect(navigationBar.titleTextAttributes![NSForegroundColorAttributeName] as? UIColor) == UIColor.blueColor()
                 }
@@ -53,7 +53,7 @@ class UINavigationBarSpec: QuickSpec {
                     
                     style = [ .TextShadow: shadow ]
                     
-                    navigationBar.titleStyle.applyStyle(style)
+                    navigationBar.titleStyle.styleInline = style
                     
                     expect(navigationBar.titleTextAttributes![NSShadowAttributeName] as? NSShadow) == shadow
                 }

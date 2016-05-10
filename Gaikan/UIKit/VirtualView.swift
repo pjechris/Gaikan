@@ -32,23 +32,26 @@ public class VirtualView<TargetView: UIView> : NSObject, Stylable {
     
     public func computeStyle() {
         guard let style = self.styleClass else {
+            self.computedStyle = self.styleInline
+
             return
         }
-        
+
         let states = StyleState.states(fromView: self.targetView)
         var computedStyle = style.style
-        
+
         for state in states {
-            computedStyle = style.states[state].map { $0.extends(computedStyle) } ?? computedStyle
+            computedStyle = style.states[state].map { return $0.extends(computedStyle) } ?? computedStyle
         }
-        
-        self.computedStyle = computedStyle
+
+        if let styleInline = self.styleInline {
+            self.computedStyle = styleInline.extends(computedStyle)
+        }
+        else {
+            self.computedStyle = computedStyle
+        }
     }
-    
-    public func applyStyle(style: StyleRule) {
-        self.computedStyle = style
-    }
-    
+
     public static func keyPathsAffectingStyle() -> [String] {
         return []
     }

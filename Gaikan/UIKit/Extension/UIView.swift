@@ -50,6 +50,8 @@ extension UIView : Stylable {
 
     public func computeStyle() {
         guard let style = self.styleClass else {
+            self.computedStyle = self.styleInline
+
             return
         }
 
@@ -60,11 +62,12 @@ extension UIView : Stylable {
             computedStyle = style.states[state].map { return $0.extends(computedStyle) } ?? computedStyle
         }
 
+        if let styleInline = self.styleInline {
+            self.computedStyle = styleInline.extends(computedStyle)
+        }
+        else {
         self.computedStyle = computedStyle
     }
-
-    public func applyStyle(style: StyleRule) {
-        self.computedStyle = style
     }
 
     public class func keyPathsAffectingStyle() -> [String] {

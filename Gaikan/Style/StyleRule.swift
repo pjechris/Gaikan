@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ *  Defines design properties with their values.
+ */
 public struct StyleRule : DictionaryLiteralConvertible {
     public typealias Key = Property
     public typealias Value = Any?

@@ -11,13 +11,18 @@ import Foundation
 var ComputedStyleAttribute = "ComputedStyleAttribute"
 
 /**
- Define methods allow an object to apply a StyleRule to style itself
+ Applies a `Style` or a `StyleRule` on an object
 */
 public protocol Stylable : class {
+    /// `Style` class to apply. Calls `computeStyle` when changed
     var styleClass: Style? { get set }
+    /// Style specific to the object. Has precedence over `styleClass`.
+    /// Works like `style` in HTML.
     var styleInline: StyleRule? { get set }
+    /// Custom style state. If defined `computedStyle` will merge state style with "default" state style
     var styleState: String? { get }
 
+    /// Re-applies computed style
     func updateStyle()
 
     static func keyPathsAffectingStyle() -> [String]
@@ -25,6 +30,8 @@ public protocol Stylable : class {
 
 extension Stylable {
 
+    /// Result `StyleRule` from `styleClass` (including `styleState`) + `styleInline`.
+    /// When changed it calls `updateStyle` to apply it.
     public internal(set) var computedStyle: StyleRule? {
         get {
             let value = objc_getAssociatedObject(self, &ComputedStyleAttribute) as? AssociatedObject<StyleRule>
@@ -37,7 +44,8 @@ extension Stylable {
         }
     }
 
-    public func computeStyle() {
+    /// Calculates style and store it into `computedStyle`
+    internal func computeStyle() {
         guard let style = self.styleClass else {
             self.computedStyle = self.styleInline
 

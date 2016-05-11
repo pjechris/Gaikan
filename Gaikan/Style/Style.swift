@@ -8,6 +8,9 @@
 
 import Foundation
 
+/**
+ *  Defines a `StyleRule` on which you can apply supplemntary `StylePseudoState` states.
+ */
 public struct Style : DictionaryLiteralConvertible {
     internal private(set) var style: StyleRule
     internal private(set) var states: [StyleState:StyleRule] = [:]

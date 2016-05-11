@@ -6,36 +6,30 @@
 Gaikan gives you powerful styling capabilities using a declarative DSL in Swift.
 _Inspired by_ <a href="https://speakerdeck.com/vjeux/react-css-in-js">React: CSS in JS</a> and <a href="http://glenmaddern.com/articles/css-modules">CSS modules</a>.
 
-To style UIView(s) just give them a ```Style``` object:
+To style UIView(s) just give them a ```StyleRule``` object:
 
 ```Swift
 
-let myLabelStyle: Style = [
-  .Color: UIColor.redColor(),
-  .Border: Border(width: 1, color: UIColor.greenColor()),
-  .Font: UIFont(name: "Courier", size: 24),        
-]
-/// OR
 let myLabelStyle = StyleRule() { (inout style: StyleRule) -> () in
   style.color = UIColor.redColor()
   style.border = Border(width: 1, color: UIColor.greenColor())
   style.font = UIFont(name: "Courier", size: 24)
 }
 
-self.label.applyStyle(myLabelStyle)
+self.label.styleInline = myLabelStyle
 
 ```
 
-Check out the sample to see how to integrate Gaikan into a project.
+Check out the sample to see how to well integrate Gaikan into a project.
 
 <img src="Doc/Screen/gaikan.png" width="400" />
 
 ## Features
 
-* Apply a simple ```Style``` struct style to your views...
-* ... or use ```styleName``` to apply a style from a style list
-* You can reuse styles using ```extends``` method
-* You can style depending on your control state (enabled, highlighted, ...)
+* Apply a simple style using ```styleInline```....
+* ... or make theming using ```styleClass``` (see below for more information).
+* You can share styles using ```extends``` method to avoid repeating yourself.
+* You can style depending on your control state (enabled, highlighted, ...).
 
 ## Properties
 
@@ -75,24 +69,21 @@ Run the following command from your project folder:
 pod install Gaikan
 ```
 
-### Carthage
-
-Add the following line to your Cartfile:
-
-```
-github "akane/Gaikan"
-```
-
 ## Advanced usage
 
 ### Theme
 
-Manually defining a ```Style``` object for each view is cumbersome.
-Most of the time what you'll really want to do is defining a ```Theme```: a
-```Theme``` packages together multiple ```Style``` definitions for a ```Themable``` view.
+```Theme``` packages together multiple ```Style``` definitions to make a whole set.
 
 ```Swift
-class CustomView: UIView, Themable {
+
+public class SampleTheme : Theme {
+  /// Non static is important if you want to reference them from InterfaceBuilder
+  lazy let logo = Style(...)
+  lazy let title = Style(...)
+}
+
+class CustomView: UIView {
   typealias ThemeType = RailTheme
 
   @IBOutlet weak var title: UILabel!
@@ -100,30 +91,21 @@ class CustomView: UIView, Themable {
   @IBOutlet weak var logo: UIImageView!
   @IBOutlet weak var button: UIButton!
 
-  func stylableThemeItems() -> [Stylable] {
-    return [self, self.title, self.footnote, self.logo, self.button]
-  }
-
   override func awakeFromNib() {
-    self.title.styleName = "title"
-    self.logo.styleName = "home-logo"
+    self.title.styleClass = SampleTheme().logo
+    self.logo.styleClass = SampleTheme().title
   }
-}
-
-public class RailTheme : Theme {
-    public func styles() -> [String : Style] {
-        return [
-            "home-logo": Style(...),
-            "title": Style(...)
-        ]
-    }
 }
 
 ```
 
+You can also apply themes right from InterfaceBuilder:
+
+<img src="Doc/Screen/ib-styleclass.png" width="400" />
+
 ### Extends
 
-You can extend your styles to reuse common features
+You can extend your styles to reuse common features:
 
 ```Swift
 func primary() -> Style {
@@ -138,7 +120,7 @@ func large() -> Style {
   ]
 }
 
-func merged() ->  {
+func merged() -> Style {
   return Style().extends(primary(), large())
   // color: green, font: 18
 }
@@ -154,7 +136,7 @@ func style() -> Style {
   return [
     .TintColor: UIColor.whiteColor()
   ]
-  .include(.Selected, attributes: [
+  .state(.Selected, attributes: [
       .TintColor: UIColor.grayColor().colorWithAlphaComponent(0.6)
   ]
 }

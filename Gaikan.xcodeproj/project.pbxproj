@@ -51,6 +51,7 @@
 		49EC39931B9373B2002938E1 /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39921B9373B2002938E1 /* Stylable.swift */; };
 		49FD8A651CD16652004F2979 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FD8A631CD16652004F2979 /* Theme.swift */; };
 		593205EC54C9AFF876D912B2 /* Pods_GaikanTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58FCFF7171F4F384215361A2 /* Pods_GaikanTests.framework */; };
+		5F1439501CF7A3380055C56C /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5F14394F1CF7A3380055C56C /* KVOController.framework */; };
 		CAFCDA4F1C592BBC004513D3 /* Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFCDA4E1C592BBC004513D3 /* Corners.swift */; };
 /* End PBXBuildFile section */
 
@@ -123,6 +124,7 @@
 		49F93D713838E2D8C15F2D70 /* Pods-GaikanTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaikanTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-GaikanTests/Pods-GaikanTests.release.xcconfig"; sourceTree = "<group>"; };
 		49FD8A631CD16652004F2979 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		58FCFF7171F4F384215361A2 /* Pods_GaikanTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GaikanTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5F14394F1CF7A3380055C56C /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Build/iOS/KVOController.framework; sourceTree = "<group>"; };
 		8E1E5EEB5FAF534C619EC20B /* Pods-GaikanTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GaikanTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-GaikanTests/Pods-GaikanTests.debug.xcconfig"; sourceTree = "<group>"; };
 		CAFCDA4E1C592BBC004513D3 /* Corners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -139,6 +141,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5F1439501CF7A3380055C56C /* KVOController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -385,6 +388,7 @@
 			children = (
 				3971B328ADBE03773776917F /* Pods.framework */,
 				58FCFF7171F4F384215361A2 /* Pods_GaikanTests.framework */,
+				5F14394F1CF7A3380055C56C /* KVOController.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -793,6 +797,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Gaikan/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
@@ -811,6 +819,10 @@
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
 				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Gaikan/Info.plist;
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";

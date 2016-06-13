@@ -39,6 +39,7 @@
 		49C306551CD8FD2900CABDF4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C306541CD8FD2900CABDF4 /* Gradient.swift */; };
 		49C306581CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C306571CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift */; };
 		49C8F7E91C1A33F400FF33DC /* StyleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8F7E81C1A33F400FF33DC /* StyleState.swift */; };
+		49CF3E291D0EF48200AF89E6 /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CF3E281D0EF48200AF89E6 /* KVOController.framework */; };
 		49CF5F971BA4835800216E6D /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF5F961BA4835800216E6D /* Dictionary.swift */; };
 		49CF5F991BA4866B00216E6D /* StyleRuleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */; };
 		49D1BF831BDD4A8700348D3D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1BF821BDD4A8700348D3D /* CustomView.swift */; };
@@ -105,6 +106,7 @@
 		49C306541CD8FD2900CABDF4 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		49C306571CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+InterfaceBuilder.swift"; sourceTree = "<group>"; };
 		49C8F7E81C1A33F400FF33DC /* StyleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleState.swift; sourceTree = "<group>"; };
+		49CF3E281D0EF48200AF89E6 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Build/iOS/KVOController.framework; sourceTree = "<group>"; };
 		49CF5F961BA4835800216E6D /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleRuleSpec.swift; sourceTree = "<group>"; };
 		49D1BF821BDD4A8700348D3D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -127,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CF3E291D0EF48200AF89E6 /* KVOController.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -299,6 +302,7 @@
 		49EC395A1B92FC7D002938E1 = {
 			isa = PBXGroup;
 			children = (
+				49CF3E281D0EF48200AF89E6 /* KVOController.framework */,
 				49EC39661B92FC7D002938E1 /* Gaikan */,
 				49EC39721B92FC7D002938E1 /* GaikanTests */,
 				498E05371B98362100B4E26B /* Sample */,
@@ -384,6 +388,7 @@
 				498E05321B98362100B4E26B /* Sources */,
 				498E05331B98362100B4E26B /* Frameworks */,
 				498E05341B98362100B4E26B /* Resources */,
+				49CF3E271D0EF41A00AF89E6 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -499,6 +504,24 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		49CF3E271D0EF41A00AF89E6 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/KVOController.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		498E05321B98362100B4E26B /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -599,6 +622,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -611,6 +638,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = Sample/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

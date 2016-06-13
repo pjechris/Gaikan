@@ -40,6 +40,9 @@
 		49C306581CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C306571CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift */; };
 		49C8F7E91C1A33F400FF33DC /* StyleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8F7E81C1A33F400FF33DC /* StyleState.swift */; };
 		49CF3E291D0EF48200AF89E6 /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CF3E281D0EF48200AF89E6 /* KVOController.framework */; };
+		49CF3E2D1D0EF81B00AF89E6 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CF3E2B1D0EF81B00AF89E6 /* Nimble.framework */; };
+		49CF3E2E1D0EF81B00AF89E6 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CF3E2C1D0EF81B00AF89E6 /* Quick.framework */; };
+		49CF3E2F1D0EF93900AF89E6 /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CF3E281D0EF48200AF89E6 /* KVOController.framework */; };
 		49CF5F971BA4835800216E6D /* Dictionary.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF5F961BA4835800216E6D /* Dictionary.swift */; };
 		49CF5F991BA4866B00216E6D /* StyleRuleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */; };
 		49D1BF831BDD4A8700348D3D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1BF821BDD4A8700348D3D /* CustomView.swift */; };
@@ -107,6 +110,8 @@
 		49C306571CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+InterfaceBuilder.swift"; sourceTree = "<group>"; };
 		49C8F7E81C1A33F400FF33DC /* StyleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleState.swift; sourceTree = "<group>"; };
 		49CF3E281D0EF48200AF89E6 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Build/iOS/KVOController.framework; sourceTree = "<group>"; };
+		49CF3E2B1D0EF81B00AF89E6 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
+		49CF3E2C1D0EF81B00AF89E6 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		49CF5F961BA4835800216E6D /* Dictionary.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Dictionary.swift; sourceTree = "<group>"; };
 		49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleRuleSpec.swift; sourceTree = "<group>"; };
 		49D1BF821BDD4A8700348D3D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
@@ -144,6 +149,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				49CF3E2F1D0EF93900AF89E6 /* KVOController.framework in Frameworks */,
+				49CF3E2D1D0EF81B00AF89E6 /* Nimble.framework in Frameworks */,
+				49CF3E2E1D0EF81B00AF89E6 /* Quick.framework in Frameworks */,
 				49EC396F1B92FC7D002938E1 /* Gaikan.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -302,6 +310,8 @@
 		49EC395A1B92FC7D002938E1 = {
 			isa = PBXGroup;
 			children = (
+				49CF3E2B1D0EF81B00AF89E6 /* Nimble.framework */,
+				49CF3E2C1D0EF81B00AF89E6 /* Quick.framework */,
 				49CF3E281D0EF48200AF89E6 /* KVOController.framework */,
 				49EC39661B92FC7D002938E1 /* Gaikan */,
 				49EC39721B92FC7D002938E1 /* GaikanTests */,
@@ -425,6 +435,7 @@
 				49EC396A1B92FC7D002938E1 /* Sources */,
 				49EC396B1B92FC7D002938E1 /* Frameworks */,
 				49EC396C1B92FC7D002938E1 /* Resources */,
+				49CF3E2A1D0EF7E900AF89E6 /* Carthage */,
 			);
 			buildRules = (
 			);
@@ -511,6 +522,23 @@
 			files = (
 			);
 			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/KVOController.framework",
+			);
+			name = Carthage;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "/usr/local/bin/carthage copy-frameworks";
+		};
+		49CF3E2A1D0EF7E900AF89E6 /* Carthage */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Nimble.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Quick.framework",
 				"$(SRCROOT)/Carthage/Build/iOS/KVOController.framework",
 			);
 			name = Carthage;
@@ -779,6 +807,10 @@
 		49EC397C1B92FC7D002938E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GaikanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Akane.GaikanTests;
@@ -789,6 +821,10 @@
 		49EC397D1B92FC7D002938E1 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
 				INFOPLIST_FILE = GaikanTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = Akane.GaikanTests;

@@ -67,7 +67,7 @@ public extension StyleRule {
 
     public var clip: Bool {
         get { return self[.Clip].map { return $0 as! Bool } ?? false }
-        set { self.attributes[.Clip] = clip }
+        set { self.attributes[.Clip] = newValue }
     }
     
     public var corners: Corners? {

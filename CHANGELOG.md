@@ -1,5 +1,16 @@
 # CHANGELOG
 
+# WIP
+
+## Added
+
+- [Style] Added `textAttributes` on `StyleRule` which convert a style into `NSAttributedString` style attributes
+
+
+## Enhancements
+
+## Bugfixes
+
 # 0.5.0
 
 ## Added

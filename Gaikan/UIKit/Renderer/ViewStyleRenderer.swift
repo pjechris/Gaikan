@@ -46,20 +46,6 @@ internal class ViewStyleRenderer {
     }
     
     final class func render(navigationBar: UINavigationBar, titleStyle: StyleRule) {
-        var attributes = [String: AnyObject]()
-        
-        if let titleForegroundColorAttribute = titleStyle.color {
-            attributes[NSForegroundColorAttributeName] = titleForegroundColorAttribute
-        }
-        
-        if let fontAttribute = titleStyle.font {
-            attributes[NSFontAttributeName] = fontAttribute
-        }
-        
-        if let shadowAttribute = titleStyle.textShadow {
-            attributes[NSShadowAttributeName] = shadowAttribute
-        }
-        
-        navigationBar.titleTextAttributes = attributes
+        navigationBar.titleTextAttributes = titleStyle.textAttributes
     }
 }

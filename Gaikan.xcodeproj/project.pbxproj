@@ -10,10 +10,12 @@
 		420190841C80B4BB00B70169 /* UINavigationBarSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420190831C80B4BB00B70169 /* UINavigationBarSpec.swift */; };
 		420190861C80B60F00B70169 /* UINavigationBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 420190851C80B60F00B70169 /* UINavigationBar.swift */; };
 		42087B221C9AE4B8000606A7 /* VirtualView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 42087B211C9AE4B8000606A7 /* VirtualView.swift */; };
+		490DA08D1D1853FD00A79778 /* Dictionary+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 490DA08C1D1853FD00A79778 /* Dictionary+Helpers.swift */; };
 		4912E9821BEB905A00C0DA4A /* Background.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9811BEB905A00C0DA4A /* Background.swift */; };
 		4912E9861BEB9A9800C0DA4A /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9851BEB9A9800C0DA4A /* Gradient.swift */; };
 		4912E9881BEB9FB000C0DA4A /* CGPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9871BEB9FB000C0DA4A /* CGPoint.swift */; };
 		4912E98A1BEBA03C00C0DA4A /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4912E9891BEBA03C00C0DA4A /* UIColor.swift */; };
+		4917A4C01D17EE1A008B5CB2 /* NSAttributedString+Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4917A4BF1D17EE1A008B5CB2 /* NSAttributedString+Style.swift */; };
 		492C1B571BE0C9DF000515B9 /* UIControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492C1B501BE0C9DF000515B9 /* UIControl.swift */; };
 		492C1B591BE0C9DF000515B9 /* UISwitch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492C1B521BE0C9DF000515B9 /* UISwitch.swift */; };
 		492C1B5A1BE0C9DF000515B9 /* UIView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492C1B531BE0C9DF000515B9 /* UIView.swift */; };
@@ -28,6 +30,7 @@
 		4970A8171BD4459300BCB3BA /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A8161BD4459300BCB3BA /* Property.swift */; };
 		4970A81A1BD445DB00BCB3BA /* Border.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A8191BD445DB00BCB3BA /* Border.swift */; };
 		4970A81C1BD4484F00BCB3BA /* StyleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4970A81B1BD4484F00BCB3BA /* StyleSpec.swift */; };
+		497AD8981D19339A00FF5498 /* Optional+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 497AD8971D19339A00FF5498 /* Optional+Helpers.swift */; };
 		498E05391B98362100B4E26B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E05381B98362100B4E26B /* AppDelegate.swift */; };
 		498E053B1B98362100B4E26B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 498E053A1B98362100B4E26B /* ViewController.swift */; };
 		498E053E1B98362100B4E26B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 498E053C1B98362100B4E26B /* Main.storyboard */; };
@@ -79,10 +82,12 @@
 		420190831C80B4BB00B70169 /* UINavigationBarSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBarSpec.swift; sourceTree = "<group>"; };
 		420190851C80B60F00B70169 /* UINavigationBar.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UINavigationBar.swift; sourceTree = "<group>"; };
 		42087B211C9AE4B8000606A7 /* VirtualView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VirtualView.swift; sourceTree = "<group>"; };
+		490DA08C1D1853FD00A79778 /* Dictionary+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Dictionary+Helpers.swift"; sourceTree = "<group>"; };
 		4912E9811BEB905A00C0DA4A /* Background.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Background.swift; sourceTree = "<group>"; };
 		4912E9851BEB9A9800C0DA4A /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		4912E9871BEB9FB000C0DA4A /* CGPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
 		4912E9891BEBA03C00C0DA4A /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
+		4917A4BF1D17EE1A008B5CB2 /* NSAttributedString+Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSAttributedString+Style.swift"; sourceTree = "<group>"; };
 		492C1B501BE0C9DF000515B9 /* UIControl.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIControl.swift; sourceTree = "<group>"; };
 		492C1B521BE0C9DF000515B9 /* UISwitch.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UISwitch.swift; sourceTree = "<group>"; };
 		492C1B531BE0C9DF000515B9 /* UIView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIView.swift; sourceTree = "<group>"; };
@@ -97,6 +102,7 @@
 		4970A8161BD4459300BCB3BA /* Property.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Property.swift; sourceTree = "<group>"; };
 		4970A8191BD445DB00BCB3BA /* Border.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Border.swift; sourceTree = "<group>"; };
 		4970A81B1BD4484F00BCB3BA /* StyleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleSpec.swift; sourceTree = "<group>"; };
+		497AD8971D19339A00FF5498 /* Optional+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Helpers.swift"; sourceTree = "<group>"; };
 		498E05361B98362100B4E26B /* Sample.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Sample.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		498E05381B98362100B4E26B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		498E053A1B98362100B4E26B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -168,6 +174,16 @@
 				4970A81B1BD4484F00BCB3BA /* StyleSpec.swift */,
 			);
 			path = Style;
+			sourceTree = "<group>";
+		};
+		4917A4BE1D17EE08008B5CB2 /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				4917A4BF1D17EE1A008B5CB2 /* NSAttributedString+Style.swift */,
+				490DA08C1D1853FD00A79778 /* Dictionary+Helpers.swift */,
+				497AD8971D19339A00FF5498 /* Optional+Helpers.swift */,
+			);
+			path = Helpers;
 			sourceTree = "<group>";
 		};
 		492C1B421BE0C81E000515B9 /* UIKit */ = {
@@ -337,6 +353,7 @@
 			children = (
 				49EC39671B92FC7D002938E1 /* Gaikan.h */,
 				49EC39691B92FC7D002938E1 /* Info.plist */,
+				4917A4BE1D17EE08008B5CB2 /* Helpers */,
 				49C306561CD902D800CABDF4 /* InterfaceBuilder */,
 				4970A8151BD4455900BCB3BA /* Property */,
 				49EC397E1B92FF2F002938E1 /* Style */,
@@ -579,6 +596,7 @@
 				49EC39931B9373B2002938E1 /* Stylable.swift in Sources */,
 				492C1B5B1BE0C9DF000515B9 /* ViewStyleRenderer.swift in Sources */,
 				49B00DF01BF8EF3D0098FECE /* UIImage.swift in Sources */,
+				490DA08D1D1853FD00A79778 /* Dictionary+Helpers.swift in Sources */,
 				492C1B631BE0CAD0000515B9 /* UILabel.swift in Sources */,
 				4912E9881BEB9FB000C0DA4A /* CGPoint.swift in Sources */,
 				4912E98A1BEBA03C00C0DA4A /* UIColor.swift in Sources */,
@@ -588,6 +606,7 @@
 				49CF5F971BA4835800216E6D /* Dictionary.swift in Sources */,
 				49FD8A651CD16652004F2979 /* Theme.swift in Sources */,
 				49A4F5581C1A3C7600D2A392 /* StylePseudoState.swift in Sources */,
+				4917A4C01D17EE1A008B5CB2 /* NSAttributedString+Style.swift in Sources */,
 				49D1BF851BDD506300348D3D /* AssociatedObject.swift in Sources */,
 				4970A8171BD4459300BCB3BA /* Property.swift in Sources */,
 				4912E9821BEB905A00C0DA4A /* Background.swift in Sources */,
@@ -595,6 +614,7 @@
 				492C1B5A1BE0C9DF000515B9 /* UIView.swift in Sources */,
 				49DBD9021BCAAF110069B0C2 /* Style.swift in Sources */,
 				492C1B591BE0C9DF000515B9 /* UISwitch.swift in Sources */,
+				497AD8981D19339A00FF5498 /* Optional+Helpers.swift in Sources */,
 				42087B221C9AE4B8000606A7 /* VirtualView.swift in Sources */,
 				4912E9861BEB9A9800C0DA4A /* Gradient.swift in Sources */,
 				CAFCDA4F1C592BBC004513D3 /* Corners.swift in Sources */,

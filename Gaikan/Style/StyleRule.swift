@@ -55,11 +55,13 @@ public struct StyleRule : DictionaryLiteralConvertible {
 }
 
 extension StyleRule {
-    var textAttributes: [String: AnyObject?] {
-        return [
+    public var textAttributes: [String:AnyObject] {
+        let attributes: [String:AnyObject?] = [
             NSForegroundColorAttributeName: self.color,
             NSFontAttributeName: self.font,
             NSShadowAttributeName: self.textShadow
         ]
+
+        return attributes.trimmed()
     }
 }

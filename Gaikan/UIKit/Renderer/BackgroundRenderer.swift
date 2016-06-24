@@ -12,7 +12,11 @@ import UIKit
 internal class BackgroundRenderer {
     final class func render(background: Background, intoView view: UIView) {
         let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let context = CGBitmapContextCreate(nil, Int(view.bounds.size.width), Int(view.bounds.size.height), 8, 0, colorSpace, 6)!
+        let ctx = CGBitmapContextCreate(nil, Int(view.bounds.size.width), Int(view.bounds.size.height), 8, 0, colorSpace, 6)
+
+        guard let context = ctx else {
+            return
+        }
 
         for bg in background.backgrounds {
             bg.render(inContext: context)

@@ -1,7 +1,8 @@
 <h1><img src="Doc/Screen/logo.png" width="550" alt="Gaikan" /></h1>
-[![Build Status](https://travis-ci.org/akane/Gaikan.svg?branch=travis)](https://travis-ci.org/akane/Gaikan)
-[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Gaikan.svg)](https://img.shields.io/cocoapods/v/Gaikan.svg)
 
+[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/Gaikan.svg)](https://img.shields.io/cocoapods/v/Gaikan.svg)
+[![Carthage compatible](https://img.shields.io/badge/Carthage-compatible-4BC51D.svg?style=flat)](https://github.com/Carthage/Carthage)
+[![Build Status](https://travis-ci.org/akane/Gaikan.svg?branch=travis)](https://travis-ci.org/akane/Gaikan)
 
 Gaikan gives you powerful styling capabilities using a declarative DSL in Swift.
 _Inspired by_ <a href="https://speakerdeck.com/vjeux/react-css-in-js">React: CSS in JS</a> and <a href="http://glenmaddern.com/articles/css-modules">CSS modules</a>.
@@ -30,6 +31,7 @@ Check out the sample to see how to well integrate Gaikan into a project.
 * ... or make theming using ```styleClass``` (see below for more information).
 * You can share styles using ```extends``` method to avoid repeating yourself.
 * You can style depending on your control state (enabled, highlighted, ...).
+* You can style `NSAttributedString`!
 
 ## Properties
 
@@ -57,19 +59,13 @@ attributes/objects:
 | ------------------|---------------|------------------------|------------------
 | UINavigationBar   | titleStyle    | Sets title navigation bar style   | 0.4
 
-## Installing
-
-Gaikan can be installed either using [CocoaPods](https://cocoapods.org/) or [Carthage](https://github.com/Carthage/Carthage).
-
-### CocoaPods
-
-Run the following command from your project folder:
-
-```ruby
-pod install Gaikan
-```
-
 ## Advanced usage
+
+### NSAttributedString
+
+Just call `NSAttributedString(string:"Hello", style: yourStyle)` to get a  styled `NSAttributedString`.
+
+Alternatively you can use `style.textAttributes` to transform `StyleRule` into any `NSAttributedString` compatible dictionary.
 
 ### Theme
 

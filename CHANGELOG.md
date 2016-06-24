@@ -4,12 +4,14 @@
 
 ## Added
 
-- [Style] Added `textAttributes` on `StyleRule` which convert a style into `NSAttributedString` style attributes
-
+- Added Carthage support. By [siemensikkema](https://github.com/siemensikkema) [#PR-7](https://github.com/akane/Gaikan/pull/7)
+- [Style] Added `textAttributes` on `StyleRule` which converts a style into `NSAttributedString` style attributes.
 
 ## Enhancements
 
 ## Bugfixes
+
+- [Property] Fixed `clip` attribute not setted correctly.
 
 # 0.5.0
 

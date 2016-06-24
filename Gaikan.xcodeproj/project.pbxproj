@@ -36,6 +36,7 @@
 		49A4F5581C1A3C7600D2A392 /* StylePseudoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4F5571C1A3C7600D2A392 /* StylePseudoState.swift */; };
 		49B00DF01BF8EF3D0098FECE /* UIImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B00DEF1BF8EF3D0098FECE /* UIImage.swift */; };
 		49B674BC1BEE814B007D1BE2 /* BackgroundRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B674BB1BEE814B007D1BE2 /* BackgroundRenderer.swift */; };
+		49B9A23B1D14589200E4DE52 /* StyleRule+DirectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9A23A1D14589200E4DE52 /* StyleRule+DirectAccess.swift */; };
 		49C306551CD8FD2900CABDF4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C306541CD8FD2900CABDF4 /* Gradient.swift */; };
 		49C306581CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C306571CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift */; };
 		49C8F7E91C1A33F400FF33DC /* StyleState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C8F7E81C1A33F400FF33DC /* StyleState.swift */; };
@@ -106,6 +107,7 @@
 		49A4F5571C1A3C7600D2A392 /* StylePseudoState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylePseudoState.swift; sourceTree = "<group>"; };
 		49B00DEF1BF8EF3D0098FECE /* UIImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIImage.swift; sourceTree = "<group>"; };
 		49B674BB1BEE814B007D1BE2 /* BackgroundRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundRenderer.swift; sourceTree = "<group>"; };
+		49B9A23A1D14589200E4DE52 /* StyleRule+DirectAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StyleRule+DirectAccess.swift"; sourceTree = "<group>"; };
 		49C306541CD8FD2900CABDF4 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
 		49C306571CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+InterfaceBuilder.swift"; sourceTree = "<group>"; };
 		49C8F7E81C1A33F400FF33DC /* StyleState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleState.swift; sourceTree = "<group>"; };
@@ -365,6 +367,7 @@
 				49A4F5571C1A3C7600D2A392 /* StylePseudoState.swift */,
 				49EC398A1B93085E002938E1 /* StyleRule.swift */,
 				49C8F7E81C1A33F400FF33DC /* StyleState.swift */,
+				49B9A23A1D14589200E4DE52 /* StyleRule+DirectAccess.swift */,
 			);
 			path = Style;
 			sourceTree = "<group>";
@@ -581,6 +584,7 @@
 				4912E98A1BEBA03C00C0DA4A /* UIColor.swift in Sources */,
 				492C1B571BE0C9DF000515B9 /* UIControl.swift in Sources */,
 				49B674BC1BEE814B007D1BE2 /* BackgroundRenderer.swift in Sources */,
+				49B9A23B1D14589200E4DE52 /* StyleRule+DirectAccess.swift in Sources */,
 				49CF5F971BA4835800216E6D /* Dictionary.swift in Sources */,
 				49FD8A651CD16652004F2979 /* Theme.swift in Sources */,
 				49A4F5581C1A3C7600D2A392 /* StylePseudoState.swift in Sources */,

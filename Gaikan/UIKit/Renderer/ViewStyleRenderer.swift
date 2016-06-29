@@ -24,6 +24,7 @@ internal class ViewStyleRenderer {
         stylable.tintColor = styleRule.tintColor
         stylable.hidden = !visible
         stylable.alpha = CGFloat(styleRule.opacity / 100)
+        stylable.layoutMargins = styleRule.margin ?? stylable.layoutMargins
 
         if let background = styleRule.background {
             BackgroundRenderer.render(Background(background), intoView: stylable)
@@ -36,9 +37,12 @@ internal class ViewStyleRenderer {
     }
 
     final class func render(button: UIButton, styleRule: StyleRule) {
-        self.render(button.titleLabel!, styleRule: styleRule)
+        if let titleLabel = button.titleLabel {
+            self.render(titleLabel, styleRule: styleRule)
+        }
 
         button.setTitleColor(styleRule.color, forState: .Normal)
+        button.contentEdgeInsets = styleRule.margin ?? button.contentEdgeInsets
     }
 
     final class func render(textField: UITextField, styleRule: StyleRule) {

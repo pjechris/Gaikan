@@ -39,6 +39,11 @@ public extension StyleRule {
         set { self.attributes[.Font] = newValue }
     }
 
+    public var margin: UIEdgeInsets? {
+        get { return self[.Margin].map { return $0 as! UIEdgeInsets } }
+        set { self.attributes[.Margin] = newValue }
+    }
+
     /// value must be between 0 and 100
     /// default is 100
     public var opacity: Double {

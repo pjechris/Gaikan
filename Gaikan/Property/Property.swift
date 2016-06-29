@@ -17,6 +17,8 @@ public enum Property {
     case Color
     case CornerRadius
     case Font
+    /// view layoutMargins
+    case Margin
     case Opacity
     case TextAlign
     case TextShadow

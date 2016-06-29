@@ -46,6 +46,7 @@ may not have any effect. Here are all the available style properties you can use
 | Color         | UILabel   | Sets the text color             | 0.1
 | CornerRadius  | UIView    | Sets the view layer corner radius | 0.4
 | Font          | UILabel   | Sets the text font              | 0.1
+| Margin        | UIView    | Sets view layoutMargins (or button title inset) | 0.6
 | Opacity       | UIView    | Change the view alpha (0...1)   | 0.4
 | TextAlign     | UILabel   | Text horizontal alignment       | 0.2
 | TintColor     | UIView    | Sets the tint color             | 0.1

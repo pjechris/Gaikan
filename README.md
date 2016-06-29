@@ -49,8 +49,9 @@ may not have any effect. Here are all the available style properties you can use
 | Margin        | UIView    | Sets view layoutMargins (or button title inset) | 0.6
 | Opacity       | UIView    | Change the view alpha (0...1)   | 0.4
 | TextAlign     | UILabel   | Text horizontal alignment       | 0.2
+| TextOverflow  | UILabel   | Specifies how overflow text is truncated | 0.6
 | TintColor     | UIView    | Sets the tint color             | 0.1
-| Transform     | UIview    | Apply transforms (rotation, ...)| 0.4
+| Transform     | UIView    | Apply transforms (rotation, ...)| 0.4
 | Visible       | UIView    | Sets the view hidden property   | 0.1
 
 Starting with 0.4, we also added `VirtualView`. This allow you to apply style effects on some non `UIView`

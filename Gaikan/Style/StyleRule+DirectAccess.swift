@@ -56,6 +56,11 @@ public extension StyleRule {
         set { self.attributes[.TextAlign] = newValue }
     }
 
+    public var textOverflow: NSLineBreakMode? {
+        get { return self[.TextOverflow].map { return $0 as! NSLineBreakMode } }
+        set { self.attributes[.TextOverflow] = newValue }
+    }
+
     public var tintColor: UIColor? {
         get { return self[.TintColor].map { return $0 as! UIColor } }
         set { self.attributes[.TintColor] = newValue }

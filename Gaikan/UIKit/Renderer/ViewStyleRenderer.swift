@@ -34,6 +34,7 @@ internal class ViewStyleRenderer {
     final class func render(stylable: UILabel, styleRule: StyleRule) {
         stylable.font = styleRule.font
         stylable.textColor = styleRule.color
+        stylable.lineBreakMode = styleRule.textOverflow ?? .ByTruncatingTail
     }
 
     final class func render(button: UIButton, styleRule: StyleRule) {

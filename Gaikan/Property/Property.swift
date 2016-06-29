@@ -21,6 +21,7 @@ public enum Property {
     case Margin
     case Opacity
     case TextAlign
+    case TextOverflow
     case TextShadow
     case TintColor
     case Transform

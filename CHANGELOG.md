@@ -1,11 +1,13 @@
 # CHANGELOG
 
-# WIP
+# 0.6.0
 
 ## Added
 
 - Added Carthage support. By [siemensikkema](https://github.com/siemensikkema) [#PR-7](https://github.com/akane/Gaikan/pull/7)
 - [Style] Added `textAttributes` on `StyleRule` which converts a style into `NSAttributedString` style attributes.
+- [Style] Added `margin` attribute.
+- [Style] Added `textOverflow` attribute.
 
 ## Enhancements
 

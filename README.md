@@ -46,7 +46,8 @@ may not have any effect. Here are all the available style properties you can use
 | Color         | UILabel   | Sets the text color             | 0.1
 | CornerRadius  | UIView    | Sets the view layer corner radius | 0.4
 | Font          | UILabel   | Sets the text font              | 0.1
-| Margin        | UIView    | Sets view layoutMargins (or button title inset) | 0.6
+| Inset         | UILabel, UIImageView | Sets label/image insets when contained into a UIButton | 0.6
+| Margin        | UIView    | Sets view layoutMargins (or button content inset) | 0.6
 | Opacity       | UIView    | Change the view alpha (0...1)   | 0.4
 | TextAlign     | UILabel   | Text horizontal alignment       | 0.2
 | TextOverflow  | UILabel   | Specifies how overflow text is truncated | 0.6
@@ -144,10 +145,17 @@ Don't hesitate to take a look at the sample to better understand how it works.
 
 ## Contributing
 
-This project was first developed by [Xebia IT Architects](http://xebia.fr) in Paris, France with the ultimate goal of releasing it as Open Source Software.
-We will continue working and investing on it.
+This project was first developed by [Xebia IT Architects](http://xebia.fr) in Paris, France. We will continue working and investing on it.
 
-We encourage the community to contribute to the project by opening tickets and/or pull requests.
+We encourage the community to contribute to the project by opening tickets and/or pull requests. Here a some of the subjects we are interested in:
+
+- Add UIStackView attributes (distribution, spacing, ...).
+- Add width and height, min-width/min-height, max-width/max-height.
+- Allow to define 1+ borders and corner radius. Currently defining border and radius set the 4 of them (top, bottom, left, right).
+- Better support for IBDesignable (if possible).
+- Add debugging information (style name, inheritance, ...).
+- Better integration with NSAttributedString.
+- Support for traits.
 
 ## License
 

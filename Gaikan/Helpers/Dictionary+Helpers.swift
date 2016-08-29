@@ -23,3 +23,13 @@ extension Dictionary where Key : Any, Value : OptionalProtocol, Value.WrappedTyp
         return dict
     }
 }
+
+extension Dictionary {
+    mutating func gaikan_merge(dictionary: Dictionary<Key, Value>) -> Dictionary<Key, Value> {
+        for (key, value) in dictionary {
+            self.updateValue(value, forKey: key)
+        }
+
+        return self
+    }
+}

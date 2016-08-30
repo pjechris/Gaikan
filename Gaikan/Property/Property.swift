@@ -17,8 +17,13 @@ public enum Property {
     case Color
     case CornerRadius
     case Font
+    case Height
     /// view layoutMargins
     case Margin
+    case MaxHeight
+    case MaxWidth
+    case MinHeight
+    case MinWidth
     case Opacity
     case TextAlign
     case TextOverflow
@@ -26,4 +31,5 @@ public enum Property {
     case TintColor
     case Transform
     case Visible
+    case Width
 }

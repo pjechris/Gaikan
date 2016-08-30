@@ -21,6 +21,7 @@
 		492C1B601BE0CA59000515B9 /* UILabelSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492C1B5E1BE0CA59000515B9 /* UILabelSpec.swift */; };
 		492C1B611BE0CA59000515B9 /* UIViewSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492C1B5F1BE0CA59000515B9 /* UIViewSpec.swift */; };
 		492C1B631BE0CAD0000515B9 /* UILabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 492C1B621BE0CAD0000515B9 /* UILabel.swift */; };
+		493C1B921D7479E500861CEA /* Constraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = 493C1B911D7479E500861CEA /* Constraint.swift */; };
 		495DE8FC1BA580D100DA97BF /* DictionarySpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 495DE8FB1BA580D100DA97BF /* DictionarySpec.swift */; };
 		496D38A11CD8EDCB00C8B4EC /* UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D389A1CD8EDCB00C8B4EC /* UIColor.swift */; };
 		496D38A21CD8EDCB00C8B4EC /* UIFont.swift in Sources */ = {isa = PBXBuildFile; fileRef = 496D389B1CD8EDCB00C8B4EC /* UIFont.swift */; };
@@ -92,6 +93,7 @@
 		492C1B5E1BE0CA59000515B9 /* UILabelSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabelSpec.swift; sourceTree = "<group>"; };
 		492C1B5F1BE0CA59000515B9 /* UIViewSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIViewSpec.swift; sourceTree = "<group>"; };
 		492C1B621BE0CAD0000515B9 /* UILabel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UILabel.swift; sourceTree = "<group>"; };
+		493C1B911D7479E500861CEA /* Constraint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constraint.swift; sourceTree = "<group>"; };
 		495DE8FB1BA580D100DA97BF /* DictionarySpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DictionarySpec.swift; sourceTree = "<group>"; };
 		496D389A1CD8EDCB00C8B4EC /* UIColor.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIColor.swift; sourceTree = "<group>"; };
 		496D389B1CD8EDCB00C8B4EC /* UIFont.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIFont.swift; sourceTree = "<group>"; };
@@ -280,6 +282,7 @@
 				4970A8191BD445DB00BCB3BA /* Border.swift */,
 				4912E9811BEB905A00C0DA4A /* Background.swift */,
 				CAFCDA4E1C592BBC004513D3 /* Corners.swift */,
+				493C1B911D7479E500861CEA /* Constraint.swift */,
 			);
 			path = Value;
 			sourceTree = "<group>";
@@ -577,6 +580,7 @@
 				49C8F7E91C1A33F400FF33DC /* StyleState.swift in Sources */,
 				49EC39931B9373B2002938E1 /* Stylable.swift in Sources */,
 				492C1B5B1BE0C9DF000515B9 /* ViewStyleRenderer.swift in Sources */,
+				493C1B921D7479E500861CEA /* Constraint.swift in Sources */,
 				490DA08D1D1853FD00A79778 /* Dictionary+Helpers.swift in Sources */,
 				492C1B631BE0CAD0000515B9 /* UILabel.swift in Sources */,
 				492C1B571BE0C9DF000515B9 /* UIControl.swift in Sources */,

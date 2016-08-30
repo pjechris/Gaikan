@@ -39,9 +39,34 @@ public extension StyleRule {
         set { self.attributes[.Font] = newValue }
     }
 
+    public var height: Constraint? {
+        get { return self[.Height].map { $0 as! Constraint } }
+        set { self.attributes[.Height] = newValue }
+    }
+
     public var margin: UIEdgeInsets? {
         get { return self[.Margin].map { return $0 as! UIEdgeInsets } }
         set { self.attributes[.Margin] = newValue }
+    }
+
+    public var maxHeight: Constraint? {
+        get { return self[.MaxHeight].map { $0 as! Constraint } }
+        set { self.attributes[.MaxHeight] = newValue }
+    }
+
+    public var maxWidth: Constraint? {
+        get { return self[.MaxWidth].map { $0 as! Constraint } }
+        set { self.attributes[.MaxWidth] = newValue }
+    }
+
+    public var minHeight: Constraint? {
+        get { return self[.MinHeight].map { $0 as! Constraint } }
+        set { self.attributes[.MinHeight] = newValue }
+    }
+
+    public var minWidth: Constraint? {
+        get { return self[.MinWidth].map { $0 as! Constraint } }
+        set { self.attributes[.MinWidth] = newValue }
     }
 
     /// value must be between 0 and 100
@@ -74,6 +99,11 @@ public extension StyleRule {
     public var visible: Bool? {
         get { return self[.Visible].map { return $0 as! Bool } }
         set { self.attributes[.Visible] = newValue }
+    }
+
+    public var width: Constraint? {
+        get { return self[.Width].map { $0 as! Constraint } }
+        set { self.attributes[.Width] = newValue }
     }
 
     public var textShadow: NSShadow? {

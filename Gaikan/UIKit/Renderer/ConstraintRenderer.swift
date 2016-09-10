@@ -21,20 +21,20 @@ class ConstraintRenderer {
 
     private class func addDimension(constraint: Constraint?, to view: UIView, attribute: NSLayoutAttribute, relation: NSLayoutRelation) {
         let identifier = "gaikan-\(relation.identifier())\(attribute.identifier().capitalizedString))"
-        let index = view.constraints.indexOf { $0.identifier == identifier }
+        let index = view.dimensions.indexOf { $0.identifier == identifier }
         var layoutConstraint: NSLayoutConstraint
 
         // Remove layoutConstraint if constraint nil but already active (from a previously pass)
         guard let constraint = constraint else {
             if let index = index {
-                view.constraints[index].active = false
+                view.dimensions[index].active = false
             }
 
             return
         }
 
         if let index = index {
-            layoutConstraint = view.constraints[index]
+            layoutConstraint = view.dimensions[index]
         }
         else {
             layoutConstraint = NSLayoutConstraint(item: view,
@@ -44,6 +44,7 @@ class ConstraintRenderer {
                                                   attribute: .NotAnAttribute,
                                                   multiplier: 1,
                                                   constant: 0)
+            view.dimensions.append(layoutConstraint)
         }
 
         // Deactivate constraint if priority changing from/to required

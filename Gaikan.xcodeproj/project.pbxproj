@@ -54,6 +54,7 @@
 		49CF3E2F1D0EF93900AF89E6 /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CF3E281D0EF48200AF89E6 /* KVOController.framework */; };
 		49CF5F991BA4866B00216E6D /* StyleRuleSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */; };
 		49D1BF831BDD4A8700348D3D /* CustomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D1BF821BDD4A8700348D3D /* CustomView.swift */; };
+		49D389A51D84272800D72B2E /* UIView+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49D389A41D84272800D72B2E /* UIView+Helpers.swift */; };
 		49DBD9021BCAAF110069B0C2 /* Style.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49DBD9011BCAAF110069B0C2 /* Style.swift */; };
 		49EC39681B92FC7D002938E1 /* Gaikan.h in Headers */ = {isa = PBXBuildFile; fileRef = 49EC39671B92FC7D002938E1 /* Gaikan.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		49EC396F1B92FC7D002938E1 /* Gaikan.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49EC39641B92FC7D002938E1 /* Gaikan.framework */; };
@@ -130,6 +131,7 @@
 		49CF3E2C1D0EF81B00AF89E6 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
 		49CF5F981BA4866B00216E6D /* StyleRuleSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleRuleSpec.swift; sourceTree = "<group>"; };
 		49D1BF821BDD4A8700348D3D /* CustomView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomView.swift; sourceTree = "<group>"; };
+		49D389A41D84272800D72B2E /* UIView+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Helpers.swift"; sourceTree = "<group>"; };
 		49DBD9011BCAAF110069B0C2 /* Style.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Style.swift; sourceTree = "<group>"; };
 		49EC39641B92FC7D002938E1 /* Gaikan.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Gaikan.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		49EC39671B92FC7D002938E1 /* Gaikan.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Gaikan.h; sourceTree = "<group>"; };
@@ -194,6 +196,7 @@
 				497AD8971D19339A00FF5498 /* Optional+Helpers.swift */,
 				4999435E1D7497FA003C510E /* UIColor+Helpers.swift */,
 				4999435F1D7497FA003C510E /* UIImage+Helpers.swift */,
+				49D389A41D84272800D72B2E /* UIView+Helpers.swift */,
 			);
 			path = Helpers;
 			sourceTree = "<group>";
@@ -610,6 +613,7 @@
 				492C1B591BE0C9DF000515B9 /* UISwitch.swift in Sources */,
 				499943611D7497FA003C510E /* UIColor+Helpers.swift in Sources */,
 				497AD8981D19339A00FF5498 /* Optional+Helpers.swift in Sources */,
+				49D389A51D84272800D72B2E /* UIView+Helpers.swift in Sources */,
 				42087B221C9AE4B8000606A7 /* VirtualView.swift in Sources */,
 				499943621D7497FA003C510E /* UIImage+Helpers.swift in Sources */,
 				4912E9861BEB9A9800C0DA4A /* Gradient.swift in Sources */,

@@ -35,25 +35,7 @@ Check out the sample to see how to well integrate Gaikan into a project.
 
 ## Properties
 
-Depending on your view type (UILabel, UIScrollView, UITextField, ...) some properties may or
-may not have any effect. Here are all the available style properties you can use:
-
-| Property name | Apply to  | Description                     | Available since
-| --------------|-----------|---------------------------------|------------------
-| Background    | UIView    | Sets a background to your view (color, gradient and or image)  | 0.3
-| Border        | UIView    | Sets the layer Border           | 0.1
-| Clip          | UIView    | Make the content of the view hidden if larger than the frame | 0.4
-| Color         | UILabel   | Sets the text color             | 0.1
-| CornerRadius  | UIView    | Sets the view layer corner radius | 0.4
-| Font          | UILabel   | Sets the text font              | 0.1
-| Inset         | UILabel, UIImageView | Sets label/image insets when contained into a UIButton | 0.6
-| Margin        | UIView    | Sets view layoutMargins (or button content inset) | 0.6
-| Opacity       | UIView    | Change the view alpha (0...1)   | 0.4
-| TextAlign     | UILabel   | Text horizontal alignment       | 0.2
-| TextOverflow  | UILabel   | Specifies how overflow text is truncated | 0.6
-| TintColor     | UIView    | Sets the tint color             | 0.1
-| Transform     | UIView    | Apply transforms (rotation, ...)| 0.4
-| Visible       | UIView    | Sets the view hidden property   | 0.1
+Check out our page on [properties](https://github.com/akane/Gaikan/Doc/Properties.md) to find which one to use to style your views.
 
 Starting with 0.4, we also added `VirtualView`. This allow you to apply style effects on some non `UIView`
 attributes/objects:
@@ -132,9 +114,9 @@ You can define styles for states. They'll extend from the default state :
 
 ```Swift
 func style() -> Style {
-  return [
-    .TintColor: UIColor.whiteColor()
-  ]
+  return Style() { (inout style: StyleRule) -> Void in
+    style.tintColor = UIColor.whiteColor()
+  }
   .state(.Selected, attributes: [
       .TintColor: UIColor.grayColor().colorWithAlphaComponent(0.6)
   ]
@@ -150,12 +132,13 @@ This project was first developed by [Xebia IT Architects](http://xebia.fr) in Pa
 We encourage the community to contribute to the project by opening tickets and/or pull requests. Here a some of the subjects we are interested in:
 
 - Add UIStackView attributes (distribution, spacing, ...).
-- Add width and height, min-width/min-height, max-width/max-height.
+- Support for multiple layout engines (AutoLayout, LayoutKit, Flexbox, ...)
 - Allow to define 1+ borders and corner radius. Currently defining border and radius set the 4 of them (top, bottom, left, right).
 - Better support for IBDesignable (if possible).
 - Add debugging information (style name, inheritance, ...).
 - Better integration with NSAttributedString.
 - Support for traits.
+- Anything you have in mind!
 
 ## License
 

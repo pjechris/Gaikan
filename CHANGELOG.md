@@ -1,5 +1,16 @@
 # CHANGELOG
 
+# 0.7.0
+
+## Added
+
+- Added height, minHeight, maxHeight
+- Added width, minWidth, maxWidth
+
+## Enhancements
+
+- Migrated to Swift 2.3
+
 # 0.6.0
 
 ## Added

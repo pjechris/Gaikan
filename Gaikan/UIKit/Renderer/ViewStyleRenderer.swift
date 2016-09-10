@@ -29,6 +29,8 @@ internal class ViewStyleRenderer {
         if let background = styleRule.background {
             BackgroundRenderer.render(Background(background), intoView: stylable)
         }
+
+        ConstraintRenderer.render(stylable, styleRule: styleRule)
     }
 
     final class func render(stylable: UILabel, styleRule: StyleRule) {

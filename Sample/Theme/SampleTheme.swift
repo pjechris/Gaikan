@@ -16,6 +16,8 @@ class SampleTheme : Theme {
 
     var logo = Style() { (inout style: StyleRule) -> () in
         style.tintColor = UIColor.logoColor()
+        style.width = 90
+        style.height = style.width
     }
 
     var title: Style = [

@@ -44,6 +44,8 @@ class ConstraintRenderer {
                                                   attribute: .NotAnAttribute,
                                                   multiplier: 1,
                                                   constant: 0)
+            layoutConstraint.identifier = identifier
+
             view.dimensions.append(layoutConstraint)
         }
 

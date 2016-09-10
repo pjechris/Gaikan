@@ -35,7 +35,7 @@ Check out the sample to see how to well integrate Gaikan into a project.
 
 ## Properties
 
-Check out our page on [properties](https://github.com/akane/Gaikan/Doc/Properties.md) to find which one to use to style your views.
+Check out our page on [properties](Doc/Properties.md) to find which one to use to style your views.
 
 Starting with 0.4, we also added `VirtualView`. This allow you to apply style effects on some non `UIView`
 attributes/objects:

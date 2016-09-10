@@ -11,7 +11,7 @@ import Foundation
 extension NSLayoutAttribute {
     func identifier() -> String {
         switch(self) {
-        case .Baseline:
+        case .LastBaseline:
             return "baseline"
         case .Bottom:
             return "bottom"

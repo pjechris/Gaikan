@@ -5,6 +5,7 @@
 - __**description**__: Sets a background to your view (color, gradient and or image)
 - __**applies**__: `UIView`
 - __**usage**__:
+
   ```swift
     style.background = UIColor.redColor()
     style.background = Background(UIImage(named: "bg"), UIColor.orangeGradient())
@@ -15,6 +16,7 @@
 - __**description**__: Sets view border color and width
 - __**applies**__: `UIView`
 - __**usage**__:
+
   ```swift
     style.border = Border(width: 1, color: UIColor.blueColor())
     ```
@@ -25,6 +27,7 @@
 - __**applies**__: `UIView`
 - __**default**__: false
 - __**usage**__:
+
  ```swift
    style.clip = true
    ```
@@ -35,6 +38,7 @@
 - __**description**__: Sets text color
 - __**applies**__: `UILabel`
 - __**usage**__:
+
  ```swift
    style.color = UIColor.redColor()
    ```
@@ -45,6 +49,7 @@
 - __**description**__: Sets view corner radius
 - __**applies**__: `UIView`
 - __**usage**__:
+
  ```swift
    style.corners = Corners(radius: 4)
    ```
@@ -55,6 +60,7 @@
 - __**description**__: Sets text font
 - __**applies**__: `UILabel`
 - __**usage**__:
+
  ```swift
    style.font = UIFont.systemFontOfSize(15)
    ```
@@ -65,6 +71,7 @@
 - __**description**__: Sets a view height using AutoLayout.
 - __**applies**__: `UIView`
 - __**usage**__:
+
  ```swift
   style.height = 42
   style.height = 50 ~ UILayoutPriorityDefaultHigh
@@ -76,6 +83,7 @@
 - __**description**__: Sets a view internal margin/padding, i.e. `UIView.layoutMargins` or `UIButton.contentEdgeInsets`.
 - __**applies**__: `UIView`, `UIButton`
 - __**usage**__:
+
  ```swift
    style.margin = UIEdgeInsetsMake(4, 4, 2, 2)
    /// sets UIView.layoutMargins
@@ -88,6 +96,7 @@
 - __**description**__: Sets a view maximum height using AutoLayout.
 - __**applies**__: `UIView`
 - __**usage**__:
+
  ```swift
   style.maxHeight = 42
   style.maxHeight = 50 ~ UILayoutPriorityDefaultHigh
@@ -106,6 +115,7 @@
 - __**description**__: Sets a view minimum height using AutoLayout.
 - __**applies**__: `UIView`
 - __**usage**__:
+
  ```swift
   style.minHeight = 42
   style.minHeight = 50 ~ UILayoutPriorityDefaultHigh
@@ -125,6 +135,7 @@
 - __**applies**__: `UIView`
 - __**range**__: 0 (tranparent) ... 100 (opaque)
 - __**usage**__:
+
  ```swift
    style.opacity = 80
    ```
@@ -144,6 +155,7 @@
 - __**applies**__: `UIView`
 - __**default**__: true
 - __**usage**__:
+
  ```swift
    style.visible = false
    ```

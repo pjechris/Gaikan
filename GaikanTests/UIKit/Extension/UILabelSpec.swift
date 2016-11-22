@@ -24,19 +24,19 @@ class UILabelSpec: QuickSpec {
 
             context("when giving style") {
                 it("should inherit view styles") {
-                    style = [ .TintColor: UIColor.blueColor() ]
+                    style = [ .tintColor: UIColor.blue ]
 
                     label.styleInline = style
 
-                    expect(label.tintColor) == UIColor.blueColor()
+                    expect(label.tintColor) == UIColor.blue
                 }
 
                 it("should apply color") {
-                    style = [ .Color: UIColor.redColor() ]
+                    style = [ .color: UIColor.red ]
 
                     label.styleInline = style
 
-                    expect(label.textColor) == UIColor.redColor()
+                    expect(label.textColor) == UIColor.red
                 }
             }
         }

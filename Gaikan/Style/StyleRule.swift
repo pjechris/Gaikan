@@ -11,7 +11,7 @@ import Foundation
 /**
  *  Defines design properties with their values.
  */
-public struct StyleRule : DictionaryLiteralConvertible {
+public struct StyleRule : ExpressibleByDictionaryLiteral {
     public typealias Key = Property
     public typealias Value = Any?
 
@@ -31,13 +31,13 @@ public struct StyleRule : DictionaryLiteralConvertible {
         self.attributes = attributes
     }
 
-    public init(_ styleBlock: (inout style: StyleRule) -> ()) {
+    public init(_ styleBlock: (_ style: inout StyleRule) -> ()) {
         self.init(attributes: [:])
 
-        styleBlock(style: &self)
+        styleBlock(&self)
     }
 
-    public func extends(styles: StyleRule?...) -> StyleRule {
+    public func extends(_ styles: StyleRule?...) -> StyleRule {
         var composedAttributes: [Key:Value] = [:]
 
         for style in styles {

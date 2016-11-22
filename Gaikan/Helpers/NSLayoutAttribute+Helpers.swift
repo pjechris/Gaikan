@@ -11,47 +11,47 @@ import Foundation
 extension NSLayoutAttribute {
     func identifier() -> String {
         switch(self) {
-        case .LastBaseline:
+        case .lastBaseline:
             return "baseline"
-        case .Bottom:
+        case .bottom:
             return "bottom"
-        case .BottomMargin:
+        case .bottomMargin:
             return "bottomMargin"
-        case .CenterX:
+        case .centerX:
             return "centerX"
-        case .CenterXWithinMargins:
+        case .centerXWithinMargins:
             return "centerXWithinMargins"
-        case .CenterY:
+        case .centerY:
             return "centerY"
-        case .CenterYWithinMargins:
+        case .centerYWithinMargins:
             return "centerYWithinMargins"
-        case .FirstBaseline:
+        case .firstBaseline:
             return "firstBaseline"
-        case .Height:
+        case .height:
             return "height"
-        case .Leading:
+        case .leading:
             return "leading"
-        case .LeadingMargin:
+        case .leadingMargin:
             return "leadingMargin"
-        case .Left:
+        case .left:
             return "left"
-        case .LeftMargin:
+        case .leftMargin:
             return "leftMargin"
-        case .NotAnAttribute:
+        case .notAnAttribute:
             return "notAnAttribute"
-        case .Right:
+        case .right:
             return "right"
-        case .RightMargin:
+        case .rightMargin:
             return "rightMargin"
-        case .Top:
+        case .top:
             return "top"
-        case .TopMargin:
+        case .topMargin:
             return "topMargin"
-        case .Trailing:
+        case .trailing:
             return "trailing"
-        case .TrailingMargin:
+        case .trailingMargin:
             return "trailingMargin"
-        case .Width:
+        case .width:
             return "width"
         }
     }

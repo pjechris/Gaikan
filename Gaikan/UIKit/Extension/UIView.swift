@@ -69,20 +69,20 @@ extension UIView : Stylable {
 
 internal extension UIView {
     func registerStyleKeyPaths() {
-        let keyPaths = self.dynamicType.keyPathsAffectingStyle()
+        let keyPaths = type(of: self).keyPathsAffectingStyle()
 
         if keyPaths.count > 0 {
-            self.KVOController.observe(self, keyPaths: keyPaths, options: .New) { [weak self] _ in
+            self.kvoController.observe(self, keyPaths: keyPaths, options: .new) { [weak self] _ in
                 self?.computeStyle()
             }
         }
 
-        self.KVOController.observe(self.layer, keyPath: "bounds", options: .New) { [weak self] _ in
+        self.kvoController.observe(self.layer, keyPath: "bounds", options: .new) { [weak self] _ in
             self?.updateStyle()
         }
     }
 
     func unregisterStyleKeyPaths() {
-        self.KVOController.unobserveAll()
+        self.kvoController.unobserveAll()
     }
 }

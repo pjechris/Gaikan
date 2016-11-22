@@ -11,9 +11,9 @@ import Foundation
 /**
  *  Defines a `StyleRule` on which you can apply supplemntary `StylePseudoState` states.
  */
-public struct Style : DictionaryLiteralConvertible {
-    internal private(set) var style: StyleRule
-    internal private(set) var states: [StyleState:StyleRule] = [:]
+public struct Style : ExpressibleByDictionaryLiteral {
+    internal fileprivate(set) var style: StyleRule
+    internal fileprivate(set) var states: [StyleState:StyleRule] = [:]
 
     public init(dictionaryLiteral elements: (StyleRule.Key, StyleRule.Value)...) {
         var attributes = Dictionary<StyleRule.Key, StyleRule.Value>()
@@ -25,19 +25,19 @@ public struct Style : DictionaryLiteralConvertible {
         self.init(style: StyleRule(attributes: attributes))
     }
 
-    public init(_ styleBlock: (inout style: StyleRule) -> ()) {
+    public init(_ styleBlock: (_ style: inout StyleRule) -> ()) {
         self.init(style: StyleRule(styleBlock))
     }
 
-    private init(style: StyleRule) {
+    fileprivate init(style: StyleRule) {
         self.style = style
     }
 
-    public func state(state: StylePseudoState, styleRule styleBlock: (inout style: StyleRule) -> ()) -> Style {
-        return self.state(.PseudoState(state), styleRule: styleBlock)
+    public func state(_ state: StylePseudoState, styleRule styleBlock: (_ style: inout StyleRule) -> ()) -> Style {
+        return self.state(.pseudoState(state), styleRule: styleBlock)
     }
 
-    internal func state(state: StyleState, styleRule styleBlock: (inout style: StyleRule) -> ()) -> Style {
+    internal func state(_ state: StyleState, styleRule styleBlock: (_ style: inout StyleRule) -> ()) -> Style {
         var style = self
 
         style.states[state] = StyleRule(styleBlock)
@@ -45,19 +45,19 @@ public struct Style : DictionaryLiteralConvertible {
         return style
     }
 
-    public func state(state: String, styleRule styleBlock: (inout style: StyleRule) -> ()) -> Style {
-        return self.state(.Custom(state), styleRule: styleBlock)
+    public func state(_ state: String, styleRule styleBlock: (_ style: inout StyleRule) -> ()) -> Style {
+        return self.state(.custom(state), styleRule: styleBlock)
     }
 
-    public func state(state: StylePseudoState, _ attributes: [StyleRule.Key:StyleRule.Value]) -> Style {
-        return self.state(.PseudoState(state), attributes: attributes)
+    public func state(_ state: StylePseudoState, _ attributes: [StyleRule.Key:StyleRule.Value]) -> Style {
+        return self.state(.pseudoState(state), attributes: attributes)
     }
 
-    public func state(state: String, _ attributes: [StyleRule.Key:StyleRule.Value]) -> Style {
-        return self.state(.Custom(state), attributes: attributes)
+    public func state(_ state: String, _ attributes: [StyleRule.Key:StyleRule.Value]) -> Style {
+        return self.state(.custom(state), attributes: attributes)
     }
 
-    internal func state(state: StyleState, attributes: [StyleRule.Key:StyleRule.Value]) -> Style {
+    internal func state(_ state: StyleState, attributes: [StyleRule.Key:StyleRule.Value]) -> Style {
         var style = self
 
         style.states[state] = StyleRule(attributes: attributes)
@@ -66,10 +66,10 @@ public struct Style : DictionaryLiteralConvertible {
     }
 
     internal subscript(state: StylePseudoState) -> StyleRule? {
-        get { return self.states[.PseudoState(state)] }
+        get { return self.states[.pseudoState(state)] }
     }
 
     internal subscript(state: String) -> StyleRule? {
-        get { return self.states[.Custom(state)] }
+        get { return self.states[.custom(state)] }
     }
 }

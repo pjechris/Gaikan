@@ -8,7 +8,7 @@
 
 import Foundation
 
-public class Theme : AnyObject {
+open class Theme : AnyObject {
     required public init() {
 
     }

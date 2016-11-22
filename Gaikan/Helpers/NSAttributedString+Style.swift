@@ -15,7 +15,7 @@ extension NSAttributedString {
 }
 
 extension NSMutableAttributedString {
-    public func setStyle(style: StyleRule, range: NSRange) {
+    public func setStyle(_ style: StyleRule, range: NSRange) {
         self.setAttributes(style.textAttributes, range: range)
     }
 }

@@ -14,9 +14,9 @@ import Foundation
  The bigger the value, the higher priority it has
 **/
 public enum StylePseudoState : UInt {
-    case Highlighted
-    case Disabled
-    case Selected
+    case highlighted
+    case disabled
+    case selected
 
-    case On
+    case on
 }

@@ -26,28 +26,28 @@ class UIViewSpec: QuickSpec {
             context("when giving style") {
 
                 it("should apply tintColor") {
-                    style = [ .TintColor: UIColor.redColor()]
+                    style = [ .tintColor: UIColor.red ]
 
                     view.styleInline = style
 
-                    expect(view.tintColor) == UIColor.redColor()
+                    expect(view.tintColor) == UIColor.red
                 }
 
                 it("should apply border") {
-                    style = [ .Border: Border(width: 3, color: UIColor.blackColor()) ]
+                    style = [ .border: Border(width: 3, color: UIColor.black) ]
 
                     view.styleInline = style
 
                     expect(view.layer.borderWidth) == 3
-                    expect(view.layer.borderColor.map { UIColor(CGColor: $0) }).to(equal(UIColor.blackColor()))
+                    expect(view.layer.borderColor.map { UIColor(cgColor: $0) }).to(equal(UIColor.black))
                 }
 
                 it("should apply visible") {
-                    style = [ .Visible: false ]
+                    style = [ .visible: false ]
 
                     view.styleInline = style
                     
-                    expect(view.hidden) == true
+                    expect(view.isHidden) == true
                 }
             }
         }
@@ -56,10 +56,10 @@ class UIViewSpec: QuickSpec {
             var style: Style!
 
             beforeEach {
-                style = Style() { (inout styleRule:StyleRule) in
-                        styleRule.tintColor = UIColor.redColor()
+                style = Style() { (styleRule:inout StyleRule) in
+                        styleRule.tintColor = UIColor.red
                     }
-                    .state("newState", [.TintColor: UIColor.blueColor()])
+                    .state("newState", [.tintColor: UIColor.blue])
             }
 
             context("when setting") {
@@ -69,7 +69,7 @@ class UIViewSpec: QuickSpec {
                 }
 
                 it("should apply state tintColor") {
-                    expect(view.tintColor) == UIColor.blueColor()
+                    expect(view.tintColor) == UIColor.blue
                 }
             }
         }

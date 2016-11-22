@@ -24,8 +24,8 @@ extension UIView {
                 return
             }
 
-            let moduleName = NSBundle.mainBundle().infoDictionary!["CFBundleExecutable"] as! String
-            let className = newValue.containsString(".") ? newValue : moduleName + "." + newValue
+            let moduleName = Bundle.main.infoDictionary!["CFBundleExecutable"] as! String
+            let className = newValue.contains(".") ? newValue : moduleName + "." + newValue
 
             objc_setAssociatedObject(self, &ViewThemeClassAttr, className, .OBJC_ASSOCIATION_COPY)
             self.attemptLoadingStyle()
@@ -42,16 +42,14 @@ extension UIView {
         }
     }
 
-    private func attemptLoadingStyle() {
-        guard let styleName = self.styleName, themeClassName = self.themeClassName else {
+    fileprivate func attemptLoadingStyle() {
+        guard let styleName = self.styleName, let themeClassName = self.themeClassName else {
             return
         }
 
         let themeClass = NSClassFromString(themeClassName) as! Theme.Type
         let dynamicTheme = themeClass.init()
         let dynamicMirror = Mirror(reflecting: dynamicTheme)
-
-        dynamicMirror.displayStyle
 
         for (label, value) in dynamicMirror.children {
             if label == styleName {

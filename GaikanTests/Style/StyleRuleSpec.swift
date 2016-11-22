@@ -18,34 +18,34 @@ class StyleRuleSpec: QuickSpec {
         describe("init") {
             context("when passing block") {
                 beforeEach {
-                    style = StyleRule() { (inout style: StyleRule) -> () in
-                        style.color = UIColor.blueColor()
+                    style = StyleRule() { (style: inout StyleRule) -> () in
+                        style.color = UIColor.blue
                     }
                 }
 
                 it("should initialize color") {
-                    expect(style.color) == UIColor.blueColor()
+                    expect(style.color) == UIColor.blue
                 }
             }
         }
 
         describe("extends") {
             beforeEach {
-                style = [ .Color: UIColor.blueColor(), .TintColor: nil ]
+                style = [ .color: UIColor.blue, .tintColor: nil ]
             }
 
             context("when extending properties") {
                 it("it should take new value") {
-                    let newStyle: StyleRule = [ .Color: UIColor.blackColor() ]
+                    let newStyle: StyleRule = [ .color: UIColor.black ]
 
-                    expect(newStyle.extends(style).color) == UIColor.blackColor()
+                    expect(newStyle.extends(style).color) == UIColor.black
                 }
             }
 
             context("when adding properties") {
                 it("should be added to style") {
-                    let font = UIFont.systemFontOfSize(22)
-                    let newStyle: StyleRule = [ .Font: font ]
+                    let font = UIFont.systemFont(ofSize:22)
+                    let newStyle: StyleRule = [ .font: font ]
 
                     expect(newStyle.extends(style).font) == font
                 }
@@ -53,7 +53,7 @@ class StyleRuleSpec: QuickSpec {
 
             context("when nullyfing a property") {
                 it("it should be nil") {
-                    var newStyle: StyleRule = [ .Color: nil ]
+                    var newStyle: StyleRule = [ .color: nil ]
 
                     newStyle.extends(style)
                     expect(newStyle.color).to(beNil())
@@ -66,16 +66,16 @@ class StyleRuleSpec: QuickSpec {
                         var newStyle: StyleRule = [:]
 
                         newStyle = newStyle.extends(nil, style)
-                        expect(newStyle.color) == UIColor.blueColor()
+                        expect(newStyle.color) == UIColor.blue
                     }
 
                     it("should add all properties") {
                         var newStyle: StyleRule = [:]
 
-                        newStyle = newStyle.extends(style, [ .TintColor: UIColor.greenColor() ])
+                        newStyle = newStyle.extends(style, [ .tintColor: UIColor.green ])
 
-                        expect(newStyle.color) == UIColor.blueColor()
-                        expect(newStyle.tintColor) == UIColor.greenColor()
+                        expect(newStyle.color) == UIColor.blue
+                        expect(newStyle.tintColor) == UIColor.green
                     }
                 }
             }

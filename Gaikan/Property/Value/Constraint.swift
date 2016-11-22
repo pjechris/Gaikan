@@ -18,7 +18,7 @@ public struct Constraint {
     }
 }
 
-extension Constraint : FloatLiteralConvertible, IntegerLiteralConvertible {
+extension Constraint : ExpressibleByFloatLiteral, ExpressibleByIntegerLiteral {
     public init(floatLiteral value: FloatLiteralType) {
         self.init(constant: value)
     }
@@ -28,9 +28,9 @@ extension Constraint : FloatLiteralConvertible, IntegerLiteralConvertible {
     }
 }
 
-infix operator ~ { }
+infix operator ~
 
-public func ~ (inout lhs: Constraint, rhs: UILayoutPriority) -> Constraint {
+public func ~ (lhs: inout Constraint, rhs: UILayoutPriority) -> Constraint {
     lhs.priority = rhs
 
     return lhs

@@ -20,13 +20,13 @@ internal final class AssociatedObject<T> : NSObject, NSCopying {
         self.value = value
     }
 
-    func copyWithZone(zone: NSZone) -> AnyObject {
+    func copy(with zone: NSZone?) -> Any {
         return AssociatedObject(self.value)
     }
 }
 
 extension AssociatedObject where T:NSCopying {
-    func copyWithZone(zone: NSZone) -> AnyObject {
-        return AssociatedObject(value.copyWithZone(zone) as! AssociatedType)
+    func copyWithZone(_ zone: NSZone?) -> AnyObject {
+        return AssociatedObject(value.copy(with: zone) as! AssociatedType)
     }
 }

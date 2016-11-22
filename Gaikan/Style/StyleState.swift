@@ -9,36 +9,36 @@
 import Foundation
 
 enum StyleState {
-    case PseudoState(StylePseudoState)
-    case Custom(String)
+    case pseudoState(StylePseudoState)
+    case custom(String)
 }
 
 extension StyleState {
-    static func states<T:Stylable>(element: T) -> [StyleState] {
+    static func states<T:Stylable>(_ element: T) -> [StyleState] {
         var states: [StyleState] = []
 
         if let control = element as? UIControl {
-            if (control.highlighted) {
-                states.append(.PseudoState(.Highlighted))
+            if (control.isHighlighted) {
+                states.append(.pseudoState(.highlighted))
             }
 
-            if (!control.enabled) {
-                states.append(.PseudoState(.Disabled))
+            if (!control.isEnabled) {
+                states.append(.pseudoState(.disabled))
             }
 
-            if (control.selected) {
-                states.append(.PseudoState(.Selected))
+            if (control.isSelected) {
+                states.append(.pseudoState(.selected))
             }
 
             if let switcher = control as? UISwitch {
-                if (switcher.on) {
-                    states.append(.PseudoState(.On))
+                if (switcher.isOn) {
+                    states.append(.pseudoState(.on))
                 }
             }
         }
 
         if let customState = element.styleState {
-            states.append(.Custom(customState))
+            states.append(.custom(customState))
         }
         
         return states
@@ -48,9 +48,9 @@ extension StyleState {
 extension StyleState : Hashable {
     var hashValue: Int {
         switch (self) {
-        case .PseudoState(let state):
+        case .pseudoState(let state):
             return state.hashValue
-        case .Custom(let state):
+        case .custom(let state):
             return state.hashValue
         }
     }
@@ -58,9 +58,9 @@ extension StyleState : Hashable {
 
 func ==(lhs: StyleState, rhs: StyleState) -> Bool {
     switch (lhs, rhs) {
-    case (.PseudoState(let state1), .PseudoState(let state2)):
+    case (.pseudoState(let state1), .pseudoState(let state2)):
         return state1 == state2
-    case (.Custom(let state1), .Custom(let state2)):
+    case (.custom(let state1), .custom(let state2)):
         return state1 == state2
     default:
         return false

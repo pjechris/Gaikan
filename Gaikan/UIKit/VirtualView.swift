@@ -8,31 +8,31 @@
 
 import Foundation
 
-public class VirtualView<TargetView: UIView> : NSObject, Stylable {
+open class VirtualView<TargetView: UIView> : NSObject, Stylable {
     
-    private let targetView: TargetView
+    fileprivate let targetView: TargetView
     
     init(targetView: TargetView) {
         self.targetView = targetView
     }
     
-    public var styleClass: Style? {
+    open var styleClass: Style? {
         didSet { self.computeStyle() }
     }
 
-    public var styleInline: StyleRule? {
+    open var styleInline: StyleRule? {
         didSet { self.computeStyle() }
     }
     
-    public var styleState: String? {
+    open var styleState: String? {
         didSet { self.computeStyle() }
     }
 
-    public func updateStyle() {
+    open func updateStyle() {
         self.targetView.updateStyle()
     }
 
-    public static func keyPathsAffectingStyle() -> [String] {
+    open static func keyPathsAffectingStyle() -> [String] {
         return []
     }
 }

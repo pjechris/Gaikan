@@ -16,44 +16,44 @@ class StyleSpec: QuickSpec {
         var style: Style!
 
         beforeEach {
-            style = Style() { (inout style: StyleRule) in
-                style.color = UIColor.blueColor()
+            style = Style() { (style: inout StyleRule) in
+                style.color = UIColor.blue
             }
         }
 
         describe("state") {
             context("when pseudo class does not exist yet") {
                 it("should be nil") {
-                    expect(style[.Highlighted]).to(beNil())
+                    expect(style[.highlighted]).to(beNil())
                 }
 
                 it("should add it") {
-                    style = style.state(.Highlighted) { (inout style: StyleRule) -> () in
+                    style = style.state(.highlighted) { (style: inout StyleRule) -> () in
                     }
 
-                    expect(style[.Highlighted]).toNot(beNil())
+                    expect(style[.highlighted]).toNot(beNil())
                 }
 
                 it("should not be merged with .Normal") {
-                    style = style.state(.Highlighted) { (inout style: StyleRule) -> () in
+                    style = style.state(.highlighted) { (style: inout StyleRule) -> () in
                     }
 
-                    expect(style[.Highlighted]?.color).to(beNil())
+                    expect(style[.highlighted]?.color).to(beNil())
                 }
             }
 
             context("when pseudo class exist") {
                 beforeEach {
-                    style = style.state(.Highlighted) { (inout style: StyleRule) -> () in
-                        style.color = UIColor.greenColor()
+                    style = style.state(.highlighted) { (style: inout StyleRule) -> () in
+                        style.color = .green
                     }
                 }
 
                 it("should replace it") {
-                    style = style.state(.Highlighted) { (inout style: StyleRule) -> () in
+                    style = style.state(.highlighted) { (style: inout StyleRule) -> () in
                     }
 
-                    expect(style[.Highlighted]?.color).to(beNil())
+                    expect(style[.highlighted]?.color).to(beNil())
                 }
             }
         }

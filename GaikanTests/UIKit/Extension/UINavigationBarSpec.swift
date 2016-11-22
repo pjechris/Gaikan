@@ -24,34 +24,34 @@ class UINavigationBarSpec: QuickSpec {
 
             context("when giving style") {
                 it("should inherit view styles") {
-                    style = [ .TintColor: UIColor.blueColor() ]
+                    style = [ .tintColor: UIColor.blue ]
 
                     navigationBar.styleInline = style
 
-                    expect(navigationBar.tintColor) == UIColor.blueColor()
+                    expect(navigationBar.tintColor) == UIColor.blue
                 }
 
                 it("should apply a title font") {
-                    style = [ .Font: UIFont.systemFontOfSize(42.0) ]
+                    style = [ .font: UIFont.systemFont(ofSize: 42.0) ]
 
                     navigationBar.titleStyle.styleInline = style
 
-                    expect(navigationBar.titleTextAttributes![NSFontAttributeName] as? UIFont) == UIFont.systemFontOfSize(42.0)
+                    expect(navigationBar.titleTextAttributes![NSFontAttributeName] as? UIFont) == UIFont.systemFont(ofSize: 42.0)
                 }
 
                 it("should apply a foreground color to the title") {
-                    style = [ .Color: UIColor.blueColor() ]
+                    style = [ .color: UIColor.blue ]
                     
                     navigationBar.titleStyle.styleInline = style
                     
-                    expect(navigationBar.titleTextAttributes![NSForegroundColorAttributeName] as? UIColor) == UIColor.blueColor()
+                    expect(navigationBar.titleTextAttributes![NSForegroundColorAttributeName] as? UIColor) == UIColor.blue
                 }
                 
                 it("should apply a shadow to the title") {
                     let shadow = NSShadow()
                     shadow.shadowOffset = CGSize(width: 2, height: 3)
                     
-                    style = [ .TextShadow: shadow ]
+                    style = [ .textShadow: shadow ]
                     
                     navigationBar.titleStyle.styleInline = style
                     

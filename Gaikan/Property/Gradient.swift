@@ -23,7 +23,7 @@ public struct Gradient  {
         self.init(from: CGPoint.top(), to: CGPoint.bottom(), gradients)
     }
 
-    private init(from: CGPoint, to: CGPoint, _ gradients: [(color: UIColor, position: Int)]) {
+    fileprivate init(from: CGPoint, to: CGPoint, _ gradients: [(color: UIColor, position: Int)]) {
         self.from = from
         self.to = to
         self.gradientValues = gradients
@@ -31,7 +31,7 @@ public struct Gradient  {
 }
 
 extension Gradient : BackgroundValue {
-    public func render(inContext ctx: CGContextRef) {
+    public func render(inContext ctx: CGContext) {
         BackgroundRenderer.render(self, inContext: ctx)
     }
 }

@@ -11,11 +11,11 @@ import Foundation
 extension NSLayoutRelation {
     func identifier() -> String {
         switch (self) {
-        case .Equal:
+        case .equal:
             return "accurate"
-        case .GreaterThanOrEqual:
+        case .greaterThanOrEqual:
             return "min"
-        case .LessThanOrEqual:
+        case .lessThanOrEqual:
             return "max"
         }
     }

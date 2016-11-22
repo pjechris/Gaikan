@@ -9,25 +9,25 @@
 import Foundation
 
 class ConstraintRenderer {
-    class func render(view: UIView, styleRule: StyleRule) {
-        self.addDimension(styleRule.height, to: view, attribute: .Height, relation: .Equal)
-        self.addDimension(styleRule.maxHeight, to: view, attribute: .Height, relation: .LessThanOrEqual)
-        self.addDimension(styleRule.minHeight, to: view, attribute: .Height, relation: .GreaterThanOrEqual)
+    class func render(_ view: UIView, styleRule: StyleRule) {
+        self.addDimension(styleRule.height, to: view, attribute: .height, relation: .equal)
+        self.addDimension(styleRule.maxHeight, to: view, attribute: .height, relation: .lessThanOrEqual)
+        self.addDimension(styleRule.minHeight, to: view, attribute: .height, relation: .greaterThanOrEqual)
 
-        self.addDimension(styleRule.width, to: view, attribute: .Width, relation: .Equal)
-        self.addDimension(styleRule.maxWidth, to: view, attribute: .Width, relation: .LessThanOrEqual)
-        self.addDimension(styleRule.minWidth, to: view, attribute: .Width, relation: .GreaterThanOrEqual)
+        self.addDimension(styleRule.width, to: view, attribute: .width, relation: .equal)
+        self.addDimension(styleRule.maxWidth, to: view, attribute: .width, relation: .lessThanOrEqual)
+        self.addDimension(styleRule.minWidth, to: view, attribute: .width, relation: .greaterThanOrEqual)
     }
 
-    private class func addDimension(constraint: Constraint?, to view: UIView, attribute: NSLayoutAttribute, relation: NSLayoutRelation) {
-        let identifier = "gaikan-\(relation.identifier())\(attribute.identifier().capitalizedString))"
-        let index = view.dimensions.indexOf { $0.identifier == identifier }
+    fileprivate class func addDimension(_ constraint: Constraint?, to view: UIView, attribute: NSLayoutAttribute, relation: NSLayoutRelation) {
+        let identifier = "gaikan-\(relation.identifier())\(attribute.identifier().capitalized))"
+        let index = view.dimensions.index { $0.identifier == identifier }
         var layoutConstraint: NSLayoutConstraint
 
         // Remove layoutConstraint if constraint nil but already active (from a previously pass)
         guard let constraint = constraint else {
             if let index = index {
-                view.dimensions[index].active = false
+                view.dimensions[index].isActive = false
             }
 
             return
@@ -41,7 +41,7 @@ class ConstraintRenderer {
                                                   attribute: attribute,
                                                   relatedBy: relation,
                                                   toItem: nil,
-                                                  attribute: .NotAnAttribute,
+                                                  attribute: .notAnAttribute,
                                                   multiplier: 1,
                                                   constant: 0)
             layoutConstraint.identifier = identifier
@@ -52,12 +52,12 @@ class ConstraintRenderer {
         // Deactivate constraint if priority changing from/to required
         if (layoutConstraint.priority != constraint.priority) {
             if (constraint.priority == UILayoutPriorityRequired || layoutConstraint.priority == UILayoutPriorityRequired) {
-                layoutConstraint.active = false
+                layoutConstraint.isActive = false
             }
         }
 
         layoutConstraint.constant = CGFloat(constraint.constant)
         layoutConstraint.priority = constraint.priority
-        layoutConstraint.active = true
+        layoutConstraint.isActive = true
     }
 }

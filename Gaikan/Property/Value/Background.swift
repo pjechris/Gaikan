@@ -13,7 +13,7 @@ import Foundation
 */
 public protocol BackgroundValue {
     /// Render the object into given context
-    func render(inContext ctx: CGContextRef)
+    func render(inContext ctx: CGContext)
 }
 
 /**
@@ -26,7 +26,7 @@ public struct Background : BackgroundValue {
         self.backgrounds = backgrounds
     }
 
-    public func render(inContext ctx: CGContextRef) {
+    public func render(inContext ctx: CGContext) {
         BackgroundRenderer.render(self, inContext: ctx)
     }
 }

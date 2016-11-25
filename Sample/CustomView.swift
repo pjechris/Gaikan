@@ -17,7 +17,7 @@ class CustomView : UIView {
     @IBOutlet weak var button: UIButton!
 
     @IBAction func gotIt() {
-        self.button.setTitle("Great!", forState: .Normal)
+        self.button.setTitle("Great!", for: .normal)
         self.button.styleClass = SampleTheme().gotIt
     }
 }

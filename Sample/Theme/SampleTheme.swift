@@ -10,32 +10,32 @@ import Foundation
 import Gaikan
 
 class SampleTheme : Theme {
-    var home =  Style() { (inout style: StyleRule) -> () in
+    var home =  Style() { (style: inout StyleRule) -> () in
         style.background = Background(UIImage(named: "background")!, Gradient.orangeGradient())
     }
 
-    var logo = Style() { (inout style: StyleRule) -> () in
+    var logo = Style() { (style: inout StyleRule) -> () in
         style.tintColor = UIColor.logoColor()
         style.width = 90
         style.height = style.width
     }
 
     var title: Style = [
-        .Color: UIColor.whiteColor(),
-        .Font: UIFont.titleFont()
+        .color: UIColor.white,
+        .font: UIFont.titleFont()
     ]
 
-    var footnote =  Style() { (inout style: StyleRule) -> () in
+    var footnote =  Style() { (style: inout StyleRule) -> () in
         style.font = UIFont.footnoteFont()
         style.color = UIColor.orangeRail()
     }
 
     var getIt: Style = [
-        .Border: Border(width: 1, color: UIColor.whiteColor()),
-        .Color: UIColor.whiteColor()
+        .border: Border(width: 1, color: UIColor.white),
+        .color: UIColor.white
     ]
 
     var gotIt: Style = [
-        .Color: UIColor.orangeRail()
+        .color: UIColor.orange
     ]
 }

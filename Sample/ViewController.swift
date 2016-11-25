@@ -14,8 +14,8 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         let titleStyle: StyleRule = [
-            .Font: UIFont(name: "AvenirNext-Italic", size: 16),
-            .Color: UIColor.purpleColor()
+            .font: UIFont(name: "AvenirNext-Italic", size: 16),
+            .color: UIColor.purple
         ]
         
         super.viewDidLoad()

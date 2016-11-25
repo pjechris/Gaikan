@@ -16,6 +16,6 @@ extension UIColor {
 
     class func logoColor() -> UIColor {
         return UIColor(red: 244/255, green: 176/255, blue: 125/255, alpha: 1)
-            .colorWithAlphaComponent(0.7)
+            .withAlphaComponent(0.7)
     }
 }

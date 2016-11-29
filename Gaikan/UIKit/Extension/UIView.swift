@@ -30,6 +30,8 @@ extension UIView : Stylable {
             }
 
             objc_setAssociatedObject(self, &ViewStyleClassAttr, AssociatedObject(newValue), .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+
+            self.addStyleLayerIfNeeded()
             self.computeStyle()
         }
     }
@@ -78,11 +80,35 @@ internal extension UIView {
         }
 
         self.kvoController.observe(self.layer, keyPath: "bounds", options: .new) { [weak self] _ in
-            self?.updateStyle()
+            guard let weakSelf = self, let computedStyle = weakSelf.computedStyle else {
+                return
+            }
+
+            weakSelf.styleLayer?.frame = weakSelf.layer.bounds
         }
     }
 
     func unregisterStyleKeyPaths() {
         self.kvoController.unobserveAll()
+    }
+}
+
+var StyleKeyAttribute = "StyleLayer"
+extension UIView {
+
+    var styleLayer: StyleLayer! {
+        get { return objc_getAssociatedObject(self, &StyleKeyAttribute) as? StyleLayer }
+        set { objc_setAssociatedObject(self, &StyleKeyAttribute, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC) }
+    }
+
+    func addStyleLayerIfNeeded() {
+        if let _ = self.styleLayer {
+            return
+        }
+
+        let styleLayer = StyleLayer()
+
+        self.styleLayer = styleLayer
+        self.layer.insertSublayer(styleLayer, at: 0)
     }
 }

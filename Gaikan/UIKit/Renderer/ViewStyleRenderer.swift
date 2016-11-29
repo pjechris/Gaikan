@@ -10,7 +10,6 @@ import Foundation
 
 internal class ViewStyleRenderer {
     final class func render(_ stylable: UIView, styleRule: StyleRule) {
-        let border = styleRule.border ?? Border(width: 0, color: nil)
         let visible = styleRule.visible ?? true
         let corners = styleRule.corners ?? Corners(radius: 0)
         
@@ -19,16 +18,12 @@ internal class ViewStyleRenderer {
         stylable.layer.masksToBounds = styleRule.clip
 
         stylable.layer.transform = styleRule.transform
-        stylable.layer.borderWidth = border.width
-        stylable.layer.borderColor = border.color?.cgColor
         stylable.tintColor = styleRule.tintColor
         stylable.isHidden = !visible
         stylable.alpha = CGFloat(styleRule.opacity / 100)
         stylable.layoutMargins = styleRule.margin ?? stylable.layoutMargins
 
-        if let background = styleRule.background {
-            BackgroundRenderer.render(Background(background), intoView: stylable)
-        }
+        stylable.styleLayer.styleClass = styleRule
 
         ConstraintRenderer.render(stylable, styleRule: styleRule)
     }

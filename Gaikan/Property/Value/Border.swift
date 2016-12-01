@@ -12,10 +12,10 @@ import Foundation
  Represent the `Border` property
 */
 public struct Border {
-    public let width: CGFloat
-    public let color: UIColor?
+    public let width: UInt
+    public let color: UIColor
 
-    public init(width: CGFloat, color: UIColor?) {
+    public init(width: UInt, color: UIColor) {
         self.width = width
         self.color = color
     }

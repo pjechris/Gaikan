@@ -10,8 +10,8 @@ import Foundation
 import UIKit
 
 class StyleLayer : CALayer {
-    let backgroundLayer = CALayer()
-    let borderLayer = CALayer()
+    let backgroundLayer = BackgroundLayer()
+    let borderLayer = BorderLayer()
 
     var styleClass: StyleRule! {
         didSet {
@@ -53,27 +53,12 @@ class StyleLayer : CALayer {
     }
 
     func applyStyle() {
+
         guard let style = self.styleClass else {
             return
         }
 
-        let border = style.border ?? Border(width: 0, color: nil)
-
-        self.borderLayer.borderWidth = border.width
-        self.borderLayer.borderColor = border.color?.cgColor
-
-        let colorSpace = CGColorSpaceCreateDeviceRGB()
-        let ctx = CGContext(data: nil, width: Int(self.bounds.size.width), height: Int(self.bounds.size.height), bitsPerComponent: 8, bytesPerRow: 0, space: colorSpace, bitmapInfo: 6)
-
-        guard let context = ctx,
-            let background = style.background else {
-            return
-        }
-
-        for bg in Background(background).backgrounds {
-            bg.render(inContext: context)
-        }
-
-        self.backgroundLayer.contents = context.makeImage()
+        self.backgroundLayer.background = style.background.map { Background($0) }
+        self.borderLayer.border = style.border
     }
 }

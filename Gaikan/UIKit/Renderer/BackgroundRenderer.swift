@@ -45,7 +45,7 @@ internal class BackgroundRenderer {
     }
 
     final class func render(_ image: UIImage, inContext ctx: CGContext) {
-        ctx.draw(image.cgImage!, in: CGRect(origin: CGPoint.zero, size: image.size))
+        image.draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: ctx.width, height: ctx.height)))
     }
 
     final class func render(_ background: Background, inContext ctx: CGContext) {

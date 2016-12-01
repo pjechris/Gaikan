@@ -21,10 +21,6 @@ extension UIView : Stylable {
             return value.map { $0.value } ?? nil
         }
         set {
-            if (self.styleClass == nil) {
-                self.registerStyleKeyPaths()
-            }
-
             if (newValue == nil) {
                 self.unregisterStyleKeyPaths()
             }
@@ -33,6 +29,10 @@ extension UIView : Stylable {
 
             self.addStyleLayerIfNeeded()
             self.computeStyle()
+
+            if (newValue != nil) {
+                self.registerStyleKeyPaths()
+            }
         }
     }
 
@@ -80,12 +80,14 @@ internal extension UIView {
         }
 
         self.kvoController.observe(self.layer, keyPath: "bounds", options: .new) { [weak self] _ in
-            guard let weakSelf = self, let computedStyle = weakSelf.computedStyle else {
+            guard let weakSelf = self else {
                 return
             }
 
             weakSelf.styleLayer?.frame = weakSelf.layer.bounds
         }
+
+        self.styleLayer.frame = self.layer.bounds
     }
 
     func unregisterStyleKeyPaths() {

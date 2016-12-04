@@ -18,7 +18,13 @@
 - __**usage**__:
 
   ```swift
+    // until 0.7
     style.border = Border(width: 1, color: UIColor.blueColor())
+
+    // after 0.7 you can define one or all borders
+    style.border = Border(all: (width: 1, color: UIColor.blue))
+    style.border = Border(.left, style: (width: 1, color: UIColor.blue))
+    style.border = Border([.left, .right] : (width: 1, color: UIColor.blue))
     ```
 
 ## Clip
@@ -165,4 +171,4 @@
 - __**since**__: 0.7
 - __**description**__: Sets a view width using AutoLayout.
 - __**applies**__: `UIView`
-- __**see**__: height 
+- __**see**__: height

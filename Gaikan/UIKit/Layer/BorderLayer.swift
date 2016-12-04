@@ -22,51 +22,42 @@ class BorderLayer : CALayer {
 
         UIGraphicsPushContext(ctx)
 
-        // TOP
-        path.move(to: CGPoint(x: 0, y: 0))
-        path.addLine(to: CGPoint(x: ctx.width, y: 0))
-        path.addLine(to: CGPoint(x: ctx.width, y: Int(border.width)))
-        path.addLine(to: CGPoint(x: 0, y: Int(border.width)))
-        path.addLine(to: CGPoint(x: 0, y: 0))
-        path.close()
-
-        ctx.setFillColor(border.color.cgColor)
-        path.fill()
-
-        // RIGHT
-        path.move(to: CGPoint(x: ctx.width, y: 0))
-        path.addLine(to: CGPoint(x: ctx.width, y: ctx.height))
-        path.addLine(to: CGPoint(x: ctx.width - Int(border.width), y: ctx.height))
-        path.addLine(to: CGPoint(x: ctx.width - Int(border.width), y: 0))
-        path.addLine(to: CGPoint(x: ctx.width, y: 0))
-        path.close()
-
-        ctx.setFillColor(border.color.cgColor)
-        path.fill()
-
-        // BOTTOM
-        path.move(to: CGPoint(x: ctx.width, y: ctx.height))
-        path.addLine(to: CGPoint(x: 0, y: ctx.height))
-        path.addLine(to: CGPoint(x: 0, y: ctx.height - Int(border.width)))
-        path.addLine(to: CGPoint(x: ctx.width, y: ctx.height - Int(border.width)))
-        path.addLine(to: CGPoint(x: ctx.width, y: ctx.height))
-        path.close()
-
-        ctx.setFillColor(border.color.cgColor)
-        path.fill()
-
-
-        // LEFT
-        path.move(to: CGPoint(x: 0, y: ctx.height))
-        path.addLine(to: CGPoint(x: 0, y: 0))
-        path.addLine(to: CGPoint(x: Int(border.width), y: 0))
-        path.addLine(to: CGPoint(x: Int(border.width), y: ctx.height))
-        path.addLine(to: CGPoint(x: 0, y: ctx.height))
-        path.close()
-
-        ctx.setFillColor(border.color.cgColor)
-        path.fill()
+        for (side, border) in border.sides {
+            switch(side) {
+            case .top:
+                self.draw(border: border,
+                          path: path,
+                          points: [ CGPoint(x: 0, y: 0), CGPoint(x: ctx.width, y: 0), CGPoint(x: ctx.width, y: Int(border.width)), CGPoint(x: 0, y: Int(border.width)) ])
+            case .right:
+                self.draw(border: border,
+                          path: path,
+                          points: [CGPoint(x: ctx.width, y: 0), CGPoint(x: ctx.width, y: ctx.height), CGPoint(x: ctx.width - Int(border.width), y: ctx.height), CGPoint(x: ctx.width - Int(border.width), y: 0)])
+            case .bottom:
+                self.draw(border: border,
+                          path: path,
+                          points: [CGPoint(x: ctx.width, y: ctx.height), CGPoint(x: 0, y: ctx.height), CGPoint(x: 0, y: ctx.height - Int(border.width)), CGPoint(x: ctx.width, y: ctx.height - Int(border.width))])
+            case .left:
+                self.draw(border: border,
+                          path: path,
+                          points: [CGPoint(x: 0, y: ctx.height), CGPoint(x: 0, y: 0), CGPoint(x: Int(border.width), y: 0), CGPoint(x: Int(border.width), y: ctx.height)])
+            }
+        }
 
         UIGraphicsPopContext()
+    }
+
+    func draw(border: BorderStyle, path: UIBezierPath, points: [CGPoint]) {
+        guard let first = points.first else {
+            return
+        }
+
+        path.move(to: first)
+        for point in points {
+            path.addLine(to: point)
+        }
+        path.close()
+
+        border.color.setFill()
+        path.fill()
     }
 }

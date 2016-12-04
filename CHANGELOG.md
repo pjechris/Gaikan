@@ -1,5 +1,18 @@
 # CHANGELOG
 
+# WIP
+
+## Added
+
+- [Border] you can now set only one border side (top, right, bottom, left) if you want.
+
+## Changed
+
+## Fixed
+
+- [UIView] Fixed rendering which was triggered every time frames changed
+- [Background] Correctly render background when frames change
+
 # 0.8.0
 
 ## Added

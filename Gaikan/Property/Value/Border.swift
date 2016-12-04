@@ -8,15 +8,38 @@
 
 import Foundation
 
-/**
- Represent the `Border` property
-*/
-public struct Border {
-    public let width: UInt
-    public let color: UIColor
+public typealias BorderStyle = (width: UInt, color: UIColor)
 
-    public init(width: UInt, color: UIColor) {
-        self.width = width
-        self.color = color
+/**
+ Represents `Border` property
+ */
+
+public struct Border {
+    var sides: [Side: BorderStyle]
+
+    public init(_ side: Side, style: BorderStyle) {
+        self.init(sides: [side], style: style)
+    }
+
+    public init(all style: BorderStyle) {
+        self.init(sides: [.top, .right, .bottom, .left], style: style)
+    }
+
+    public init(sides: [Side], style: BorderStyle) {
+        var allSides = [Side:BorderStyle]()
+
+        for side in sides {
+            allSides[side] = style
+        }
+
+        self.sides = allSides
+    }
+
+    public func stylize(_ side: Side, with style: BorderStyle) -> Border {
+        var newBorder = self
+
+        newBorder.sides[side] = style
+
+        return newBorder
     }
 }

@@ -12,8 +12,8 @@ import Foundation
  Any class/struct conforming to BackgroundValue can be used to represent the `Background` property
 */
 public protocol BackgroundValue {
-    /// Render the object into given context
-    func render(inContext ctx: CGContext)
+    /// Renders the object into given context
+    func draw(in ctx: CGContext)
 }
 
 /**
@@ -26,7 +26,9 @@ public struct Background : BackgroundValue {
         self.backgrounds = backgrounds
     }
 
-    public func render(inContext ctx: CGContext) {
-        BackgroundRenderer.render(self, inContext: ctx)
+    public func draw(in ctx: CGContext) {
+        for bg in self.backgrounds {
+            bg.draw(in: ctx)
+        }
     }
 }

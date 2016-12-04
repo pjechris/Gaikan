@@ -9,7 +9,7 @@
 import Foundation
 
 extension UIImage : BackgroundValue {
-    public func render(inContext ctx: CGContext) {
-        BackgroundRenderer.render(self, inContext: ctx)
+    public func draw(in ctx: CGContext) {
+        self.draw(in: CGRect(origin: CGPoint.zero, size: CGSize(width: ctx.width, height: ctx.height)))
     }
 }

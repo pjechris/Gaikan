@@ -31,7 +31,16 @@ public struct Gradient  {
 }
 
 extension Gradient : BackgroundValue {
-    public func render(inContext ctx: CGContext) {
-        BackgroundRenderer.render(self, inContext: ctx)
+    public func draw(in ctx: CGContext) {
+        let layer = CAGradientLayer()
+
+        layer.frame = CGRect(origin: CGPoint.zero, size: CGSize(width: ctx.width, height: ctx.height))
+
+        layer.endPoint = self.to
+        layer.startPoint = self.from
+        layer.colors = self.gradientValues.map { $0.color.cgColor }
+        layer.locations = self.gradientValues.map { NSNumber(value:($0.position/100)) }
+
+        layer.render(in: ctx)
     }
 }

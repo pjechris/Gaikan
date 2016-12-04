@@ -43,7 +43,6 @@
 		499943611D7497FA003C510E /* UIColor+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4999435E1D7497FA003C510E /* UIColor+Helpers.swift */; };
 		499943621D7497FA003C510E /* UIImage+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 4999435F1D7497FA003C510E /* UIImage+Helpers.swift */; };
 		49A4F5581C1A3C7600D2A392 /* StylePseudoState.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49A4F5571C1A3C7600D2A392 /* StylePseudoState.swift */; };
-		49B674BC1BEE814B007D1BE2 /* BackgroundRenderer.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B674BB1BEE814B007D1BE2 /* BackgroundRenderer.swift */; };
 		49B9A23B1D14589200E4DE52 /* StyleRule+DirectAccess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49B9A23A1D14589200E4DE52 /* StyleRule+DirectAccess.swift */; };
 		49BE40B51D78565B00FE0818 /* NSLayoutAttribute+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE40B41D78565B00FE0818 /* NSLayoutAttribute+Helpers.swift */; };
 		49BE40B71D78566400FE0818 /* NSLayoutRelation+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE40B61D78566400FE0818 /* NSLayoutRelation+Helpers.swift */; };
@@ -125,7 +124,6 @@
 		4999435E1D7497FA003C510E /* UIColor+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Helpers.swift"; sourceTree = "<group>"; };
 		4999435F1D7497FA003C510E /* UIImage+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIImage+Helpers.swift"; sourceTree = "<group>"; };
 		49A4F5571C1A3C7600D2A392 /* StylePseudoState.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StylePseudoState.swift; sourceTree = "<group>"; };
-		49B674BB1BEE814B007D1BE2 /* BackgroundRenderer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BackgroundRenderer.swift; sourceTree = "<group>"; };
 		49B9A23A1D14589200E4DE52 /* StyleRule+DirectAccess.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "StyleRule+DirectAccess.swift"; sourceTree = "<group>"; };
 		49BE40B41D78565B00FE0818 /* NSLayoutAttribute+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutAttribute+Helpers.swift"; sourceTree = "<group>"; };
 		49BE40B61D78566400FE0818 /* NSLayoutRelation+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutRelation+Helpers.swift"; sourceTree = "<group>"; };
@@ -236,7 +234,6 @@
 			isa = PBXGroup;
 			children = (
 				492C1B561BE0C9DF000515B9 /* ViewStyleRenderer.swift */,
-				49B674BB1BEE814B007D1BE2 /* BackgroundRenderer.swift */,
 				497032FA1D75E6410014E0C2 /* ConstraintRenderer.swift */,
 			);
 			path = Renderer;
@@ -630,7 +627,6 @@
 				492C1B631BE0CAD0000515B9 /* UILabel.swift in Sources */,
 				492C1B571BE0C9DF000515B9 /* UIControl.swift in Sources */,
 				493BB1DC1DF094FC004906C4 /* BackgroundLayer.swift in Sources */,
-				49B674BC1BEE814B007D1BE2 /* BackgroundRenderer.swift in Sources */,
 				499081B31DE4EF78000F8855 /* Layer.swift in Sources */,
 				49B9A23B1D14589200E4DE52 /* StyleRule+DirectAccess.swift in Sources */,
 				49FD8A651CD16652004F2979 /* Theme.swift in Sources */,

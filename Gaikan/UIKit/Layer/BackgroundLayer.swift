@@ -22,9 +22,7 @@ class BackgroundLayer : CALayer {
 
         UIGraphicsPushContext(ctx)
 
-        for bg in Background(background).backgrounds {
-            bg.render(inContext: ctx)
-        }
+        background.draw(in: ctx)
 
         UIGraphicsPopContext()
     }

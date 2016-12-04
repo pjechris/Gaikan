@@ -9,7 +9,8 @@
 import Foundation
 
 extension UIColor : BackgroundValue {
-    public func render(inContext ctx: CGContext) {
-        BackgroundRenderer.render(self, inContext: ctx)
+    public func draw(in ctx: CGContext) {
+        ctx.setFillColor(self.cgColor)
+        ctx.fill(CGRect(origin: CGPoint.zero, size: CGSize(width: ctx.width, height: ctx.height)))
     }
 }

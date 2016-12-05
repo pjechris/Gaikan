@@ -14,7 +14,7 @@ public typealias BorderStyle = (width: UInt, color: UIColor)
  Represents `Border` property
  */
 
-public struct Border {
+public struct Border : Equatable {
     var sides: [Side: BorderStyle]
 
     public init(_ side: Side, style: BorderStyle) {
@@ -42,4 +42,18 @@ public struct Border {
 
         return newBorder
     }
+}
+
+public func ==(lhs: Border, rhs: Border) -> Bool {
+    for (key, lvalue) in lhs.sides {
+        guard let rvalue = rhs.sides[key] else {
+            return false
+        }
+
+        guard lvalue.width == rvalue.width, lvalue.color == rvalue.color else {
+            return false
+        }
+    }
+
+    return true
 }

@@ -34,12 +34,13 @@ class UIViewSpec: QuickSpec {
                 }
 
                 it("should apply border") {
-                    style = [ .border: Border(width: 3, color: UIColor.black) ]
+                    let border = Border(all: (width: 3, color: UIColor.black))
+
+                    style = [ .border: border]
 
                     view.styleInline = style
 
-                    expect(view.layer.borderWidth) == 3
-                    expect(view.layer.borderColor.map { UIColor(cgColor: $0) }).to(equal(UIColor.black))
+                    expect(view.styleLayer.borderLayer.border) == border
                 }
 
                 it("should apply visible") {

@@ -31,7 +31,7 @@ class SampleTheme : Theme {
     }
 
     var getIt: Style = [
-        .border: Border(width: 1, color: UIColor.white),
+        .border: Border(all: (width: 1, color: UIColor.white)),
         .color: UIColor.white
     ]
 

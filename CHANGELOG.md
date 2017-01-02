@@ -1,6 +1,6 @@
 # CHANGELOG
 
-# WIP
+# 0.9.0
 
 ## Added
 
@@ -18,6 +18,8 @@
 ## Added
 
 - Swift 3 support!
+By [mcaylus](https://github.com/mcaylus)
+[#PR-12](https://github.com/akane/Gaikan/pull/12)
 
 # 0.7.0
 
@@ -26,7 +28,7 @@
 - Added height, minHeight, maxHeight
 - Added width, minWidth, maxWidth
 
-## Enhancements
+## Changed
 
 - Migrated to Swift 2.3
 
@@ -34,14 +36,16 @@
 
 ## Added
 
-- Added Carthage support. By [siemensikkema](https://github.com/siemensikkema) [#PR-7](https://github.com/akane/Gaikan/pull/7)
+- Added Carthage support.
+By [siemensikkema](https://github.com/siemensikkema)
+[#PR-7](https://github.com/akane/Gaikan/pull/7)
 - [Style] Added `textAttributes` on `StyleRule` which converts a style into `NSAttributedString` style attributes.
 - [Style] Added `margin` attribute.
 - [Style] Added `textOverflow` attribute.
 
-## Enhancements
+## Changed
 
-## Bugfixes
+## Fixed
 
 - [Property] Fixed `clip` attribute not setted correctly.
 
@@ -49,7 +53,7 @@
 
 ## Added
 
-## Enhancements
+## Changed
 
 - [Theme] Themes are now simple `AnyObject`. You just define (non static) attributes
 on it and apply them on a `UIView` usting the new `styleClass` attribute.
@@ -58,7 +62,7 @@ in addition to `styleName`.
 - [Style] Replaced `applyStyle` with `styleInline`.
 While the former was totally replacing the style, the newer appends style to `styleClass`.
 
-## Bugfixes
+## Fixed
 
 # 0.4.0
 
@@ -69,8 +73,8 @@ While the former was totally replacing the style, the newer appends style to `st
 - [Property] Added `Opacity`.
 - [Property] Added `Transform`.
 
-## Enhancements
+## Changed
 
-## Bugfixes
+## Fixed
 
 - [Background] Fixed renderer positions for `Gradient`.

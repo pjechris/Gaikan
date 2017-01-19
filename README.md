@@ -11,10 +11,11 @@ To style UIView(s) just give them a ```StyleRule``` object:
 
 ```Swift
 
-let myLabelStyle = StyleRule() { (inout style: StyleRule) -> () in
-  style.color = UIColor.redColor()
-  style.border = Border(width: 1, color: UIColor.greenColor())
-  style.font = UIFont(name: "Courier", size: 24)
+let myLabelStyle = StyleRule() { ( sr: inout StyleRule) -> () in
+  var style = sr
+  style.color = .red
+  style.border = Border(Side.top, style: BorderStyle(width: 1, color: .blue))
+  sr = style
 }
 
 self.label.styleInline = myLabelStyle

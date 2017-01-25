@@ -28,7 +28,7 @@ class BorderLayer : CALayer {
     @inline(__always) func drawAllSides(for border: Border, in ctx: CGContext) {
         UIGraphicsPushContext(ctx)
         let topBorder = border.sides[.top]! // Any border here would suffice
-        let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: ctx.width, height: ctx.height), cornerRadius: cornerRadius)
+        let path = UIBezierPath(roundedRect: bounds, cornerRadius: cornerRadius)
         topBorder.color.setStroke()
         path.lineWidth = CGFloat(topBorder.width)
         path.addClip()
@@ -46,19 +46,19 @@ class BorderLayer : CALayer {
             case .top:
                 self.draw(border: border,
                           path: path,
-                          points: [ CGPoint(x: 0, y: 0), CGPoint(x: ctx.width, y: 0), CGPoint(x: ctx.width, y: Int(border.width)), CGPoint(x: 0, y: Int(border.width)) ])
+                          points: [ CGPoint(x: 0, y: 0), CGPoint(x: bounds.width, y: 0), CGPoint(x: bounds.width, y: border.width), CGPoint(x: 0, y: border.width) ])
             case .right:
                 self.draw(border: border,
                           path: path,
-                          points: [CGPoint(x: ctx.width, y: 0), CGPoint(x: ctx.width, y: ctx.height), CGPoint(x: ctx.width - Int(border.width), y: ctx.height), CGPoint(x: ctx.width - Int(border.width), y: 0)])
+                          points: [CGPoint(x: bounds.width, y: 0), CGPoint(x: bounds.width, y: bounds.height), CGPoint(x: bounds.width - border.width, y: bounds.height), CGPoint(x: bounds.width - border.width, y: 0)])
             case .bottom:
                 self.draw(border: border,
                           path: path,
-                          points: [CGPoint(x: ctx.width, y: ctx.height), CGPoint(x: 0, y: ctx.height), CGPoint(x: 0, y: ctx.height - Int(border.width)), CGPoint(x: ctx.width, y: ctx.height - Int(border.width))])
+                          points: [CGPoint(x: bounds.width, y: bounds.height), CGPoint(x: 0, y: bounds.height), CGPoint(x: 0, y: bounds.height - border.width), CGPoint(x: bounds.width, y: bounds.height - border.width)])
             case .left:
                 self.draw(border: border,
                           path: path,
-                          points: [CGPoint(x: 0, y: ctx.height), CGPoint(x: 0, y: 0), CGPoint(x: Int(border.width), y: 0), CGPoint(x: Int(border.width), y: ctx.height)])
+                          points: [CGPoint(x: 0, y: bounds.height), CGPoint(x: 0, y: 0), CGPoint(x: Int(border.width), y: 0), CGPoint(x: border.width, y: bounds.height)])
             }
         }
 

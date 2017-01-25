@@ -43,6 +43,9 @@ class StyleLayer : CALayer {
     }
 
     private func setupLayers() {
+        self.contentsScale = UIScreen.main.scale
+        self.backgroundLayer.contentsScale = UIScreen.main.scale
+        self.borderLayer.contentsScale = UIScreen.main.scale
         self.addSublayer(self.backgroundLayer)
         self.addSublayer(self.borderLayer)
     }

@@ -8,7 +8,7 @@
 
 import Foundation
 
-public typealias BorderStyle = (width: UInt, color: UIColor)
+public typealias BorderStyle = (width: CGFloat, color: UIColor)
 
 /**
  Represents `Border` property

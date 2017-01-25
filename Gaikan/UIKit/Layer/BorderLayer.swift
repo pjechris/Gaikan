@@ -17,7 +17,26 @@ class BorderLayer : CALayer {
         guard let border = self.border else {
             return
         }
+        
+        guard border.sides.keys.count != Side.all.count else {
+            drawAllSides(for: border, in: ctx)
+            return
+        }
+        drawSingleSides(for: border, in: ctx)
+    }
 
+    @inline(__always) func drawAllSides(for border: Border, in ctx: CGContext) {
+        UIGraphicsPushContext(ctx)
+        let topBorder = border.sides[.top]! // Any border here would suffice
+        let path = UIBezierPath(roundedRect: CGRect(x: 0, y: 0, width: ctx.width, height: ctx.height), cornerRadius: cornerRadius)
+        topBorder.color.setStroke()
+        path.lineWidth = CGFloat(topBorder.width)
+        path.addClip()
+        path.stroke()
+        UIGraphicsPopContext()
+    }
+    
+    private func drawSingleSides(for border: Border, in ctx: CGContext) {
         let path = UIBezierPath()
 
         UIGraphicsPushContext(ctx)

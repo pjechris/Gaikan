@@ -61,4 +61,11 @@ class StyleLayer : CALayer {
         self.backgroundLayer.background = style.background.map { Background($0) }
         self.borderLayer.border = style.border
     }
+    
+    override var cornerRadius: CGFloat {
+        didSet {
+            self.backgroundLayer.cornerRadius = cornerRadius
+            self.borderLayer.cornerRadius = cornerRadius
+        }
+    }
 }

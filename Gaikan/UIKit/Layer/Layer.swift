@@ -43,6 +43,9 @@ class StyleLayer : CALayer {
     }
 
     private func setupLayers() {
+        self.contentsScale = UIScreen.main.scale
+        self.backgroundLayer.contentsScale = UIScreen.main.scale
+        self.borderLayer.contentsScale = UIScreen.main.scale
         self.addSublayer(self.backgroundLayer)
         self.addSublayer(self.borderLayer)
     }
@@ -60,5 +63,12 @@ class StyleLayer : CALayer {
 
         self.backgroundLayer.background = style.background.map { Background($0) }
         self.borderLayer.border = style.border
+    }
+    
+    override var cornerRadius: CGFloat {
+        didSet {
+            self.backgroundLayer.cornerRadius = cornerRadius
+            self.borderLayer.cornerRadius = cornerRadius
+        }
     }
 }

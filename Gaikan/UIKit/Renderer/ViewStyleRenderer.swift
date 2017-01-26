@@ -24,6 +24,7 @@ internal class ViewStyleRenderer {
         stylable.layoutMargins = styleRule.margin ?? stylable.layoutMargins
 
         stylable.styleLayer.styleClass = styleRule
+        stylable.styleLayer.cornerRadius = corners.radius
 
         ConstraintRenderer.render(stylable, styleRule: styleRule)
     }

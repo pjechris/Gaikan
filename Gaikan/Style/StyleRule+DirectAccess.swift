@@ -76,6 +76,11 @@ public extension StyleRule {
         set { self.attributes[.opacity] = newValue }
     }
 
+    public var shadow: NSShadow? {
+        get { return self[.shadow].map { return $0 as! NSShadow } }
+        set { self.attributes[.shadow] = newValue }
+    }
+
     public var textAlign: NSTextAlignment? {
         get { return self[.textAlign].map { return $0 as! NSTextAlignment } }
         set { self.attributes[.textAlign] = newValue }

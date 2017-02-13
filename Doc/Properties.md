@@ -146,6 +146,17 @@
    style.opacity = 80
    ```
 
+## Shadow
+
+- __**since**__: xxx
+- __**description**__: Applies shadow to view.
+- __**applies**__: `UIView`
+- __**usage**__:
+
+  ```swift
+    style.shadow = NSShadow(offset: CGSize(width: 0, height: 0), radius: 4, color: UIColor.red)
+  ```   
+
 ## TextAlign
 
 ## TextOverflow

@@ -25,6 +25,7 @@ public enum Property {
     case minHeight
     case minWidth
     case opacity
+    case shadow
     case textAlign
     case textOverflow
     case textShadow

@@ -23,6 +23,16 @@ internal class ViewStyleRenderer {
         stylable.alpha = CGFloat(styleRule.opacity / 100)
         stylable.layoutMargins = styleRule.margin ?? stylable.layoutMargins
 
+        if let shadow = styleRule.shadow {
+            stylable.layer.shadowOpacity = 1
+            stylable.layer.shadowOffset = shadow.shadowOffset
+            stylable.layer.shadowRadius = shadow.shadowBlurRadius
+            stylable.layer.shadowColor = (shadow.shadowColor as? UIColor)?.cgColor
+        }
+        else {
+            stylable.layer.shadowOpacity = 0
+        }
+
         stylable.styleLayer.styleClass = styleRule
         stylable.styleLayer.cornerRadius = corners.radius
 

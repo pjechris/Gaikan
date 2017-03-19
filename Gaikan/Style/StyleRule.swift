@@ -49,7 +49,7 @@ public struct StyleRule : ExpressibleByDictionaryLiteral {
         return StyleRule(attributes: composedAttributes.gaikan_merge(self.attributes))
     }
 
-    subscript(keyname: Property) -> Value {
+    public subscript(keyname: Property) -> Value {
         get { return self.attributes[keyname] != nil ? self.attributes[keyname]! : nil }
     }
 }

@@ -12,8 +12,8 @@ import Foundation
  *  Defines a `StyleRule` on which you can apply supplemntary `StylePseudoState` states.
  */
 public struct Style : ExpressibleByDictionaryLiteral {
-    public fileprivate(set) var style: StyleRule
-    public fileprivate(set) var states: [StyleState:StyleRule] = [:]
+    internal fileprivate(set) var style: StyleRule
+    internal fileprivate(set) var states: [StyleState:StyleRule] = [:]
 
     public init(dictionaryLiteral elements: (StyleRule.Key, StyleRule.Value)...) {
         var attributes = Dictionary<StyleRule.Key, StyleRule.Value>()

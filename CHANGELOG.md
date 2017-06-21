@@ -1,5 +1,15 @@
 # CHANGELOG
 
+## 0.9.1
+
+### Added
+
+- Added shadow property.
+
+### Fixed
+
+- Border not correctly set when all sides were defined by [viteinfinite](https://github.com/viteinfinite) [#PR-16](https://github.com/akane/Gaikan/pull/16)
+
 # 0.9.0
 
 ## Added

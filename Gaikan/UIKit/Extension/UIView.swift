@@ -14,7 +14,7 @@ var ViewStyleClassAttr = "ViewStyleClassAttr"
 var ViewStyleInlineAttr = "ViewStyleInlineAttr"
 
 extension UIView : Stylable {
-    public var styleClass: Style? {
+    public var style: Style? {
         get {
             let value = objc_getAssociatedObject(self, &ViewStyleClassAttr) as? AssociatedObject<Style?>
 
@@ -33,28 +33,6 @@ extension UIView : Stylable {
             if (newValue != nil) {
                 self.registerStyleKeyPaths()
             }
-        }
-    }
-
-    public var styleInline: StyleRule? {
-        get {
-            let value = objc_getAssociatedObject(self, &ViewStyleInlineAttr) as? AssociatedObject<StyleRule>
-
-            return value.map { $0.value }
-        }
-        set {
-            objc_setAssociatedObject(self, &ViewStyleInlineAttr, newValue.map { AssociatedObject($0) }, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-
-            self.addStyleLayerIfNeeded()
-            self.computeStyle()
-        }
-    }
-
-    public var styleState: String? {
-        get { return objc_getAssociatedObject(self, &ViewStyleStateAttribute) as? String }
-        set {
-            objc_setAssociatedObject(self, &ViewStyleStateAttribute, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-            self.computeStyle()
         }
     }
 

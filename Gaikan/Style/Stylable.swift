@@ -15,12 +15,7 @@ var ComputedStyleAttribute = "ComputedStyleAttribute"
 */
 public protocol Stylable : class {
     /// `Style` class to apply. Calls `computeStyle` when changed
-    var styleClass: Style? { get set }
-    /// Style specific to the object. Has precedence over `styleClass`.
-    /// Works like `style` in HTML.
-    var styleInline: StyleRule? { get set }
-    /// Custom style state. If defined `computedStyle` will merge state style with "default" state style
-    var styleState: String? { get }
+    var style: Style? { get set }
 
     /// Re-applies computed style
     func updateStyle()
@@ -44,26 +39,27 @@ extension Stylable {
         }
     }
 
+    /// FIXME re-enable
     /// Calculates style and store it into `computedStyle`
     internal func computeStyle() {
-        guard let style = self.styleClass else {
-            self.computedStyle = self.styleInline
-
-            return
-        }
-
-        let states = StyleState.states(self)
-        var computedStyle = style.style
-
-        for state in states {
-            computedStyle = style.states[state].map { return $0.extends(computedStyle) } ?? computedStyle
-        }
-
-        if let styleInline = self.styleInline {
-            self.computedStyle = styleInline.extends(computedStyle)
-        }
-        else {
-            self.computedStyle = computedStyle
-        }
+//        guard let style = self.styleClass else {
+//            self.computedStyle = self.styleInline
+//
+//            return
+//        }
+//
+//        let states = StyleState.states(self)
+//        var computedStyle = style.style
+//
+//        for state in states {
+//            computedStyle = style.states[state].map { return $0.extends(computedStyle) } ?? computedStyle
+//        }
+//
+//        if let styleInline = self.styleInline {
+//            self.computedStyle = styleInline.extends(computedStyle)
+//        }
+//        else {
+//            self.computedStyle = computedStyle
+//        }
     }
 }

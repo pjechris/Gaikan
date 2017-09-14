@@ -34,3 +34,27 @@ public enum Property {
     case visible
     case width
 }
+
+public protocol TextStyler {
+    var textColor: UIColor? { get set }
+    var textAlignment: NSTextAlignment? { get set }
+    var textOverflow: NSLineBreakMode? { get set }
+    var textShadow: NSShadow? { get set }
+}
+
+public protocol FontStyler {
+    var font: UIFont? { get set }
+}
+
+public protocol VisibilityStyler {
+    var clipToBounds: Bool? { get set }
+    var opacity: Double? { get set }
+    var isVisible: Bool { get set }
+}
+
+public protocol DesignStyler {
+    var border: Border? { get set }
+    var background: Background? { get set }
+    var cornerRadius: Corners? { get set }
+    var tintColor: UIColor? { get set }
+}

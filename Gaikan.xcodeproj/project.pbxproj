@@ -48,7 +48,6 @@
 		49BE40B71D78566400FE0818 /* NSLayoutRelation+Helpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49BE40B61D78566400FE0818 /* NSLayoutRelation+Helpers.swift */; };
 		49C25A8C1D845A6900E3735C /* ConstraintRendererSpec.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C25A8B1D845A6900E3735C /* ConstraintRendererSpec.swift */; };
 		49C306551CD8FD2900CABDF4 /* Gradient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C306541CD8FD2900CABDF4 /* Gradient.swift */; };
-		49C306581CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49C306571CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift */; };
 		49CF3E291D0EF48200AF89E6 /* KVOController.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CF3E281D0EF48200AF89E6 /* KVOController.framework */; };
 		49CF3E2D1D0EF81B00AF89E6 /* Nimble.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CF3E2B1D0EF81B00AF89E6 /* Nimble.framework */; };
 		49CF3E2E1D0EF81B00AF89E6 /* Quick.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 49CF3E2C1D0EF81B00AF89E6 /* Quick.framework */; };
@@ -64,7 +63,6 @@
 		49EC398B1B93085E002938E1 /* StyleRule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC398A1B93085E002938E1 /* StyleRule.swift */; };
 		49EC39931B9373B2002938E1 /* Stylable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49EC39921B9373B2002938E1 /* Stylable.swift */; };
 		49F78A671DF4245300866F72 /* Side.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49F78A661DF4245300866F72 /* Side.swift */; };
-		49FD8A651CD16652004F2979 /* Theme.swift in Sources */ = {isa = PBXBuildFile; fileRef = 49FD8A631CD16652004F2979 /* Theme.swift */; };
 		CAFCDA4F1C592BBC004513D3 /* Corners.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAFCDA4E1C592BBC004513D3 /* Corners.swift */; };
 /* End PBXBuildFile section */
 
@@ -129,7 +127,6 @@
 		49BE40B61D78566400FE0818 /* NSLayoutRelation+Helpers.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "NSLayoutRelation+Helpers.swift"; sourceTree = "<group>"; };
 		49C25A8B1D845A6900E3735C /* ConstraintRendererSpec.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConstraintRendererSpec.swift; sourceTree = "<group>"; };
 		49C306541CD8FD2900CABDF4 /* Gradient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Gradient.swift; sourceTree = "<group>"; };
-		49C306571CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+InterfaceBuilder.swift"; sourceTree = "<group>"; };
 		49CF3E281D0EF48200AF89E6 /* KVOController.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = KVOController.framework; path = Carthage/Build/iOS/KVOController.framework; sourceTree = "<group>"; };
 		49CF3E2B1D0EF81B00AF89E6 /* Nimble.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Nimble.framework; path = Carthage/Build/iOS/Nimble.framework; sourceTree = "<group>"; };
 		49CF3E2C1D0EF81B00AF89E6 /* Quick.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Quick.framework; path = Carthage/Build/iOS/Quick.framework; sourceTree = "<group>"; };
@@ -147,7 +144,6 @@
 		49EC398A1B93085E002938E1 /* StyleRule.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleRule.swift; sourceTree = "<group>"; };
 		49EC39921B9373B2002938E1 /* Stylable.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Stylable.swift; sourceTree = "<group>"; };
 		49F78A661DF4245300866F72 /* Side.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Side.swift; sourceTree = "<group>"; };
-		49FD8A631CD16652004F2979 /* Theme.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Theme.swift; sourceTree = "<group>"; };
 		CAFCDA4E1C592BBC004513D3 /* Corners.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Corners.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -341,14 +337,6 @@
 			path = Renderer;
 			sourceTree = "<group>";
 		};
-		49C306561CD902D800CABDF4 /* InterfaceBuilder */ = {
-			isa = PBXGroup;
-			children = (
-				49C306571CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift */,
-			);
-			path = InterfaceBuilder;
-			sourceTree = "<group>";
-		};
 		49EC395A1B92FC7D002938E1 = {
 			isa = PBXGroup;
 			children = (
@@ -378,10 +366,8 @@
 				49EC39671B92FC7D002938E1 /* Gaikan.h */,
 				49EC39691B92FC7D002938E1 /* Info.plist */,
 				4917A4BE1D17EE08008B5CB2 /* Helpers */,
-				49C306561CD902D800CABDF4 /* InterfaceBuilder */,
 				4970A8151BD4455900BCB3BA /* Property */,
 				49EC397E1B92FF2F002938E1 /* Style */,
-				49FD8A611CD16652004F2979 /* Theme */,
 				492C1B421BE0C81E000515B9 /* UIKit */,
 			);
 			path = Gaikan;
@@ -410,12 +396,9 @@
 			path = Style;
 			sourceTree = "<group>";
 		};
-		49FD8A611CD16652004F2979 /* Theme */ = {
 			isa = PBXGroup;
 			children = (
-				49FD8A631CD16652004F2979 /* Theme.swift */,
 			);
-			path = Theme;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -618,7 +601,6 @@
 				4932871A1EFA7655009D1326 /* NSShadow+Helpers.swift in Sources */,
 				49F78A671DF4245300866F72 /* Side.swift in Sources */,
 				49EC398B1B93085E002938E1 /* StyleRule.swift in Sources */,
-				49C306581CD902EC00CABDF4 /* UIView+InterfaceBuilder.swift in Sources */,
 				49EC39931B9373B2002938E1 /* Stylable.swift in Sources */,
 				492C1B5B1BE0C9DF000515B9 /* ViewStyleRenderer.swift in Sources */,
 				49BE40B51D78565B00FE0818 /* NSLayoutAttribute+Helpers.swift in Sources */,
@@ -630,7 +612,6 @@
 				493BB1DC1DF094FC004906C4 /* BackgroundLayer.swift in Sources */,
 				499081B31DE4EF78000F8855 /* Layer.swift in Sources */,
 				49B9A23B1D14589200E4DE52 /* StyleRule+DirectAccess.swift in Sources */,
-				49FD8A651CD16652004F2979 /* Theme.swift in Sources */,
 				49E99D491DEF3A77003BF8B4 /* BorderLayer.swift in Sources */,
 				4917A4C01D17EE1A008B5CB2 /* NSAttributedString+Style.swift in Sources */,
 				499943581D7497AB003C510E /* AssociatedObject.swift in Sources */,

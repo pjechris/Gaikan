@@ -49,7 +49,7 @@ public protocol FontStyler {
 public protocol VisibilityStyler {
     var clipToBounds: Bool? { get set }
     var opacity: Double? { get set }
-    var isVisible: Bool { get set }
+    var isVisible: Bool? { get set }
 }
 
 public protocol DesignStyler {
@@ -57,4 +57,40 @@ public protocol DesignStyler {
     var background: Background? { get set }
     var cornerRadius: Corners? { get set }
     var tintColor: UIColor? { get set }
+}
+
+public struct Properties : TextStyler, FontStyler, VisibilityStyler, DesignStyler {
+    public var textColor: UIColor?
+    public var textAlignment: NSTextAlignment?
+    public var textOverflow: NSLineBreakMode?
+    public var textShadow: NSShadow?
+
+    public var font: UIFont?
+
+    public var clipToBounds: Bool?
+    public var opacity: Double?
+    public var isVisible: Bool?
+
+    public var border: Border?
+    public var background: Background?
+    public var cornerRadius: Corners?
+    public var tintColor: UIColor?
+
+    internal var applier: (inout Properties) -> Void = { _ in }
+
+    public init() {
+
+    }
+}
+
+extension Properties {
+    mutating func applies(_ otherProperties: Properties) {
+        let oldApplier = self.applier
+
+        otherProperties.applier(&self)
+        self.applier = {
+            oldApplier(&$0)
+            otherProperties.applier(&$0)
+        }
+    }
 }
